@@ -1,4 +1,22 @@
 .menu {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin: 0 30px;
+}
+.menuLink {
+    width: 250px;
+    height:80px; 
+    margin: 20px;
+    background-color: #b6bdc7;
+    color: #3e3632;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 700;
+
 }
