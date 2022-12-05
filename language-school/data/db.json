@@ -1,0 +1,19 @@
+{
+  "classrooms": [
+    {
+      "id": 5,
+      "number": 5,
+      "description": "for adults"
+    },
+    {
+      "id": 4,
+      "number": 5,
+      "description": "for adults"
+    },
+    {
+      "id": 3,
+      "number": 5,
+      "description": "for adults"
+    }
+  ]
+}

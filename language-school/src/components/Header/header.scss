@@ -1,11 +1,27 @@
+@import "../../../style/variables";
+@import "../../../style/global";
+
 .header {
-  position: fixed;
-  z-index: 10;
+  // position: fixed;
+  // z-index: 10;
   // aby był przyklejony do góry - mozna zmienic
   width: 100%;
-  height: 80px;
-
+  height: 160px;
+  box-shadow: 0 0 10px $main-color-dark;
   background-color: $main-color-light;
-  margin: 5px auto;
-  font-weight: 700;
+  margin-top:5px;
+ margin: 15px auto;
+
+
+  &__text {
+    color: $main-color-dark;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    font-family: $second-font;
+    text-shadow: 7px 7px 12px $main-color-dark;
+    letter-spacing: 10px;
+  }
 }

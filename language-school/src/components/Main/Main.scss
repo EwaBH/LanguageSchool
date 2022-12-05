@@ -1,8 +1,17 @@
+@import "../../../style/variables";
+@import "../../../style/global";
+
 .main {
     width:80%;
-    height: 800px;
-    background-image: url("../../../public/assets/20180206_120342.jpg");
+    margin: 15px auto;
+    height: 600px;
+    // background-image: url("../../../public/assets/20180206_120342.jpg");
     background-size: contain;
     background-repeat: no-repeat;
     
 }
+// @media all and (min-width: $md-min){
+//     &__image{
+//         width: 50%;
+//     }
+// }

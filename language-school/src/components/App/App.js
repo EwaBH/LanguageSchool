@@ -20,7 +20,7 @@ const App = () => {
       <div className="mainSection">
         <Menu />
         <Routes>
-          <Route path="/main" element={<Main />} />
+          <Route path="/" element={<Main />} />
           <Route path="/timetables" element={<Timetables />} />
           <Route path="/timetable" element={<Timetable />} />
           <Route path="/teachers" element={<Teachers />} />

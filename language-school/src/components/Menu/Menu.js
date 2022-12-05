@@ -5,7 +5,7 @@ import "./Menu.scss";
 const Menu = () => {
   return (
     <div className="menu">
-      <div className="menu">Menu</div>
+      <div className="menu"></div>
       <Link className="menuLink" to="/main">
         Main
       </Link>
