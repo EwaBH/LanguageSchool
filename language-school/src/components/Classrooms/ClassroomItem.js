@@ -1,12 +1,10 @@
 import React from "react";
 import "./Classrooms.scss";
-const API_URL = "http://localhost:3000";
+import { deleteClassroom } from "../../services/httpService";
 
 const ClassroomItem = ({ classroom, onDelete }) => {
-  const deleteClassroom = async () => {
-    await fetch(`${API_URL}/classrooms/${classroom.id}`, {
-      method: "DELETE",
-    });
+  const deleteItem = async () => {
+    await deleteClassroom(classroom.id);
     onDelete();
   };
 
@@ -14,9 +12,10 @@ const ClassroomItem = ({ classroom, onDelete }) => {
     <li className="classroomItem__list">
       <p>
         {classroom.number} discription: {classroom.description}
-        <span className="material-symbols-outlined" onClick={deleteClassroom}>
-          menu
+        <span className="material-symbols-outlined" onClick={deleteItem}>
+          delete
         </span>
+        <span className="material-symbols-outlined">edit</span>
       </p>
     </li>
   );

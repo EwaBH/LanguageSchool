@@ -1,1 +1,11 @@
-r
+@import "../../../style/variables";
+@import "../../../style/global";
+
+.subjectItem__list {
+  margin: 0 20px;
+  padding: 2px;
+  font-family: $main-font;
+  font-size: 25px;
+//   font-weight: 700;
+ 
+}

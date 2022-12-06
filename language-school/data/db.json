@@ -1,19 +1,30 @@
 {
-  "classrooms": [
+  "classrooms": [],
+  "subjects": [
     {
-      "id": 5,
-      "number": 5,
-      "description": "for adults"
+      "id": 1,
+      "subject": "E",
+      "description": "poziom A1-B1"
     },
     {
-      "id": 4,
-      "number": 5,
-      "description": "for adults"
+      "id": 2,
+      "subject": "English",
+      "description": "poziom A1-C2"
     },
     {
       "id": 3,
-      "number": 5,
-      "description": "for adults"
+      "subject": "Japanese",
+      "description": "poziom A1-B1"
+    },
+    {
+      "id": 4,
+      "subject": "Japanese",
+      "description": "poziom A1-B1"
+    },
+    {
+      "id": 5,
+      "subject": "Japanese",
+      "description": "poziom A1-B1"
     }
   ]
 }

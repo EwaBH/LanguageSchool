@@ -7,19 +7,19 @@ const Menu = () => {
     <div className="menu">
       <div className="menu"></div>
       <Link className="menuLink" to="/main">
-        Main
+        strona główna
       </Link>
       <Link className="menuLink" to="/timetables">
-        <div>Timetables</div>
+        <div>plan zajęć</div>
       </Link>
       <Link className="menuLink" to="/teachers">
-        Teachers
+        Nauczyciele
       </Link>
       <Link className="menuLink" to="/subjects">
-        Subjects
+        Przedmioty
       </Link>
       <Link className="menuLink" to="/clasrooms">
-        Clasrooms
+       Sale lekcyjne
       </Link>
     </div>
   );

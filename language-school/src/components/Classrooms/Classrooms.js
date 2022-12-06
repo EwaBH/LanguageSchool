@@ -1,19 +1,25 @@
 import React, { useState, useEffect } from "react";
 import ClassroomItem from "./ClassroomItem";
-const API_URL = "http://localhost:3000";
+import { getClassrooms } from "../../services/httpService";
+import Spinner from "react-bootstrap/Spinner";
+import Search from "../shared/search/search";
+
+const address = "clasroom";
 
 const Classrooms = () => {
   const [classrooms, setClasssrooms] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  const search = (text) => {
+    console.log(text);
+  };
+
   const getClassroom = () => {
     setLoading(true);
-    fetch(`${API_URL}/classrooms`)
-      .then((response) => response.json())
-      .then((result) => {
-        setClasssrooms(result);
-        setLoading(false);
-      });
+    getClassrooms().then((result) => {
+      setClasssrooms(result);
+      setLoading(false);
+    });
   };
 
   const deleteClassroom = () => {
@@ -24,10 +30,12 @@ const Classrooms = () => {
     getClassroom();
   }, []);
 
-  if (loading) return <p>Trwa ładowanie danych...</p>;
-
+  if (loading) return <Spinner animation="border" />;
   return (
-    <>
+    <div className="classrooms__container">
+      <h2>Sale lekcyjne</h2>
+      <Search address={address} search={search} />
+
       <ul>
         {classrooms.map((classroom) => {
           return (
@@ -39,7 +47,7 @@ const Classrooms = () => {
           );
         })}
       </ul>
-    </>
+    </div>
   );
 };
 export default Classrooms;
