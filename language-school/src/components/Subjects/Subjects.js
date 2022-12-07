@@ -33,21 +33,23 @@ const search = (text) => {
   if (loading) return <Spinner animation="border" />;
 
   return (
-    <>
-      <h2>Nauczane języki obce</h2>
-      <Search address={address} search={search} />
-      <ul>
-        {subjects.map((subject) => {
-          return (
-            <SubjectsItem
-              key={subject.id}
-              subject={subject}
-              onDelete={deleteSubject}
-            />
-          );
-        })}
-      </ul>
-    </>
+    
+      <div className="subjects__container">
+        <h2>Przedmioty - języki obce</h2>
+        <Search address={address} search={search} />
+        <ul>
+          {subjects.map((subject) => {
+            return (
+              <SubjectsItem
+                key={subject.id}
+                subject={subject}
+                onDelete={deleteSubject}
+              />
+            );
+          })}
+        </ul>
+      </div>
+    
   );
 };
 export default Subjects;

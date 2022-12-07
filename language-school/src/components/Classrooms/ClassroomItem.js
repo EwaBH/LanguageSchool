@@ -11,7 +11,8 @@ const ClassroomItem = ({ classroom, onDelete }) => {
   return (
     <li className="classroomItem__list">
       <p>
-        {classroom.number} discription: {classroom.description}
+        <span> numer sali: {classroom.number} </span>
+        <span>opis: {classroom.description}</span>
         <span className="material-symbols-outlined" onClick={deleteItem}>
           delete
         </span>

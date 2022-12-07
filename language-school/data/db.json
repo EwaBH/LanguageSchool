@@ -1,5 +1,36 @@
 {
-  "classrooms": [],
+  "classrooms": [
+    {
+      "id": 1,
+      "number": 11,
+      "description": "2 piętro, sala dla dorosłych"
+    },
+    {
+      "id": 2,
+      "number": 1,
+      "description": "1 piętro, sala dla dzieci"
+    },
+    {
+      "id": 3,
+      "number": 10,
+      "description": "2 piętro, sala dla dorosłych"
+    },
+    {
+      "id": 4,
+      "number": 15,
+      "description": "2 piętro, sala dla dorosłych"
+    },
+    {
+      "id": 5,
+      "number": 12,
+      "description": "2 piętro, sala dla dorosłych"
+    },
+    {
+      "number": "3333333",
+      "description": "33333333",
+      "id": 6
+    }
+  ],
   "subjects": [
     {
       "id": 1,
@@ -25,6 +56,34 @@
       "id": 5,
       "subject": "Japanese",
       "description": "poziom A1-B1"
+    },
+    {
+      "subject": "język rosyjski",
+      "description": "A2-B1",
+      "id": 6
+    },
+    {
+      "subject": "ffffff",
+      "description": "a2b2",
+      "id": 7
+    }
+  ],
+  "teachers": [
+    {
+      "id": 2,
+      "name": "Marta",
+      "surname": "Nowak",
+      "email": "marta@op.pl",
+      "phone": "514235897",
+      "language": "English"
+    },
+    {
+      "id": 4,
+      "name": "Marta",
+      "surname": "Nowak",
+      "email": "marta@op.pl",
+      "phone": "514235897",
+      "language": "English"
     }
   ]
 }

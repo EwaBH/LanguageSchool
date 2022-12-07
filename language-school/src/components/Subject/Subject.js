@@ -17,7 +17,7 @@ const AddSubject = () => {
   const descriptionChanged = (e) => {
     setDescription(e.target.value);
   };
-  
+
   const validate = (e) => {
     e.preventDefault();
     const validation = [];
@@ -51,7 +51,7 @@ const AddSubject = () => {
       <form onSubmit={validate}>
         <input type="text" onChange={subjectChanged} placeholder="podaj przedmiot" />
         <br />
-        <input type="text" onChange={descriptionChanged} placeholder="opis" />
+        <input type="text" onChange={descriptionChanged} placeholder="opis,poziom" />
         <br />
         <button type="submit">Wyślij</button>
         <br />
