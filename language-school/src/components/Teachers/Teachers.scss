@@ -1,0 +1,23 @@
+@import "../../../style/variables";
+@import "../../../style/global";
+
+.teachersItem__list {
+  margin: 10px 20px;
+  width:450px;
+  height: 45px;
+  padding:10px;
+  font-family: $main-font;
+  font-size: 15px;
+  list-style-type: none;
+  box-shadow: 1px 1px 4px $main-color-dark;
+  border-radius: 4px;
+
+&:hover {
+    background-color: $secondary-color;
+    width: 460px;
+    letter-spacing: 3px;
+    color: #fff;
+    opacity: 80;
+    font-weight: 700;
+  }
+}

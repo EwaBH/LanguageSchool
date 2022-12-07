@@ -9,18 +9,22 @@ const SubjectsItem = ({ subject, onDelete }) => {
   };
 
   return (
-    <>
+    <div className="subjectItem__container">
       <li className="subjectItem__list">
-        <p>
-          {subject.subject} - 
-          {subject.description}
-          <span className="material-symbols-outlined" onClick={deleteItem}>
+        <div className="subjectItem__list-text">
+          {subject.subject} -{subject.description}
+          <span
+            className="material-symbols-outlined subjectItem__list-bin"
+            onClick={deleteItem}
+          >
             delete
           </span>
-          <span className="material-symbols-outlined">edit</span>
-        </p>
+          <span className="material-symbols-outlined subjectItem__list-edit">
+            edit
+          </span>
+        </div>
       </li>
-    </>
+    </div>
   );
 };
 

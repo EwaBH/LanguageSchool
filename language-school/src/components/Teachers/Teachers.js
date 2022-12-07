@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import TeachersItem from "./TeachersItem";
 import Spinner from "react-bootstrap/Spinner";
 import { getTeachers } from "../../services/httpService";
-import Search from "../shared/search/search";
+import Search from "../SearchItem/Search";
 
 const address = "teacher";
 

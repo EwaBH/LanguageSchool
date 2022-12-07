@@ -12,6 +12,7 @@ import Subjects from "../Subjects/Subjects";
 import Subject from "../Subject/Subject";
 import Clasrooms from "../Classrooms/Classrooms";
 import Classroom from "../Classroom/Classroom";
+import { NotFound } from "../NotFound/NotFound";
 
 const App = () => {
   return (
@@ -29,6 +30,8 @@ const App = () => {
           <Route path="/subject" element={<Subject />} />
           <Route path="/clasrooms" element={<Clasrooms />} />
           <Route path="/clasroom" element={<Classroom />} />
+          <Route path="/clasroom/:id" element={<Classroom />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
       <Footer />

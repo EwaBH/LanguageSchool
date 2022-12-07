@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import ClassroomItem from "./ClassroomItem";
 import { getClassrooms } from "../../services/httpService";
 import Spinner from "react-bootstrap/Spinner";
-import Search from "../shared/search/search";
-
+import Search from "../SearchItem/Search"
 const address = "clasroom";
 
 const Classrooms = () => {

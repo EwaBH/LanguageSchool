@@ -1,0 +1,19 @@
+@import "../../../style/variables";
+@import "../../../style/global";
+
+.search__button,
+.search__button-item {
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-bottom: 3px;
+  background-color: $secondary-color;
+}
+
+.search__button-item {
+  width: 45px;
+  height: 45px;
+}
+.search__button {
+  width: 400px;
+  height: 50px;
+}

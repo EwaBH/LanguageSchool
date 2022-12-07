@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3004";
+const API_URL = "http://localhost:3000";
 
 export function getClassrooms() {
   return fetch(`${API_URL}/classrooms`).then((response) => response.json());

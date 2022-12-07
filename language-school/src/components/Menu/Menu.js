@@ -4,9 +4,9 @@ import "./Menu.scss";
 
 const Menu = () => {
   return (
-    <div className="menu">
+    <div className="menu__container">
       <div className="menu"></div>
-      <Link className="menuLink" to="/main">
+      <Link className="menuLink" to="/">
         strona główna
       </Link>
       <Link className="menuLink" to="/timetables">

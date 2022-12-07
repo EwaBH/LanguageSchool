@@ -2,20 +2,23 @@
 @import "../../../style/global";
 
 .classroomItem__list {
-  margin: 0 20px;
-  padding: 2px;
+   margin: 10px 20px;
+  width:450px;
+  height: 45px;
+  padding:10px;
   font-family: $main-font;
-  font-size: 25px;
- 
+  font-size: 15px;
+  list-style-type: none;
+  box-shadow: 1px 1px 4px $main-color-dark;
+  border-radius: 4px;
+
+&:hover {
+    background-color: $secondary-color;
+    width: 460px;
+    letter-spacing: 3px;
+    color: #fff;
+    opacity: 80;
+    font-weight: 700;
+  }
 }
 
-.classrooms__container {
-   margin: 0 auto;
-}
-// .classroomItem__list-icon {
-//   margin-left: 10px;
-//   background-color: $main-color-light;
-//     width: 15px;
-//     height: 15px;
-//     border-radius: 50%;
-// }

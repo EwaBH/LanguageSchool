@@ -39,12 +39,12 @@ const AddTeacher = () => {
     
     const reEmail = new RegExp("^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$");
 
-    if (name.length < 3 || !Number.isNaN(name.current.value)) {
+    if (name.length < 3 || !Number.isNaN(name)) {
       validation.push(
         "Wpisywane imię musi być dłuższe niż 3 znaki i nie może być liczbą"
       );
     }
-    if (surname.length < 3 || !Number.isNaN(surname.current.value)) {
+    if (surname.length < 3 || !Number.isNaN(surname)) {
       validation.push(
         "Wpisywane nazwisko musi być dłuższe niż 3 znaki i nie może być liczbą"
       );

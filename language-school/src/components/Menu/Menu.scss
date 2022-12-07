@@ -6,7 +6,6 @@
   flex-direction: column;
   width: 20%;
   margin: 0 30px;
-  
   font-family: $main-font;
   font-size: 20px;
   font-weight: 700;
@@ -23,4 +22,14 @@
   text-decoration: none;
   text-transform: uppercase;
   border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+
+  &:focus,
+  :hover {
+    background-color: $secondary-color;
+    width: 270px;
+    letter-spacing: 3px;
+    color: #fff;
+    font-weight: 700;
+  }
 }

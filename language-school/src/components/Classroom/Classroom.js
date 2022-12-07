@@ -1,15 +1,15 @@
-import { useNavigate } from "react-router-dom";
-import React, { useState } from "react";
+import { useNavigate,useParams } from "react-router-dom";
+import React, { useState} from "react";
 import { createClassroom } from "../../services/httpService";
 
 const Classroom = () => {
-  
   const [classroom, setClassroom] = useState("");
   const [description, setDescription] = useState("");
-
+  const { id } = useParams();
   const navigate = useNavigate();
 
   const classroomChanged = (e) => {
+    console.log(id);
     setClassroom(e.target.value);
   };
 
@@ -17,15 +17,14 @@ const Classroom = () => {
     setDescription(e.target.value);
   };
 
-const classroomText = (e) => {
-  e.preventDefault();
-   
+  const classroomText = (e) => {
+    e.preventDefault();
+
     sendData({
       number: classroom,
       description: description,
     });
-  }
-
+  };
 
   const sendData = async (data) => {
     await createClassroom(data);
@@ -34,6 +33,7 @@ const classroomText = (e) => {
 
   return (
     <>
+    
       <form onSubmit={classroomText}>
         <input
           type="text"
