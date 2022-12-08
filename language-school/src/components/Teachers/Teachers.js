@@ -35,7 +35,7 @@ const Teachers = () => {
 
  return (
    <div className="teachers__container">
-     <h2>Nauczyciele</h2>
+     <h2 className="teachers__header">Nauczyciele</h2>
      <Search address={address} search={search} />
      <ul>
        {teachers.map((teacher) => {

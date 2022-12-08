@@ -15,8 +15,8 @@ const Search = ({ address, search }) => {
     search(searchInput.current.value);
   };
   return (
-    <div>
-      <input ref={searchInput} className="search__button " type="text" />
+    <div className="search__container">
+      <input ref={searchInput} className="search__button " type="text" placeholder="wyszukaj"/>
       <button className="search__button-item" onClick={itemSearch}>
         <span className="material-symbols-outlined ">search</span>
       </button>

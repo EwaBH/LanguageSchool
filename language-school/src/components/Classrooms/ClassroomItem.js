@@ -1,24 +1,35 @@
 import React from "react";
 import "./Classrooms.scss";
 import { deleteClassroom } from "../../services/httpService";
+import { useNavigate} from "react-router-dom";
 
-const ClassroomItem = ({ classroom, onDelete }) => {
+const ClassroomItem = ({ classroom, refresh }) => {
+  const navigate = useNavigate();
   const deleteItem = async () => {
     await deleteClassroom(classroom.id);
-    onDelete();
+    refresh();
   };
 
   return (
-    <li className="classroomItem__list">
-      <p>
-        <span> numer sali: {classroom.number} </span>
-        <span>opis: {classroom.description}</span>
-        <span className="material-symbols-outlined" onClick={deleteItem}>
+    <div className="classrooms__container">
+      <li className="classroomItem__list">
+        <div className="classroomItem__description">
+          sala nr: {classroom.number}
+        </div>
+        <div className="classroomItem__description-second">
+          opis: ({classroom.description})
+        </div>
+        <div
+          className="material-symbols-outlined edit"
+          onClick={() => navigate(`/classroom/${classroom.id}`)}
+        >
+          edit
+        </div>
+        <div className="material-symbols-outlined bin" onClick={deleteItem}>
           delete
-        </span>
-        <span className="material-symbols-outlined">edit</span>
-      </p>
-    </li>
+        </div>
+      </li>
+    </div>
   );
 };
 export default ClassroomItem;

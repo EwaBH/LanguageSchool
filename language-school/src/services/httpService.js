@@ -4,9 +4,16 @@ export function getClassrooms() {
   return fetch(`${API_URL}/classrooms`).then((response) => response.json());
 }
 
+export function getClassroom(id) {
+  return fetch(`${API_URL}/classrooms/${id}`).then((response) =>
+    response.json()
+  );
+}
+
 export function getSubjects() {
   return fetch(`${API_URL}/subjects`).then((response) => response.json());
 }
+
 export function getTeachers() {
   return fetch(`${API_URL}/teachers`).then((response) => response.json());
 }
@@ -47,14 +54,24 @@ export async function createClassroom(data) {
       "Content-Type": "application/json",
     },
   });
-  }
-  
-  export async function createTeacher(data) {
-    await fetch(`${API_URL}/teachers`, {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-  }
+}
+
+export async function updateClassroom(data, id) {
+  await fetch(`${API_URL}/classrooms/${id}`, {
+    method: "PUT",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+}
+
+export async function createTeacher(data) {
+  await fetch(`${API_URL}/teachers`, {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+}

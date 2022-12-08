@@ -9,13 +9,15 @@
   font-family: $main-font;
   font-size: 20px;
   font-weight: 700;
+ 
 }
 .menuLink {
-  width: 250px;
+  width: 240px;
   height: 80px;
   margin: 20px;
   background-color: #b6bdc7;
   color: #3e3632;
+  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,13 +25,13 @@
   text-transform: uppercase;
   border-radius: 10px;
   transition: all 0.2s ease-in-out;
-
   &:focus,
-  :hover {
+  &:hover {
     background-color: $secondary-color;
-    width: 270px;
+    width: 245px;
     letter-spacing: 3px;
     color: #fff;
     font-weight: 700;
   }
 }
+ 

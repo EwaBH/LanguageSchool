@@ -18,7 +18,7 @@ const Menu = () => {
       <Link className="menuLink" to="/subjects">
         Przedmioty
       </Link>
-      <Link className="menuLink" to="/clasrooms">
+      <Link className="menuLink" to="/classrooms">
        Sale lekcyjne
       </Link>
     </div>

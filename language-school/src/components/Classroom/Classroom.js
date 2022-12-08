@@ -1,6 +1,6 @@
-import { useNavigate,useParams } from "react-router-dom";
-import React, { useState} from "react";
-import { createClassroom } from "../../services/httpService";
+import { useNavigate, useParams } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { createClassroom, getClassroom, updateClassroom } from "../../services/httpService";
 
 const Classroom = () => {
   const [classroom, setClassroom] = useState("");
@@ -8,8 +8,16 @@ const Classroom = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (id !== undefined && !Number.isNaN(id)) {
+      getClassroom(id).then((result) => {
+        setClassroom(result.classroom);
+        setDescription(result.description);
+      });
+    }
+  }, []);
+
   const classroomChanged = (e) => {
-    console.log(id);
     setClassroom(e.target.value);
   };
 
@@ -27,22 +35,27 @@ const Classroom = () => {
   };
 
   const sendData = async (data) => {
-    await createClassroom(data);
+    if (id !== undefined && !Number.isNaN(id)) {
+      await updateClassroom(data, id);
+    } else {
+      await createClassroom(data);
+    }
     navigate("/classrooms");
   };
 
   return (
     <>
-    
       <form onSubmit={classroomText}>
         <input
           type="text"
+          value={classroom}
           onChange={classroomChanged}
           placeholder="dodaj salę"
         />
         <br />
         <input
           type="text"
+          value={description}
           onChange={descriptionChanged}
           placeholder="opis,piętro"
         />

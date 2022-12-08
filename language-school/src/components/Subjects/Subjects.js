@@ -34,7 +34,7 @@ const Subjects = () => {
 
   return (
     <div className="subjects__container">
-      <h2>Przedmioty - języki obce</h2>
+      <h2 className="subjects__header">Przedmioty - języki obce</h2>
       <Search address={address} search={search} />
       <ul>
         {subjects.map((subject) => {

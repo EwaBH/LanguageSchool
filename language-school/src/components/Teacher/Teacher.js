@@ -35,38 +35,45 @@ const AddTeacher = () => {
 
   const validate = (e) => {
     e.preventDefault();
-    const validation = [];
+    // const validation = [];
     
-    const reEmail = new RegExp("^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$");
+    // const reEmail = new RegExp("^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$");
 
-    if (name.length < 3 || !Number.isNaN(name)) {
-      validation.push(
-        "Wpisywane imię musi być dłuższe niż 3 znaki i nie może być liczbą"
-      );
-    }
-    if (surname.length < 3 || !Number.isNaN(surname)) {
-      validation.push(
-        "Wpisywane nazwisko musi być dłuższe niż 3 znaki i nie może być liczbą"
-      );
-    }
-    if (!reEmail.test(email)) {
-      validation.push("mail musi zawierać min. 3 znaki oraz @ ");
-    }
+    // if (name.length < 3 || !Number.isNaN(name)) {
+    //   validation.push(
+    //     "Wpisywane imię musi być dłuższe niż 3 znaki i nie może być liczbą"
+    //   );
+    // }
+    // if (surname.length < 3 || !Number.isNaN(surname)) {
+    //   validation.push(
+    //     "Wpisywane nazwisko musi być dłuższe niż 3 znaki i nie może być liczbą"
+    //   );
+    // }
+    // if (!reEmail.test(email)) {
+    //   validation.push("mail musi zawierać min. 3 znaki oraz @ ");
+    // }
 
-      if (validation.length > 0) {
-        setDisplay(true);
-        setErrors(validation);
-      } else {
-        setDisplay(false);
-        setErrors([]);
-        sendData({
+    //   if (validation.length > 0) {
+    //     setDisplay(true);
+    //     setErrors(validation);
+    //   } else {
+    //     setDisplay(false);
+    //     setErrors([]);
+    //     sendData({
+    //       name: name,
+    //       surname: surname,
+    //       email: email,
+    //       phone: phone,
+    //       language: language,
+    //     });
+    //   }
+    sendData({
           name: name,
           surname: surname,
           email: email,
           phone: phone,
           language: language,
         });
-      }
   }
 
     const sendData = async (data) => {

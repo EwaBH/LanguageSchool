@@ -11,17 +11,14 @@ const SubjectsItem = ({ subject, onDelete }) => {
   return (
     <div className="subjectItem__container">
       <li className="subjectItem__list">
-        <div className="subjectItem__list-text">
-          {subject.subject} -{subject.description}
-          <span
-            className="material-symbols-outlined subjectItem__list-bin"
-            onClick={deleteItem}
-          >
-            delete
-          </span>
-          <span className="material-symbols-outlined subjectItem__list-edit">
-            edit
-          </span>
+        <div className="subjectItem__description">{subject.subject}</div>
+        <div className="subjectItem__description-second">
+          {subject.description}
+        </div>
+        <div className="material-symbols-outlined  edit">edit</div>
+
+        <div className="material-symbols-outlined bin" onClick={deleteItem}>
+          delete
         </div>
       </li>
     </div>

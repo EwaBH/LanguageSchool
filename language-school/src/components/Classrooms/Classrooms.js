@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ClassroomItem from "./ClassroomItem";
 import { getClassrooms } from "../../services/httpService";
 import Spinner from "react-bootstrap/Spinner";
-import Search from "../SearchItem/Search"
+import Search from "../SearchItem/Search";
 const address = "clasroom";
 
 const Classrooms = () => {
@@ -21,7 +21,7 @@ const Classrooms = () => {
     });
   };
 
-  const deleteClassroom = () => {
+  const refresh = () => {
     getClassroom();
   };
 
@@ -32,7 +32,7 @@ const Classrooms = () => {
   if (loading) return <Spinner animation="border" />;
   return (
     <div className="classrooms__container">
-      <h2>Sale lekcyjne</h2>
+      <h2 className="classrooms__header">Sale lekcyjne</h2>
       <Search address={address} search={search} />
 
       <ul>
@@ -41,7 +41,7 @@ const Classrooms = () => {
             <ClassroomItem
               key={classroom.id}
               classroom={classroom}
-              onDelete={deleteClassroom}
+              refresh={refresh}
             />
           );
         })}

@@ -1,114 +1,68 @@
 {
   "classrooms": [
     {
-      "id": 1,
-      "number": 11,
-      "description": "2 piętro, sala dla dorosłych"
-    },
-    {
-      "id": 2,
-      "number": 1,
-      "description": "1 piętro, sala dla dzieci"
-    },
-    {
       "id": 3,
-      "number": 10,
+      "classroom": 10,
       "description": "2 piętro, sala dla dorosłych"
     },
     {
       "id": 4,
-      "number": 15,
+      "classroom": 15,
       "description": "2 piętro, sala dla dorosłych"
     },
     {
       "id": 5,
-      "number": 12,
+      "classroom": 12,
       "description": "2 piętro, sala dla dorosłych"
     },
     {
-      "number": "3333333",
-      "description": "33333333",
-      "id": 6
-    },
-    {
-      "number": "4",
+      "classroom": "4",
       "description": "1",
       "id": 7
     },
     {
-      "number": "33",
+      "classroom": "33",
       "description": "4",
       "id": 8
     },
     {
-      "number": "4",
-      "description": "44",
+      "number": "xxxxxxxxxxx",
+      "description": "xxxxxxxxxxxxxxxxxx",
       "id": 9
-    },
-    {
-      "number": "5",
-      "description": "6",
-      "id": 10
-    },
-    {
-      "number": "ee",
-      "description": "eee",
-      "id": 11
     }
   ],
   "subjects": [
     {
       "id": 2,
       "subject": "English",
-      "description": "poziom A1-C2"
+      "description": " A1-C2"
     },
     {
       "id": 3,
       "subject": "Japanese",
-      "description": "poziom A1-B1"
+      "description": " A1-B1"
     },
     {
       "id": 4,
       "subject": "Japanese",
-      "description": "poziom A1-B1"
+      "description": "A1-B1"
     },
     {
       "id": 5,
       "subject": "Japanese",
-      "description": "poziom A1-B1"
+      "description": "A1-B1"
     },
     {
       "subject": "język rosyjski",
       "description": "A2-B1",
       "id": 6
-    },
-    {
-      "subject": "333",
-      "description": "eeee",
-      "id": 7
     }
   ],
   "teachers": [
     {
-      "id": 2,
-      "name": "Marta",
-      "surname": "Nowak",
-      "email": "marta@op.pl",
-      "phone": "514235897",
-      "language": "English"
-    },
-    {
       "id": 4,
       "name": "Marta",
       "surname": "Nowak",
-      "email": "marta@op.pl",
-      "phone": "514235897",
-      "language": "English"
-    },
-    {
-      "id": 1,
-      "name": "Anna",
-      "surname": "Bobrowska",
       "email": "marta@op.pl",
       "phone": "514235897",
       "language": "English"
@@ -120,6 +74,46 @@
       "email": "marta@op.pl",
       "phone": "514235897",
       "language": "English"
+    },
+    {
+      "id": 3,
+      "name": "Marta",
+      "surname": "Grzywak",
+      "email": "marta@op.pl",
+      "phone": "514235897",
+      "language": "English"
+    },
+    {
+      "id": 3,
+      "name": "Marta",
+      "surname": "Grzywak",
+      "email": "marta@op.pl",
+      "phone": "514235897",
+      "language": "English"
+    },
+    {
+      "id": 3,
+      "name": "Marta",
+      "surname": "Grzywak",
+      "email": "marta@op.pl",
+      "phone": "514235897",
+      "language": "English"
+    },
+    {
+      "name": "ewa",
+      "surname": "cvgf",
+      "email": "b.ewa@op.pl",
+      "phone": "345678",
+      "language": "sde",
+      "id": 5
+    },
+    {
+      "name": "eee",
+      "surname": "eee",
+      "email": "eee",
+      "phone": "ee",
+      "language": "ee",
+      "id": 6
     }
   ]
 }
