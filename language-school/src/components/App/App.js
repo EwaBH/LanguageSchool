@@ -20,7 +20,8 @@ const App = () => {
       <Header />
       <div className="mainSection">
         <Menu />
-        <Routes>
+        <Main />
+        {/* <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/timetables" element={<Timetables />} />
           <Route path="/timetable" element={<Timetable />} />
@@ -32,7 +33,7 @@ const App = () => {
           <Route path="/classroom" element={<Classroom />} />
           <Route path="/classroom/:id" element={<Classroom />} />
           <Route path="*" element={<NotFound />} />
-        </Routes>
+        </Routes> */}
       </div>
       <Footer />
     </div>

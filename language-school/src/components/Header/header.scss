@@ -6,7 +6,8 @@
   background-color: $main-color-light;
   margin-top: 5px;
   margin: 10px auto;
-  width: 100%;
+  //width: 100%;
+  flex-basis: 160px;
 
   @media screen and (min-width: 992px) {
     height: 120px;

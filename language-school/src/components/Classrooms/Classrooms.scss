@@ -6,10 +6,11 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-   @media (max-width: 780px) {
-      display: flex;
-flex-direction: column;
-    }
+  flex-grow: 1;
+  @media (max-width: 780px) {
+    display: flex;
+    flex-direction: column;    
+  }
 }
 .classroomItem__list {
   margin: 10px 20px;
@@ -21,7 +22,7 @@ flex-direction: column;
   list-style-type: none;
   box-shadow: 1px 1px 4px $main-color-dark;
   border-radius: 4px;
-  display:flex;
+  display: flex;
   justify-content: space-between;
 
   &:hover {
@@ -31,10 +32,7 @@ flex-direction: column;
     color: #fff;
     opacity: 80;
     font-weight: 700;
-   
   }
-   
-    
 }
 
 .classrooms__header {
@@ -47,9 +45,8 @@ flex-direction: column;
 
 .classroomItem__description {
   font-weight: 700;
-  width:120px;
+  width: 120px;
 }
-
 
 .classroomItem__description-second {
   width: 300px;
