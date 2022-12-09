@@ -3,7 +3,7 @@ import ClassroomItem from "./ClassroomItem";
 import { getClassrooms } from "../../services/httpService";
 import Spinner from "react-bootstrap/Spinner";
 import Search from "../SearchItem/Search";
-const address = "clasroom";
+const address = "classroom";
 
 const Classrooms = () => {
   const [classrooms, setClasssrooms] = useState([]);

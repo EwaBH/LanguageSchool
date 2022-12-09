@@ -14,7 +14,7 @@ const ClassroomItem = ({ classroom, refresh }) => {
     <div className="classrooms__container">
       <li className="classroomItem__list">
         <div className="classroomItem__description">
-          sala nr: {classroom.number}
+          sala nr: {classroom.classroom}
         </div>
         <div className="classroomItem__description-second">
           opis: ({classroom.description})

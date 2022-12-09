@@ -3,12 +3,15 @@ import TeachersItem from "./TeachersItem";
 import Spinner from "react-bootstrap/Spinner";
 import { getTeachers } from "../../services/httpService";
 import Search from "../SearchItem/Search";
-
 const address = "teacher";
 
 const Teachers = () => {
   const [teachers, setTeachers] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  const search = (text) => {
+    console.log(text);
+  };
 
  const getTeacher = () => {
    setLoading(true);
@@ -18,13 +21,13 @@ const Teachers = () => {
    });
  };
 
- const search = (text) => {
-   console.log(text);
+ const refresh = () => {
+   getTeacher();
  };
 
-  const deleteTeacher = () => {
-    getTeacher();
-  };
+  // const deleteTeacher = () => {
+  //   getTeacher();
+  // };
 
 
  useEffect(() => {
@@ -43,7 +46,7 @@ const Teachers = () => {
            <TeachersItem
              key={teacher.id}
              teacher={teacher}
-             onDelete={deleteTeacher}
+             refresh={refresh}
            />
          );
        })}

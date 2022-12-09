@@ -18,6 +18,12 @@ export function getTeachers() {
   return fetch(`${API_URL}/teachers`).then((response) => response.json());
 }
 
+export function getTeacher(id) {
+  return fetch(`${API_URL}/teachers/${id}`).then((response) =>
+    response.json()
+  );
+}
+
 export async function deleteClassroom(id) {
   await fetch(`${API_URL}/classrooms/${id}`, {
     method: "DELETE",
@@ -69,6 +75,16 @@ export async function updateClassroom(data, id) {
 export async function createTeacher(data) {
   await fetch(`${API_URL}/teachers`, {
     method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+}
+
+export async function updateTeacher(data, id) {
+  await fetch(`${API_URL}/teachers/${id}`, {
+    method: "PUT",
     body: JSON.stringify(data),
     headers: {
       "Content-Type": "application/json",
