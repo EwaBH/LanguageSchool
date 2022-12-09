@@ -1,18 +1,12 @@
 @import "../../../style/variables";
 @import "../../../style/global";
 
-.menu {
+.menu__container {
   display: flex;
   flex-direction: column;
-  width: 20%;
-  margin: 0 30px;
   font-family: $main-font;
-  font-size: 20px;
-  font-weight: 700;
-
-
- 
 }
+
 .menuLink {
   width: 240px;
   height: 80px;
@@ -27,15 +21,102 @@
   text-transform: uppercase;
   border-radius: 10px;
   transition: all 0.2s ease-in-out;
+
   &:focus,
   &:hover {
     background-color: $secondary-color;
     width: 245px;
     letter-spacing: 3px;
     color: #fff;
-    font-weight: 700;
+  
   }
 }
- 
+.normalMenu {
+  display: flex;
+}
+@media (max-width: 779px) {
+  .normalMenu {
+    display: none;
+  }
+}
+.mobileMenu {
+    display: none;
+  }
 
-  
+
+@media (max-width: 780px) {
+  .mobileMenu {
+    display: none;
+  }
+  .mobileMenu {
+    display: flex;
+      .menuLink {
+        margin-top: 20px;;
+      width: 150px;
+      height: 30px;
+      font-size: 15px;
+
+    
+  &:hover {
+    background-color: $secondary-color;
+    width: 154px;
+    letter-spacing: 1px;
+    color: #fff;
+    }
+  }}
+
+
+  .mobileMenu .hamburger {
+    position: absolute;
+    left: 5%;
+    cursor: pointer;
+  }
+   .mobileMenu .close {
+    position: absolute;
+    left: 5%;
+    cursor: pointer;
+  }
+}
+
+// .menuLink {
+//   margin: 20px;
+//   background-color: #b6bdc7;
+//   color: #3e3632;
+//   font-weight: 700;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   text-decoration: none;
+//   text-transform: uppercase;
+//   border-radius: 10px;
+//   transition: all 0.2s ease-in-out;
+//   &:focus,
+//   &:hover {
+//     background-color: $secondary-color;
+//     width: 245px;
+//     letter-spacing: 3px;
+//     color: #fff;
+//     font-weight: 700;
+//   }
+//   @media all and (min-width: 760px) {
+//     font-size: 15px;
+//     font-weight: 500;
+//     color: red;
+//     width: 140px;
+//     height: 40px;
+//   }
+//   @media all and (min-width: 992px) {
+//     font-weight: 500;
+//     color: blue;
+//     width: 200px;
+//     height: 50px;
+//   }
+//   @media all and (min-width: 1200px) {
+//     font-size: 20px;
+//     font-weight: 700;
+//     width: 240px;
+//     padding: 10px;
+//     color: $secondary-color;
+//     height: 80px;
+//   }
+// }

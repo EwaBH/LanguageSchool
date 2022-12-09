@@ -3,13 +3,14 @@
 
 
 .main__container {
+    display: flex;
     width:80%;
     margin: 15px auto;
     height: 600px;
     background-image: url("../../../public/assets/zdjecie.jpg");
     background-size: contain;
     background-repeat: no-repeat;
-    
+  
 }
 // @media all and (min-width: $md-min){
 //     &__image{

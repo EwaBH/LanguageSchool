@@ -1,18 +1,13 @@
 import React from "react";
-import MenuLinks from "./MenuLinks";
 import { Link } from "react-router-dom";
-import "./Menu.scss";
-import MobileMenu from "./MobileMenu";
-import NormalMenu from "./NormalMenu";
 
-const Menu = () => {
+const MenuLinks = (props) => {
   return (
-    <>
-    <div className="menu__container">
-      <NormalMenu />
-      <MobileMenu />
-      </div>
-      {/* <Link className="menuLink" to="/">
+    <div
+      className="menu"
+      onClick={() => props.isMobile && props.closeMobileMenu()}
+    >
+      <Link className="menuLink" to="/">
         strona główna
       </Link>
       <Link className="menuLink" to="/timetables">
@@ -25,9 +20,10 @@ const Menu = () => {
         Przedmioty
       </Link>
       <Link className="menuLink" to="/classrooms">
-       Sale lekcyjne
-      </Link> */}
-    </>
+        Sale lekcyjne
+      </Link>
+    </div>
   );
 };
-export default Menu;
+
+export default MenuLinks;

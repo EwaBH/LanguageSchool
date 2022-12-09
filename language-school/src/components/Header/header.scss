@@ -16,30 +16,29 @@
   }
 }
 .header__text {
-  color: $secondary-color;
+  font-family: $second-font;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: $second-font;
   text-shadow: 8px 8px 11px $main-color-dark;
 
   @media screen and (min-width: 760px) {
     font-size: 30px;
     letter-spacing: normal;
     font-weight: 500;
-    color:red;
+    color: red;
   }
   @media screen and (min-width: 992px) {
     font-size: 50px;
     letter-spacing: normal;
     font-weight: 500;
-    color: blue
+    color: blue;
   }
   @media screen and (min-width: 1200px) {
     font-size: 70px;
     letter-spacing: 8px;
     font-weight: 700;
     padding: 10px;
-    color:yellow;
+    color: $secondary-color;
   }
 }

@@ -6,6 +6,10 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
+   @media (max-width: 780px) {
+      display: flex;
+flex-direction: column;
+    }
 }
 .classroomItem__list {
   margin: 10px 20px;
@@ -29,6 +33,8 @@
     font-weight: 700;
    
   }
+   
+    
 }
 
 .classrooms__header {
