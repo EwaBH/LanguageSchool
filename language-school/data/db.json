@@ -1,14 +1,14 @@
 {
   "timetables": [
     {
-      "dayId": "1",
-      "timeStart": "20:54",
-      "timeEnd": "22:54",
-      "teacherId": "4",
-      "subjectId": "5",
-      "classroomId": "4",
-      "description": "ssss",
-      "id": 1
+      "dayId": "5",
+      "timeStart": "10:00",
+      "timeEnd": "11:58",
+      "teacherId": "2",
+      "subjectId": "2",
+      "classroomId": "3",
+      "description": "",
+      "id": 2
     }
   ],
   "classrooms": [
@@ -127,28 +127,19 @@
   ],
   "teachers": [
     {
-      "name": "ewa",
-      "surname": "www",
-      "email": "www",
-      "phone": "www",
-      "language": "ww",
-      "id": 6
-    },
-    {
-      "name": "zosi",
-      "surname": "www",
-      "email": "www",
-      "phone": "www",
-      "language": "ww",
-      "id": 4
-    },
-    {
       "name": "iwo",
       "surname": "www",
       "email": "www",
       "phone": "www",
       "language": "ww",
       "id": 2
+    },
+    {
+      "name": "bvf",
+      "surname": "nki",
+      "email": "b.ewa@op.pl",
+      "phone": "676789087",
+      "id": 5
     }
   ]
 }

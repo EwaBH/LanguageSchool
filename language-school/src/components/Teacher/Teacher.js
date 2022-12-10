@@ -1,9 +1,9 @@
 import { useNavigate, useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import { 
+import {
   createTeacher,
-  getTeacher, 
-  updateTeacher ,
+  getTeacher,
+  updateTeacher,
 } from "../../services/httpService";
 
 const AddTeacher = () => {
@@ -15,27 +15,23 @@ const AddTeacher = () => {
   const [emailValidation, setEmailValidation] = useState(false);
   const [phone, setPhone] = useState("");
   const [phoneValidation, setPhoneValidation] = useState(false);
-  const [language, setLanguage] = useState("");
-  const [languageValidation, setLanguageValidation] = useState(false);
-  const {id} = useParams();
+  const { id } = useParams();
   const navigate = useNavigate();
 
- useEffect(() => {
+  useEffect(() => {
     if (id !== undefined && !Number.isNaN(id)) {
       getTeacher(id).then((result) => {
         setName(result.name);
-        setSurname(result.setSurname);
-        setEmail(result.setEmail);
-        setPhone(result.setPhone);
-        setLanguage(result.setLanguage)
-              });
+        setSurname(result.surname);
+        setEmail(result.email);
+        setPhone(result.phone);
+      });
     }
   }, []);
 
-
   const nameChanged = (e) => {
     setName(e.target.value);
-    if (e.target.value.lenght !==0) {
+    if (e.target.value.lenght !== 0) {
       setNameValidation(true);
     } else {
       setNameValidation(false);
@@ -44,7 +40,7 @@ const AddTeacher = () => {
 
   const surnameChanged = (e) => {
     setSurname(e.target.value);
-    if (e.target.value.length !== 0 ) {
+    if (e.target.value.length !== 0) {
       setSurnameValidation(true);
     } else {
       setSurnameValidation(false);
@@ -55,7 +51,7 @@ const AddTeacher = () => {
     const reEmail = new RegExp("^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$");
 
     setEmail(e.target.value);
-    if (e.target.value === reEmail.test(e.target.value)) {
+    if (reEmail.test(e.target.value)) {
       setEmailValidation(true);
     } else {
       setEmailValidation(false);
@@ -64,38 +60,28 @@ const AddTeacher = () => {
 
   const phoneChanged = (e) => {
     setPhone(e.target.value);
-    if (
-      e.target.value.lenght > 8 &&
-      e.target.value.lenght < 14 
-    ) {
+    if (e.target.value.length > 8 && e.target.value.length < 14) {
       setPhoneValidation(true);
     } else {
       setPhoneValidation(false);
     }
   };
 
-  const languageChanged = (e) => {
-    setLanguage(e.target.value);
-    if (e.target.value.lenght  !==0) {
-      setLanguageValidation(true);
-    } else {
-      setLanguageValidation(false);
-    }
-    };
  
+
   const submit = (e) => {
     e.preventDefault();
- 
-  sendData({
-        name: name,
-        surname: surname,
-        email: email,
-        phone: phone,
-        language: language,
-      });
-    }
 
-   const sendData = async (data) => {
+    sendData({
+      name: name,
+      surname: surname,
+      email: email,
+      phone: phone,
+      
+    });
+  };
+
+  const sendData = async (data) => {
     if (id !== undefined && !Number.isNaN(id)) {
       await updateTeacher(data, id);
     } else {
@@ -141,19 +127,12 @@ const AddTeacher = () => {
           style={{ borderColor: phoneValidation ? "green" : "red" }}
         />
         <br />
-        <input
-          type="text"
-          value={language}
-          onChange={languageChanged}
-          placeholder="język obcy"
-          style={{ borderColor: languageValidation ? "green" : "red" }}
-        />
-        <br />
+       
         {nameValidation &&
           surnameValidation &&
           emailValidation &&
           phoneValidation &&
-          languageValidation && <button type="submit">Wyślij</button>}
+           <button type="submit">Wyślij</button>}
 
         <br />
       </form>

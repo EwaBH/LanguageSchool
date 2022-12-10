@@ -24,10 +24,13 @@ const App = () => {
           <Route path="/" element={<Main />} />
           <Route path="/timetables" element={<Timetables />} />
           <Route path="/timetable" element={<Timetable />} />
+          <Route path="/timetable/:id" element={<Timetable />} />
           <Route path="/teachers" element={<Teachers />} />
           <Route path="/teacher" element={<Teacher />} />
+          <Route path="/teacher/:id" element={<Teacher />} />
           <Route path="/subjects" element={<Subjects />} />
           <Route path="/subject" element={<Subject />} />
+          <Route path="/subject/:id" element={<Subject />} />
           <Route path="/classrooms" element={<Clasrooms />} />
           <Route path="/classroom" element={<Classroom />} />
           <Route path="/classroom/:id" element={<Classroom />} />
