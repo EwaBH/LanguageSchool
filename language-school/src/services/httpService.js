@@ -19,9 +19,7 @@ export function getTeachers() {
 }
 
 export function getTeacher(id) {
-  return fetch(`${API_URL}/teachers/${id}`).then((response) =>
-    response.json()
-  );
+  return fetch(`${API_URL}/teachers/${id}`).then((response) => response.json());
 }
 
 export async function deleteClassroom(id) {
@@ -85,6 +83,16 @@ export async function createTeacher(data) {
 export async function updateTeacher(data, id) {
   await fetch(`${API_URL}/teachers/${id}`, {
     method: "PUT",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+}
+
+export async function createTimetable(data) {
+  await fetch(`${API_URL}/timetables`, {
+    method: "POST",
     body: JSON.stringify(data),
     headers: {
       "Content-Type": "application/json",

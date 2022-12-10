@@ -2,7 +2,6 @@ import { Routes, Route } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Menu from "../Menu/Menu";
-import "./App.scss";
 import Main from "../Main/Main";
 import Timetables from "../Timetables/Timetables";
 import Timetable from "../Timetable/Timetable";
@@ -13,6 +12,7 @@ import Subject from "../Subject/Subject";
 import Clasrooms from "../Classrooms/Classrooms";
 import Classroom from "../Classroom/Classroom";
 import { NotFound } from "../NotFound/NotFound";
+import "./App.scss";
 
 const App = () => {
   return (

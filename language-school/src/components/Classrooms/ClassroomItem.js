@@ -1,7 +1,7 @@
 import React from "react";
-import "./Classrooms.scss";
+import { useNavigate } from "react-router-dom";
 import { deleteClassroom } from "../../services/httpService";
-import { useNavigate} from "react-router-dom";
+import "./Classrooms.scss";
 
 const ClassroomItem = ({ classroom, refresh }) => {
   const navigate = useNavigate();

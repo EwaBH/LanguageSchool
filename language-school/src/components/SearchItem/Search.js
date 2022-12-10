@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-
 import "../SearchItem/Search.scss";
 
 const Search = ({ address, search }) => {
@@ -19,12 +18,12 @@ const Search = ({ address, search }) => {
       <div>
         <input
           ref={searchInput}
-          className="search__button "
+          className="search__button"
           type="text"
           placeholder="wyszukaj"
         />
         <button className="search__button-item" onClick={itemSearch}>
-          <span className="material-symbols-outlined ">search</span>
+          <span className="material-symbols-outlined">search</span>
         </button>
       </div>
       <button className="search__button-item" onClick={addItem}>

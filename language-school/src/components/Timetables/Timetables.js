@@ -1,6 +1,10 @@
 import React from "react";
+import SearchTimetables from "../SearchTimetables/SearchTimetables";
+
 
 const Timetables = () => {
-  return <div>Timetables</div>;
+  return <SearchTimetables />
+
+ 
 };
 export default Timetables;

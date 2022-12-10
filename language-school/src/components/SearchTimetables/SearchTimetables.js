@@ -5,8 +5,8 @@ import {
   getTeachers,
   getSubjects,
   getClassrooms,
-  createTimetable,
 } from "../../services/httpService";
+import Timetable from "../Timetable/Timetable";
 
 const weekDays = [
   { dayName: "poniedziałek", nr: 1 },
@@ -17,11 +17,12 @@ const weekDays = [
   { dayName: "sobota", nr: 6 },
   { dayName: "niedziela", nr: 0 },
 ];
-//Number(e.target.value.replace(":", ""));
-const AddTimetable = () => {
-  const [selectedDay, setSelectedDay] = useState(-1);
-  const [selectedTimeStart, setSelectedTimeStart] = useState("");
-  const [selectedTimeEnd, setSelectedTimeEnd] = useState("");
+
+
+const SearchTimetables = ({search}) => {
+
+
+  const [selectedDay, setSelectedDay] = useState(new Date().getDay());
   const [loading, setLoading] = useState(false);
   const [teachers, setTeachers] = useState([]);
   const [selectedTeacher, setSelectedTeacher] = useState(0);
@@ -29,13 +30,17 @@ const AddTimetable = () => {
   const [selectedSubject, setSelectedSubject] = useState(0);
   const [classrooms, setClasssrooms] = useState([]);
   const [selectedClassroom, setSelectedClasssroom] = useState(0);
-  const [description, setDescription] = useState("");
-  const navigate = useNavigate();
+const navigate = useNavigate();
 
   useEffect(() => {
     setLoading(true);
     fetchDate();
   }, []);
+
+
+ const addItem = () => {
+   navigate("/timetable");
+ };
 
   const fetchDate = async () => {
     const p1 = getClassrooms().then((result) => {
@@ -55,13 +60,6 @@ const AddTimetable = () => {
     setSelectedDay(e.target.value);
   };
 
-  const timeChangedStart = (e) => {
-    setSelectedTimeStart(String(e.target.value));
-  };
-  const timeChangedEnd = (e) => {
-    setSelectedTimeEnd(String(e.target.value));
-  };
-
   const teacherChanged = (e) => {
     setSelectedTeacher(e.target.value);
   };
@@ -74,36 +72,12 @@ const AddTimetable = () => {
     setSelectedClasssroom(e.target.value);
   };
 
-  const descriptionChanged = (e) => {
-    setDescription(e.target.value);
-  };
 
-  const sendData = async (data) => {
-    await createTimetable(data);
-    navigate("/timetables");
-  };
-
-  const submit = (e) => {
-    e.preventDefault();
-
-    sendData({
-      dayId: selectedDay,
-      timeStart: selectedTimeStart,
-      timeEnd: selectedTimeEnd,
-      teacherId: selectedTeacher,
-      subjectId: selectedSubject,
-      classroomId: selectedClassroom,
-      description: description,
-    });
-  };
 
   if (loading) return <Spinner animation="border" />;
   return (
-    <form onSubmit={submit}>
+    <div>
       <select value={selectedDay} onChange={dayChanged}>
-        <option key={-1} value={-1}>
-          wybierz dzień
-        </option>
         {weekDays.map((day) => {
           return (
             <option key={day.nr} value={day.nr}>
@@ -112,26 +86,12 @@ const AddTimetable = () => {
           );
         })}
       </select>
-      <p>
-        godzina rozpoczęcia{" "}
-        <input
-          type="time"
-          id="appt"
-          name="appt"
-          onChange={timeChangedStart}
-        ></input>
-      </p>
-      <p>
-        godzina zakończenia{" "}
-        <input
-          type="time"
-          id="appt"
-          name="appt"
-          onChange={timeChangedEnd}
-        ></input>
-      </p>
 
-      <select value={selectedTeacher} onChange={teacherChanged}>
+      <select
+        value={selectedTeacher}
+        onChange={teacherChanged}
+        disabled={selectedClassroom > 0 || selectedSubject > 0}
+      >
         <option key={0} value={0}>
           wybierz nauczyciela
         </option>
@@ -144,7 +104,11 @@ const AddTimetable = () => {
         })}
       </select>
 
-      <select value={selectedSubject} onChange={subjectChanged}>
+      <select
+        value={selectedSubject}
+        onChange={subjectChanged}
+        disabled={selectedClassroom > 0 || selectedTeacher > 0}
+      >
         <option key={0} value={0}>
           wybierz przemiot
         </option>
@@ -157,7 +121,11 @@ const AddTimetable = () => {
         })}
       </select>
 
-      <select value={selectedClassroom} onChange={classroomChanged}>
+      <select
+        value={selectedClassroom}
+        onChange={classroomChanged}
+        disabled={selectedTeacher > 0 || selectedSubject > 0}
+      >
         <option key={0} value={0}>
           wybierz salę
         </option>
@@ -169,20 +137,15 @@ const AddTimetable = () => {
           );
         })}
       </select>
-      <input
-        type="text"
-        onChange={descriptionChanged}
-        placeholder="opis,poziom"
-      />
+      <button type="submit">Generuj</button>
+        <br/>
 
-      {selectedDay > -1 &&
-        selectedTeacher > 0 &&
-        selectedSubject > 0 &&
-        selectedClassroom > 0 &&
-        selectedTimeStart.length === 5 &&
-        selectedTimeEnd.length === 5 && <button type="submit">Wyślij</button>}
-    </form>
+        <div>dodaj pozycję</div>
+      <button className="search__button-item" onClick={addItem}>
+        <span className="material-symbols-outlined">add</span>
+      </button>
+    </div>
   );
 };
 
-export default AddTimetable;
+export default SearchTimetables;

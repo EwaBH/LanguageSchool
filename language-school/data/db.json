@@ -1,4 +1,16 @@
 {
+  "timetables": [
+    {
+      "dayId": "1",
+      "timeStart": "20:54",
+      "timeEnd": "22:54",
+      "teacherId": "4",
+      "subjectId": "5",
+      "classroomId": "4",
+      "description": "ssss",
+      "id": 1
+    }
+  ],
   "classrooms": [
     {
       "classroom": 10,
@@ -11,13 +23,8 @@
       "id": 4
     },
     {
-      "id": 5,
-      "classroom": 12,
-      "description": "2 piętro, sala dla dorosłych"
-    },
-    {
       "classroom": "2",
-      "description": "2",
+      "description": "sala dla dzieci",
       "id": 7
     },
     {
@@ -103,11 +110,6 @@
       "description": " A1-C2"
     },
     {
-      "id": 4,
-      "subject": "Japanese",
-      "description": "A1-B1"
-    },
-    {
       "id": 5,
       "subject": "Japanese",
       "description": "A1-B1"
@@ -132,15 +134,7 @@
       "language": "ww",
       "id": 6
     },
-     {
-      "name": "ala",
-      "surname": "www",
-      "email": "www",
-      "phone": "www",
-      "language": "ww",
-      "id": 5
-    },
-     {
+    {
       "name": "zosi",
       "surname": "www",
       "email": "www",
@@ -148,29 +142,13 @@
       "language": "ww",
       "id": 4
     },
-     {
-      "name": "ola",
-      "surname": "www",
-      "email": "www",
-      "phone": "www",
-      "language": "ww",
-      "id": 3
-    },
-     {
+    {
       "name": "iwo",
       "surname": "www",
       "email": "www",
       "phone": "www",
       "language": "ww",
       "id": 2
-    },
-     {
-      "name": "michał",
-      "surname": "www",
-      "email": "www",
-      "phone": "www",
-      "language": "ww",
-      "id": 1
     }
   ]
 }
