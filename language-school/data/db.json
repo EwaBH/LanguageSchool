@@ -1,7 +1,7 @@
 {
   "classrooms": [
     {
-      "number": 10,
+      "classroom": 10,
       "description": "2 piętro, sala dla dorosłych",
       "id": 3
     },
@@ -21,7 +21,7 @@
       "id": 7
     },
     {
-      "number": "333",
+      "classroom": "333",
       "description": "4",
       "id": 8
     },

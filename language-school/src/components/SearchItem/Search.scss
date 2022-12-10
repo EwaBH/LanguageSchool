@@ -1,25 +1,27 @@
 @import "../../../style/variables";
 @import "../../../style/global";
 
-.search__container{
-  width: 600px;
+.search__container {
+  width: 650px;
   height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
  
 }
 
 .search__button,
 .search__button-item {
   border-radius: 10px;
- 
   margin-bottom: 10px;
   background-color: $main-color-light;
   color: $secondary-color;
-
 }
 
 .search__button-item {
   width: 50px;
   height: 50px;
+  margin-left: 4px;
 }
 .search__button {
   width: 400px;

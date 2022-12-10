@@ -8,9 +8,10 @@ const address = "classroom";
 const Classrooms = () => {
   const [classrooms, setClasssrooms] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [searchText, setSearchText] = useState("");
 
   const search = (text) => {
-    console.log(text);
+    setSearchText(text);
   };
 
   const getClassroom = () => {
@@ -27,6 +28,7 @@ const Classrooms = () => {
 
   useEffect(() => {
     getClassroom();
+    
   }, []);
 
   if (loading) return <Spinner animation="border" />;
@@ -36,15 +38,23 @@ const Classrooms = () => {
       <Search address={address} search={search} />
 
       <ul>
-        {classrooms.map((classroom) => {
-          return (
-            <ClassroomItem
-              key={classroom.id}
-              classroom={classroom}
-              refresh={refresh}
-            />
-          );
-        })}
+        {classrooms
+          .filter((classroom) => {
+            if (searchText === "") {
+              return true;
+            }else {
+              return String(classroom.classroom).toLowerCase().includes(String(searchText).toLowerCase());
+            }
+          })
+          .map((classroom) => {
+            return (
+              <ClassroomItem
+                key={classroom.id}
+                classroom={classroom}
+                refresh={refresh}
+              />
+            );
+          })}
       </ul>
     </div>
   );

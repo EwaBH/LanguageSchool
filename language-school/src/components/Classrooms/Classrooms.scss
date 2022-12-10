@@ -9,12 +9,12 @@
   flex-grow: 1;
   @media (max-width: 780px) {
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
   }
 }
 .classroomItem__list {
   margin: 10px 20px;
-  width: 550px;
+  width: 700px;
   height: 45px;
   padding: 10px;
   font-family: $main-font;
@@ -27,7 +27,6 @@
 
   &:hover {
     background-color: $secondary-color;
-    // width: 560px;
     letter-spacing: 2px;
     color: #fff;
     opacity: 80;
