@@ -8,9 +8,10 @@ const address = "teacher";
 const Teachers = () => {
   const [teachers, setTeachers] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [searchText, setSearchText] = useState("");
 
   const search = (text) => {
-    console.log(text);
+    setSearchText(text);
   };
 
  const getTeacher = () => {
@@ -41,7 +42,15 @@ const Teachers = () => {
      <h2 className="teachers__header">Nauczyciele</h2>
      <Search address={address} search={search} />
      <ul>
-       {teachers.map((teacher) => {
+       {teachers.filter((teacher)=> {
+        if(searchText==="") {
+          return true;
+        } else {
+          return String(teacher.teacher).toLowerCase().includes(String(searchText).toLowerCase());
+        }
+       })
+       
+       .map((teacher) => {
          return (
            <TeachersItem
              key={teacher.id}

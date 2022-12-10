@@ -9,6 +9,7 @@ const address = "subject";
 const Subjects = () => {
   const [subjects, setSubjects] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [searchText, setSearchText] = useState("");
 
   const getSubject = () => {
     setLoading(true);
@@ -19,7 +20,7 @@ const Subjects = () => {
   };
 
   const search = (text) => {
-    console.log(text);
+    setSearchText(text);
   };
 
   const deleteSubject = () => {
@@ -37,7 +38,17 @@ const Subjects = () => {
       <h2 className="subjects__header">Przedmioty - języki obce</h2>
       <Search address={address} search={search} />
       <ul>
-        {subjects.map((subject) => {
+        {subjects
+        .filter((subject)=>{
+          if(searchText==="") {
+            return true;
+          } else {
+            return String(subject.subject)
+              .toLowerCase()
+              .includes(String(searchText).toLowerCase());
+          }
+        })
+        .map((subject) => {
           return (
             <SubjectsItem
               className="subject__list"
