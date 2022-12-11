@@ -6,7 +6,7 @@ import {
   updateTeacher,
 } from "../../services/httpService";
 
-const AddTeacher = () => {
+const Teacher = () => {
   const [name, setName] = useState("");
   const [nameValidation, setNameValidation] = useState(false);
   const [surname, setSurname] = useState("");
@@ -15,32 +15,48 @@ const AddTeacher = () => {
   const [emailValidation, setEmailValidation] = useState(false);
   const [phone, setPhone] = useState("");
   const [phoneValidation, setPhoneValidation] = useState(false);
+    const [description, setDescription] = useState("");
+    const [descriptionValidation, setDescriptionValidation] = useState(false);
   const { id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
     if (id !== undefined && !Number.isNaN(id)) {
       getTeacher(id).then((result) => {
-        setName(result.name);
-        setSurname(result.surname);
-        setEmail(result.email);
-        setPhone(result.phone);
+        setNameValue(result.name);
+        setSurnameValue(result.surname);
+        setEmailValue(result.email);
+        setPhoneValue(result.phone);
       });
     }
   }, []);
 
-  const nameChanged = (e) => {
-    setName(e.target.value);
-    if (e.target.value.lenght !== 0) {
-      setNameValidation(true);
-    } else {
-      setNameValidation(false);
-    }
-  };
+   const nameChanged = (e) => {
+     setNameValue(e.target.value);
+   };
 
-  const surnameChanged = (e) => {
-    setSurname(e.target.value);
-    if (e.target.value.length !== 0) {
+ const setNameValue = (value) => {
+   if (value == null) {
+     value = "";
+   }
+   setName(value);
+   if (value.length !== 0) {
+     setNameValidation(true);
+   } else {
+     setNameValidation(false);
+   }
+ };
+
+ const surnameChanged = (e) => {
+   setSurnameValue(e.target.value);
+ };
+
+  const setSurnameValue = (value) => {
+    if (value == null) {
+      value = "";
+    }
+    setSurname(value);
+    if (value.length !== 0) {
       setSurnameValidation(true);
     } else {
       setSurnameValidation(false);
@@ -49,25 +65,55 @@ const AddTeacher = () => {
 
   const emailChanged = (e) => {
     const reEmail = new RegExp("^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$");
-
-    setEmail(e.target.value);
-    if (reEmail.test(e.target.value)) {
-      setEmailValidation(true);
-    } else {
-      setEmailValidation(false);
-    }
+setEmailValue(e.target.value);
+  
   };
 
-  const phoneChanged = (e) => {
-    setPhone(e.target.value);
-    if (e.target.value.length > 8 && e.target.value.length < 14) {
+const setEmailValue = (value) => {
+  if (value == null) {
+    value = "";
+  }
+  setEmail(value);
+  if (value.length !== 0) {
+    setEmailValidation(true);
+  } else {
+    setEmailValidation(false);
+  }
+};
+
+
+ const phoneChanged = (e) => {
+   setPhoneValue(e.target.value);
+ };
+
+
+  const setPhoneValue = (value) => {
+      if (value == null) {
+        value = "";
+      }
+    setPhone(value);
+    if (value.length > 8 ) {
       setPhoneValidation(true);
     } else {
       setPhoneValidation(false);
     }
   };
 
- 
+ const descriptionChanged = (e) => {
+   setDescriptionValue(e.target.value);
+ };
+
+ const setDescriptionValue = (value) => {
+   if (value == null) {
+     value = "";
+   }
+   setDescription(value);
+   if (value.length !== 0) {
+     setDescriptionValidation(true);
+   } else {
+     setDescriptionValidation(false);
+   }
+ };
 
   const submit = (e) => {
     e.preventDefault();
@@ -92,52 +138,60 @@ const AddTeacher = () => {
 
   return (
     <>
-      <div>Nauczyciel </div>
       <form onSubmit={submit}>
+        <h2 className="teachers__header">Nauczyciele</h2>
+        <label>imię</label> <br />
         <input
           type="text"
           value={name}
           onChange={nameChanged}
           placeholder="imię"
-          style={{ borderColor: nameValidation ? "green" : "red" }}
+          style={{ backgroundColor: nameValidation ? "#CCF7BA" : "#FFA8A8" }}
         />
         <br />
+        <label>nazwisko</label> <br />
         <input
           type="text"
           value={surname}
           onChange={surnameChanged}
           placeholder="nazwisko"
-          style={{ borderColor: surnameValidation ? "green" : "red" }}
+          style={{ backgroundColor: surnameValidation ? "#CCF7BA" : "#FFA8A8" }}
         />
         <br />
+        <label>email</label> <br />
         <input
           type="text"
           value={email}
           onChange={emailChanged}
           placeholder="email"
-          style={{ borderColor: emailValidation ? "green" : "red" }}
+          style={{ backgroundColor: emailValidation ? "#CCF7BA" : "#FFA8A8" }}
         />
-
         <br />
+        <label>telefon</label> <br />
         <input
           type="text"
           value={phone}
           onChange={phoneChanged}
           placeholder="telefon"
-          style={{ borderColor: phoneValidation ? "green" : "red" }}
+          style={{ backgroundColor: phoneValidation ? "#CCF7BA" : "#FFA8A8" }}
         />
         <br />
-       
+        <label>opis (nieobowiązkowy)</label> <br />
+        <input
+          type="text"
+          value={description}
+          onChange={descriptionChanged}
+          placeholder="opis"
+        />
+        <br />
         {nameValidation &&
           surnameValidation &&
           emailValidation &&
-          phoneValidation &&
-           <button type="submit">Wyślij</button>}
-
+          phoneValidation && <button type="submit">Wyślij</button>}
         <br />
       </form>
     </>
   );
 };
 
-export default AddTeacher;
+export default Teacher;

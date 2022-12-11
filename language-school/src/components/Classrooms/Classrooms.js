@@ -28,7 +28,6 @@ const Classrooms = () => {
 
   useEffect(() => {
     getClassroom();
-    
   }, []);
 
   if (loading) return <Spinner animation="border" />;
@@ -42,8 +41,10 @@ const Classrooms = () => {
           .filter((classroom) => {
             if (searchText === "") {
               return true;
-            }else {
-              return String(classroom.classroom).toLowerCase().includes(String(searchText).toLowerCase());
+            } else {
+              return String(classroom.classroom)
+                .toLowerCase()
+                .includes(String(searchText).toLowerCase());
             }
           })
           .map((classroom) => {

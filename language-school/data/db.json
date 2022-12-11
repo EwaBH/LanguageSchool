@@ -1,16 +1,5 @@
 {
-  "timetables": [
-    {
-      "dayId": "5",
-      "timeStart": "10:00",
-      "timeEnd": "11:58",
-      "teacherId": "2",
-      "subjectId": "2",
-      "classroomId": "3",
-      "description": "",
-      "id": 2
-    }
-  ],
+  "timetables": [],
   "classrooms": [
     {
       "classroom": 10,
@@ -19,7 +8,7 @@
     },
     {
       "classroom": "154",
-      "description": "2 piętro, sala dlaorosłych",
+      "description": "2 piętro, sala dla dorosłych",
       "id": 4
     },
     {
@@ -38,12 +27,7 @@
       "id": 9
     },
     {
-      "classroom": "eee",
-      "description": "eeeee",
-      "id": 10
-    },
-    {
-      "classroom": "099",
+      "classroom": "7",
       "description": "99",
       "id": 11
     },
@@ -51,11 +35,6 @@
       "classroom": "4",
       "description": "4",
       "id": 12
-    },
-    {
-      "classroom": "4",
-      "description": "4",
-      "id": 13
     },
     {
       "classroom": "22",
@@ -78,7 +57,7 @@
       "id": 17
     },
     {
-      "classroom": "444444",
+      "classroom": "14",
       "description": "44",
       "id": 18
     },
@@ -101,21 +80,21 @@
       "classroom": "2",
       "description": "2",
       "id": 22
+    },
+    {
+      "classroom": "32",
+      "description": "II piętro",
+      "id": 23
     }
   ],
   "subjects": [
     {
-      "id": 2,
-      "subject": "English",
-      "description": " A1-C2"
+      "subject": "niemiecki",
+      "description": "C1",
+      "id": 5
     },
     {
-      "id": 5,
-      "subject": "Japanese",
-      "description": "A1-B1"
-    },
-    {
-      "subject": "język rosyjski",
+      "subject": "angielski",
       "description": "A2-B1",
       "id": 6
     },
@@ -123,23 +102,56 @@
       "subject": "fff",
       "description": "fff",
       "id": 7
+    },
+    {
+      "subject": "angielski",
+      "description": "B2",
+      "id": 8
+    },
+    {
+      "subject": "Angielski",
+      "description": "A2/B1",
+      "id": 9
+    },
+    {
+      "subject": "angielski",
+      "description": "C1/C2",
+      "id": 10
+    },
+    {
+      "subject": "francuski",
+      "description": "B2",
+      "id": 11
     }
   ],
   "teachers": [
     {
-      "name": "iwo",
-      "surname": "www",
-      "email": "www",
-      "phone": "www",
-      "language": "ww",
+      "name": "Roma",
+      "surname": "Pigwa",
+      "email": "www@op.pl",
+      "phone": "www542036987",
       "id": 2
     },
     {
-      "name": "bvf",
-      "surname": "nki",
-      "email": "b.ewa@op.pl",
+      "name": "Grażyna ",
+      "surname": "Niki",
+      "email": "grazia@pl.pl",
       "phone": "676789087",
       "id": 5
+    },
+    {
+      "name": "ewa",
+      "surname": "mkn",
+      "email": "b.ewa@op.pl",
+      "phone": "3332222222",
+      "id": 6
+    },
+    {
+      "name": "Jan",
+      "surname": "Kowalski",
+      "email": "kowalski@op.pl",
+      "phone": "777777777",
+      "id": 7
     }
   ]
 }

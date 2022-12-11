@@ -26,7 +26,7 @@ const Classroom = () => {
   const classroomChanged = (e) => {
     setClassroomValue(e.target.value);
   };
-
+  
   const setClassroomValue = (value) => {
     if (value == null) {
       value = "";
@@ -76,20 +76,27 @@ const Classroom = () => {
   return (
     <>
       <form onSubmit={submit}>
+        <h2 className="classrooms__header">Sale lekcyjne</h2>
+        <label>sala</label> <br />
         <input
           type="text"
           value={classroom}
           onChange={classroomChanged}
           placeholder="dodaj salę"
-          style={{ borderColor: classroomValidation ? "green" : "red" }}
+          style={{
+            backgroundColor: classroomValidation ? "#CCF7BA" : "#FFA8A8",
+          }}
         />
         <br />
+        <label>opis</label> <br />
         <input
           type="text"
           value={description}
           onChange={descriptionChanged}
           placeholder="opis,piętro"
-          style={{ borderColor: descriptionValidation ? "green" : "red" }}
+          style={{
+            backgroundColor: descriptionValidation ? "#CCF7BA" : "#FFA8A8",
+          }}
         />
         <br />
         {classroomValidation && descriptionValidation && (

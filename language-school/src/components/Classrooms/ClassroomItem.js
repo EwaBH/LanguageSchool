@@ -17,7 +17,7 @@ const ClassroomItem = ({ classroom, refresh }) => {
           sala nr: {classroom.classroom}
         </div>
         <div className="classroomItem__description-second">
-          opis: ({classroom.description})
+          opis: {classroom.description}
         </div>
         <div
           className="material-symbols-outlined edit"

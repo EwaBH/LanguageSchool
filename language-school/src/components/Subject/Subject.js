@@ -1,67 +1,109 @@
-import { useNavigate } from "react-router-dom";
-import React, { useState } from "react";
-import { createSubject } from "../../services/httpService";
+import { useNavigate, useParams } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import {
+  createSubject,
+  getSubject,
+  updateSubject,
+} from "../../services/httpService";
 
-const AddSubject = () => {
-  const [display, setDisplay] = useState(false);
-  const [errors, setErrors] = useState([]);
+const Subject = () => {
   const [subject, setSubject] = useState("");
+  const [subjectValidation, setSubjectValidation] = useState(false);
   const [description, setDescription] = useState("");
-
+  const [descriptionValidation, setDescriptionValidation] = useState(false);
+  const { id } = useParams();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (id !== undefined && !Number.isNaN(id)) {
+      getSubject(id).then((result) => {
+        setSubjectValue(result.subject);
+        setDescriptionValue(result.description);
+      });
+    }
+  }, []);
+
   const subjectChanged = (e) => {
-    setSubject(e.target.value);
+    setSubjectValue(e.target.value);
+  };
+
+  const setSubjectValue = (value) => {
+    if (value == null) {
+      value = "";
+    }
+    setSubject(value);
+    if (value.length !== 0) {
+      setSubjectValidation(true);
+    } else {
+      setSubjectValidation(false);
+    }
   };
 
   const descriptionChanged = (e) => {
-    setDescription(e.target.value);
+    setDescriptionValue(e.target.value);
   };
 
-  const validate = (e) => {
-    e.preventDefault();
-    const validation = [];
-
-    if (subject.length < 3) {
-      validation.push(
-        "Wpisywana nazwa przedmiotu musi być dłuższa niż 3 znaki"
-      );
+  const setDescriptionValue = (value) => {
+    if (value == null) {
+      value = "";
     }
-
-    if (validation.length > 0) {
-      setDisplay(true);
-      setErrors(validation);
+    setDescription(value);
+    if (value.length !== 0) {
+      setDescriptionValidation(true);
     } else {
-      setDisplay(false);
-      setErrors([]);
-      sendData({
-        subject: subject,
-        description: description,
-      });
+      setDescriptionValidation(false);
     }
+  };
+
+  const submit = (e) => {
+    e.preventDefault();
+
+    sendData({
+      subject: subject,
+      description: description,
+    });
   };
 
   const sendData = async (data) => {
-    await createSubject(data);
+    if (id !== undefined && !Number.isNaN(id)) {
+      await updateSubject(data, id);
+    } else {
+      await createSubject(data);
+    }
     navigate("/subjects");
   };
 
   return (
     <>
-      <form onSubmit={validate}>
-        <input type="text" onChange={subjectChanged} placeholder="podaj przedmiot" />
+      <form onSubmit={submit}>
+        <h2 className="subjects__header">Przedmioty</h2>
+        <label>przedmiot (język obcy)</label> <br />
+        <input
+          type="text"
+          value={subject}
+          onChange={subjectChanged}
+          placeholder="przedmiot"
+          style={{
+            backgroundColor: subjectValidation ? "#CCF7BA" : "#FFA8A8",
+          }}
+        />
         <br />
-        <input type="text" onChange={descriptionChanged} placeholder="opis,poziom" />
+        <label>opis</label> <br />
+        <input
+          type="text"
+          value={description}
+          onChange={descriptionChanged}
+          placeholder="opis,piętro"
+          style={{
+            backgroundColor: descriptionValidation ? "#CCF7BA" : "#FFA8A8",
+          }}
+        />
         <br />
-        <button type="submit">Wyślij</button>
+        {subjectValidation && <button type="submit">Wyślij</button>}
         <br />
       </form>
-
-      <div>
-        {display && errors.map((error) => <div key={error}>{error}</div>)}
-      </div>
     </>
   );
 };
 
-export default AddSubject;
+export default Subject;
