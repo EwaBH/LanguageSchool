@@ -111,3 +111,13 @@ export async function createTimetable(data) {
     },
   });
 }
+
+export function getTimetables() {
+  return fetch(`${API_URL}/timetables`).then((response) => response.json());
+}
+
+export function getTimetable(id) {
+  return fetch(`${API_URL}/timetables/${id}`).then((response) =>
+    response.json()
+  );
+}

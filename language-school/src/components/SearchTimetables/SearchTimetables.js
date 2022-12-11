@@ -1,23 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Spinner from "react-bootstrap/Spinner";
 import { useNavigate } from "react-router-dom";
+import { weekDays } from "../../data/constants";
 import {
   getTeachers,
   getSubjects,
   getClassrooms,
 } from "../../services/httpService";
 import Timetable from "../Timetable/Timetable";
-
-const weekDays = [
-  { dayName: "poniedziałek", nr: 1 },
-  { dayName: "wtorek", nr: 2 },
-  { dayName: "środa", nr: 3 },
-  { dayName: "czwartek", nr: 4 },
-  { dayName: "piątek", nr: 5 },
-  { dayName: "sobota", nr: 6 },
-  { dayName: "niedziela", nr: 0 },
-];
-
 
 const SearchTimetables = ({search}) => {
 
@@ -72,7 +62,14 @@ const navigate = useNavigate();
     setSelectedClasssroom(e.target.value);
   };
 
-
+const itemSearch = () => {
+  search({
+    selectedDay,
+    selectedTeacher,
+    selectedSubject,
+    selectedClassroom
+  });
+};
 
   if (loading) return <Spinner animation="border" />;
   return (
@@ -137,7 +134,7 @@ const navigate = useNavigate();
           );
         })}
       </select>
-      <button type="submit">Generuj</button>
+      <button onClick ={itemSearch}>Generuj</button>
         <br/>
 
         <div>dodaj pozycję</div>

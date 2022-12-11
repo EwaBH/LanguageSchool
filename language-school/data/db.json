@@ -1,5 +1,26 @@
 {
-  "timetables": [],
+  "timetables": [
+    {
+      "dayId": "1",
+      "timeStart": "15:31",
+      "timeEnd": "18:34",
+      "teacherId": "2",
+      "subjectId": "5",
+      "classroomId": "3",
+      "description": "",
+      "id": 1
+    },
+    {
+      "dayId": "1",
+      "timeStart": "15:31",
+      "timeEnd": "16:35",
+      "teacherId": "2",
+      "subjectId": "6",
+      "classroomId": "3",
+      "description": "",
+      "id": 2
+    }
+  ],
   "classrooms": [
     {
       "classroom": 10,
