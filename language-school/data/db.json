@@ -19,6 +19,26 @@
       "classroomId": "3",
       "description": "",
       "id": 2
+    },
+    {
+      "dayId": "1",
+      "timeStart": "15:00",
+      "timeEnd": "16:30",
+      "teacherId": "8",
+      "subjectId": "5",
+      "classroomId": "11",
+      "description": "",
+      "id": 3
+    },
+    {
+      "dayId": "3",
+      "timeStart": "17:30",
+      "timeEnd": "19:00",
+      "teacherId": "7",
+      "subjectId": "11",
+      "classroomId": "12",
+      "description": "",
+      "id": 4
     }
   ],
   "classrooms": [
@@ -63,21 +83,6 @@
       "id": 14
     },
     {
-      "classroom": "eee",
-      "description": "eee",
-      "id": 15
-    },
-    {
-      "classroom": "99",
-      "description": "99",
-      "id": 16
-    },
-    {
-      "classroom": "99",
-      "description": "",
-      "id": 17
-    },
-    {
       "classroom": "14",
       "description": "44",
       "id": 18
@@ -106,6 +111,21 @@
       "classroom": "32",
       "description": "II piętro",
       "id": 23
+    },
+    {
+      "classroom": "302",
+      "description": "3 piętro",
+      "id": 24
+    },
+    {
+      "classroom": "110",
+      "description": "I piętro",
+      "id": 25
+    },
+    {
+      "classroom": "7",
+      "description": "parter",
+      "id": 26
     }
   ],
   "subjects": [
@@ -120,8 +140,8 @@
       "id": 6
     },
     {
-      "subject": "fff",
-      "description": "fff",
+      "subject": "niemiecki",
+      "description": "B1",
       "id": 7
     },
     {
@@ -130,14 +150,9 @@
       "id": 8
     },
     {
-      "subject": "Angielski",
+      "subject": "angielski",
       "description": "A2/B1",
       "id": 9
-    },
-    {
-      "subject": "angielski",
-      "description": "C1/C2",
-      "id": 10
     },
     {
       "subject": "francuski",
@@ -161,9 +176,9 @@
       "id": 5
     },
     {
-      "name": "ewa",
-      "surname": "mkn",
-      "email": "b.ewa@op.pl",
+      "name": "Ewa",
+      "surname": "Kowalska",
+      "email": "ewakow@op.pl",
       "phone": "3332222222",
       "id": 6
     },
@@ -173,6 +188,13 @@
       "email": "kowalski@op.pl",
       "phone": "777777777",
       "id": 7
+    },
+    {
+      "name": "Zosia",
+      "surname": "Markowska",
+      "email": "mark@wp.pl",
+      "phone": "602516478",
+      "id": 8
     }
   ]
 }

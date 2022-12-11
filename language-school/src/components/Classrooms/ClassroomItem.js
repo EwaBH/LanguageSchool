@@ -25,9 +25,11 @@ const ClassroomItem = ({ classroom, refresh }) => {
         >
           edit
         </div>
-        <div className="material-symbols-outlined bin" onClick={deleteItem}>
-          delete
-        </div>
+        {classroom.canBeRemoved && (
+          <div className="material-symbols-outlined bin" onClick={deleteItem}>
+            delete
+          </div>
+        )}
       </li>
     </div>
   );

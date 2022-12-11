@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import TeachersItem from "./TeachersItem";
 import Spinner from "react-bootstrap/Spinner";
-import { getTeachers } from "../../services/httpService";
+import { getTeachers, getTimetables } from "../../services/httpService";
 import Search from "../SearchItem/Search";
 const address = "teacher";
 
@@ -14,25 +14,22 @@ const Teachers = () => {
     setSearchText(text);
   };
 
- const getTeacher = () => {
-   setLoading(true);
-   getTeachers().then((result) => {
-     setTeachers(result);
-     setLoading(false);
-   });
- };
+  const fetchData = async () => {
+    setLoading(true);
+    const data = await Promise.all([getTeachers(), getTimetables()]);
+    data[0].forEach((t) => {
+      t.canBeRemoved = !data[1].some((tt) => tt.teacherId == t.id);
+    });
+
+    setTeachers(data[0]);
+    setLoading(false);
+  };
 
  const refresh = () => {
-   getTeacher();
+   fetchData();
  };
-
-  // const deleteTeacher = () => {
-  //   getTeacher();
-  // };
-
-
  useEffect(() => {
-   getTeacher();
+   fetchData();
  }, []);
 
  if (loading) return <Spinner animation="border" />;

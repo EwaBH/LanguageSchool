@@ -5,6 +5,7 @@ import {
   getClassroom,
   updateClassroom,
 } from "../../services/httpService";
+import "./Classroom.scss";
 
 const Classroom = () => {
   const [classroom, setClassroom] = useState("");
@@ -26,7 +27,7 @@ const Classroom = () => {
   const classroomChanged = (e) => {
     setClassroomValue(e.target.value);
   };
-  
+
   const setClassroomValue = (value) => {
     if (value == null) {
       value = "";
@@ -75,34 +76,38 @@ const Classroom = () => {
 
   return (
     <>
-      <form onSubmit={submit}>
-        <h2 className="classrooms__header">Sale lekcyjne</h2>
-        <label>sala</label> <br />
-        <input
-          type="text"
-          value={classroom}
-          onChange={classroomChanged}
-          placeholder="dodaj salę"
-          style={{
-            backgroundColor: classroomValidation ? "#CCF7BA" : "#FFA8A8",
-          }}
-        />
-        <br />
-        <label>opis</label> <br />
-        <input
-          type="text"
-          value={description}
-          onChange={descriptionChanged}
-          placeholder="opis,piętro"
-          style={{
-            backgroundColor: descriptionValidation ? "#CCF7BA" : "#FFA8A8",
-          }}
-        />
-        <br />
+      <form className="classroom__container" onSubmit={submit}>
+        <h2 className="classroom__header">Sale lekcyjne</h2>
+        <div>
+          <label className="classroomItem__input-label">sala</label>
+          <input
+            className="classroomItem__input"
+            type="text"
+            value={classroom}
+            onChange={classroomChanged}
+            placeholder="dodaj salę"
+            style={{
+              backgroundColor: classroomValidation ? "#CCF7BA" : "#FFA8A8",
+            }}
+          />
+        </div>
+        <div>
+          <label className="classroomItem__input-label">opis</label>
+          <input
+            className="classroomItem__input"
+            type="text"
+            value={description}
+            onChange={descriptionChanged}
+            placeholder="opis,piętro"
+            style={{
+              backgroundColor: descriptionValidation ? "#CCF7BA" : "#FFA8A8",
+            }}
+          />
+        </div>
         {classroomValidation && descriptionValidation && (
-          <button type="submit">Wyślij</button>
+          <button  className = "classroom__button " type="submit">Wyślij</button>
         )}
-        <br />
+        
       </form>
     </>
   );

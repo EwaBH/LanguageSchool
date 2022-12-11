@@ -9,9 +9,7 @@ import {
 } from "../../services/httpService";
 import Timetable from "../Timetable/Timetable";
 
-const SearchTimetables = ({search}) => {
-
-
+const SearchTimetables = ({ search }) => {
   const [selectedDay, setSelectedDay] = useState(new Date().getDay());
   const [loading, setLoading] = useState(false);
   const [teachers, setTeachers] = useState([]);
@@ -20,17 +18,16 @@ const SearchTimetables = ({search}) => {
   const [selectedSubject, setSelectedSubject] = useState(0);
   const [classrooms, setClasssrooms] = useState([]);
   const [selectedClassroom, setSelectedClasssroom] = useState(0);
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     setLoading(true);
     fetchDate();
   }, []);
 
-
- const addItem = () => {
-   navigate("/timetable");
- };
+  const addItem = () => {
+    navigate("/timetable");
+  };
 
   const fetchDate = async () => {
     const p1 = getClassrooms().then((result) => {
@@ -62,14 +59,14 @@ const navigate = useNavigate();
     setSelectedClasssroom(e.target.value);
   };
 
-const itemSearch = () => {
-  search({
-    selectedDay,
-    selectedTeacher,
-    selectedSubject,
-    selectedClassroom
-  });
-};
+  const itemSearch = () => {
+    search({
+      selectedDay,
+      selectedTeacher,
+      selectedSubject,
+      selectedClassroom,
+    });
+  };
 
   if (loading) return <Spinner animation="border" />;
   return (
@@ -134,10 +131,12 @@ const itemSearch = () => {
           );
         })}
       </select>
-      <button onClick ={itemSearch}>Generuj</button>
-        <br/>
+      {(selectedTeacher > 0 ||
+        selectedSubject > 0 ||
+        selectedClassroom > 0) && <button onClick={itemSearch}>Generuj</button>}
+      <br />
 
-        <div>dodaj pozycję</div>
+      <div>dodaj pozycję</div>
       <button className="search__button-item" onClick={addItem}>
         <span className="material-symbols-outlined">add</span>
       </button>

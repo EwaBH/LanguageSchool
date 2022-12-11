@@ -49,7 +49,23 @@ const Timetables = () => {
         <ul>
           {timetables
             .filter((tt) => {
-              return tt.dayId === searchParameters.selectedDay;
+              if (searchParameters.selectedTeacher > 0) {
+                return (
+                  tt.dayId === searchParameters.selectedDay &&
+                  tt.teacherId === searchParameters.selectedTeacher
+                );
+              } else if (searchParameters.selectedSubject > 0) {
+                return (
+                  tt.dayId === searchParameters.selectedDay &&
+                  tt.subjectId === searchParameters.selectedSubject
+                );
+              } else if (searchParameters.selectedClassroom > 0) {
+                return (
+                  tt.dayId === searchParameters.selectedDay &&
+                  tt.classroomId === searchParameters.selectedClassroom
+                );
+              } 
+              return false;
             })
             .map((tt) => {
               return <TimetableItem key={tt.id} timetable={tt} />;
@@ -60,4 +76,3 @@ const Timetables = () => {
   );
 };
 export default Timetables;
-  

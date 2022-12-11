@@ -23,9 +23,12 @@ const SubjectsItem = ({ subject, refresh }) => {
         >
           edit
         </div>
-        <div className="material-symbols-outlined bin" onClick={deleteItem}>
-          delete
-        </div>
+         {subject.canBeRemoved && (
+          <div className="material-symbols-outlined bin" onClick={deleteItem}>
+            delete
+          </div>
+        )}
+        
       </li>
     </div>
   );

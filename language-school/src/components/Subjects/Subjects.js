@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SubjectsItem from "./SubjectItem";
-import { getSubjects} from "../../services/httpService";
+import { getSubjects, getTimetables} from "../../services/httpService";
 import Spinner from "react-bootstrap/Spinner";
 import Search from "../SearchItem/Search";
 const address = "subject";
@@ -14,20 +14,23 @@ const Subjects = () => {
    setSearchText(text);
  };
 
-  const getSubject = () => {
+  const fetchData = async () => {
     setLoading(true);
-    getSubjects().then((result) => {
-      setSubjects(result);
-      setLoading(false);
+    const data = await Promise.all([getSubjects(), getTimetables()]);
+    data[0].forEach((s) => {
+      s.canBeRemoved = !data[1].some((tt) => tt.classroomId == s.id);
     });
+
+    setSubjects(data[0]);
+    setLoading(false);
   };
- 
+
   const refresh = () => {
-    getSubject();
+    fetchData();
   };
 
   useEffect(() => {
-    getSubject();
+    fetchData();
   }, []);
 
   if (loading) return <Spinner animation="border" />;
