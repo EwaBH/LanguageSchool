@@ -2,59 +2,83 @@
 @import "../../../style/global";
 
 .teachers__container {
-  display: flex;
+ display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  height: 100%;
+   width: 100%;
   flex-grow: 1;
-  @media (max-width: 780px) {
+  background-color: $main-color-light;
+
+  @media screen and (min-width: 780px) {
+    height: 100%;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+  }
+  @media screen and (min-width: 992px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 .teachersItem__list {
   margin: 10px 20px;
-  width: 550px;
+  width: 700px;
   height: 45px;
   padding: 10px;
   font-family: $main-font;
   font-size: 15px;
   list-style-type: none;
   box-shadow: 1px 1px 4px $main-color-dark;
+  background-color: $main-color-light;
   border-radius: 4px;
   display: flex;
   justify-content: space-between;
+  @media (max-width: 780px) {
+    width: 300px;
+    margin: 5px 0;
+    height: 90px;
+  }
+  
+   @media screen and (min-width: 992px) {
+      width: 600px;
+    margin: 5px 0;
+   
+   }
+
+ @media screen and (min-width: 1200px) {
+      width: 700px;
+    margin: 5px 0;
+    
+  }
 
   &:hover {
     background-color: $secondary-color;
-    letter-spacing: 2px;
     color: #fff;
     opacity: 80;
-    font-weight: 700;
   }
 }
 .teachers__header {
-  display: flex;
+   display: flex;
+   margin: 20px;
   text-transform: uppercase;
   justify-content: center;
   color: $secondary-color;
-  margin-bottom: 20px;
+  width: 650px;
+  font-weight: 700;
 }
 
 .teachersItem__list-data {
   font-weight: 700;
 }
 .teachersItem__description {
-  font-weight: 700;
+font-weight: 700;
   width: 120px;
 }
 
 .teachersItem__description-second {
   width: 300px;
-}
-.bin {
-  cursor: pointer;
-}
-.edit {
-  cursor: pointer;
+  font-weight: 700;
 }

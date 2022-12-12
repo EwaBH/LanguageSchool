@@ -6,10 +6,21 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  height: 100%;
+  width: 100%;
   flex-grow: 1;
-  @media (max-width: 780px) {
+  background-color: $main-color-light;
+
+  @media screen and (min-width: 780px) {
+    height: 100%;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+  }
+  @media screen and (min-width: 992px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 .classroomItem__list {
@@ -21,25 +32,44 @@
   font-size: 15px;
   list-style-type: none;
   box-shadow: 1px 1px 4px $main-color-dark;
+  background-color: $main-color-light;
   border-radius: 4px;
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width: 780px) {
+    width: 300px;
+    margin: 5px 0;
+    height: 90px;
+  }
+   @media screen and (min-width: 992px) {
+      width: 600px;
+    margin: 5px 0;
+   
+   }
+
+ @media screen and (min-width: 1200px) {
+      width: 700px;
+    margin: 5px 0;
+    
+  }
 
   &:hover {
     background-color: $secondary-color;
-    letter-spacing: 2px;
     color: #fff;
     opacity: 80;
-    font-weight: 700;
   }
 }
 
 .classrooms__header {
   display: flex;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   justify-content: center;
   color: $secondary-color;
-  margin-bottom: 20px;
+  width: 650px;
+  font-weight: 700;
+  margin: 20px;
+  font-family: $second-font;
+  letter-spacing: 3px;
 }
 
 .classroomItem__description {
@@ -49,4 +79,10 @@
 
 .classroomItem__description-second {
   width: 300px;
+}
+
+.edit,
+.bin {
+  padding: 10px;
+  cursor: pointer;
 }

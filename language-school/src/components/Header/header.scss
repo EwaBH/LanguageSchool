@@ -4,17 +4,22 @@
 .header__container {
   box-shadow: 0 0 10px $main-color-dark;
   background-color: $main-color-light;
-  margin-top: 5px;
+  height: 100%;
   margin: 10px auto;
-  width: 100%;
-  // background-image: linear-gradient(45deg, #81e2fe , $main-color-light, #81e2fe );
-  
+   width: 100%;
 
+
+    @media screen and (min-width: 780px) {
+   flex-basis: 130px;
+  
+  }
   @media screen and (min-width: 992px) {
-  flex-basis: 130px;
+    flex-basis: 130px;
+    
   }
   @media screen and (min-width: 1200px) {
     flex-basis: 160px;
+    
   }
 }
 .header__text {
@@ -23,24 +28,25 @@
   align-items: center;
   justify-content: center;
   text-shadow: 8px 8px 11px $main-color-dark;
+  color: $secondary-color;
 
-  @media screen and (min-width: 760px) {
-    font-size: 30px;
-    letter-spacing: normal;
-    font-weight: 500;
-    color: red;
-  }
-  @media screen and (min-width: 992px) {
+
+  @media screen and (min-width: 780px) {
     font-size: 50px;
     letter-spacing: normal;
     font-weight: 500;
-    color: blue;
+    padding: 10px;
+  }
+  @media screen and (min-width: 992px) {
+    font-size: 70px;
+    letter-spacing: normal;
+    font-weight: 500;
+    padding: 10px;
   }
   @media screen and (min-width: 1200px) {
-    font-size: 70px;
+    font-size: 90px;
     letter-spacing: 8px;
     font-weight: 700;
     padding: 10px;
-    color: $secondary-color;
   }
 }

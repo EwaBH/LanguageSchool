@@ -6,24 +6,35 @@
   height: 50px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
- 
+  
+  // justify-content: space-between;
 }
+ .button__container {
+  display: flex;
+  margin: 0 auto;
 
+ }
 .search__button,
 .search__button-item {
   border-radius: 10px;
   margin-bottom: 10px;
   background-color: $main-color-light;
   color: $secondary-color;
+  box-shadow: 1px 1px 4px $main-color-dark;
 }
 
 .search__button-item {
   width: 50px;
   height: 50px;
   margin-left: 4px;
+  
 }
 .search__button {
+  
   width: 400px;
   height: 50px;
+  @media (max-width: 780px) {
+    width: 200px;
+    height: 50px;
+  }
 }

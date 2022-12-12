@@ -11,13 +11,13 @@
 
 .menuLink {
   display: flex;
-   width: 240px;
+  width: 240px;
   height: 80px;
   margin: 20px;
   background-color: #b6bdc7;
   color: #3e3632;
   font-weight: 700;
-   align-items: center;
+  align-items: center;
   justify-content: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -27,7 +27,6 @@
   &:focus,
   &:hover {
     background-color: $secondary-color;
-    
     letter-spacing: 3px;
     color: #fff;
   }
@@ -35,7 +34,7 @@
 .normalMenu {
   display: flex;
 }
-@media (max-width: 779px) {
+@media (max-width: 992px) {
   .normalMenu {
     display: none;
   }
@@ -44,7 +43,7 @@
   display: none;
 }
 
-@media (max-width: 780px) {
+@media (max-width: 992px) {
   .mobileMenu {
     display: none;
   }
