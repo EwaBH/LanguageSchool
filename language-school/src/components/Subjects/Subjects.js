@@ -40,7 +40,7 @@ const Subjects = () => {
       <h2 className="subjects__header">Przedmioty</h2>
       <Search address={address} search={search} />
       <ul>
-        {subjects
+        {subjects.sort((a, b)=> {return a.subject > b.subject ? 1: -1})
         .filter((subject)=>{
           if(searchText==="") {
             return true;

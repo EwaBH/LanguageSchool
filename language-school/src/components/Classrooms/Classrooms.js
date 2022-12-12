@@ -40,7 +40,7 @@ const Classrooms = () => {
       <Search address={address} search={search} />
 
       <ul>
-        {classrooms
+        {classrooms.sort((a,b)=>{return a.classroom-b.classroom})
           .filter((classroom) => {
             if (searchText === "") {
               return true;

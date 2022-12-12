@@ -48,6 +48,9 @@ const Timetables = () => {
       {searchParameters !== null && (
         <ul>
           {timetables
+            .sort((a, b) => {
+              return a.timeStart > b.timeStart ? 1 : -1;
+            })
             .filter((tt) => {
               if (searchParameters.selectedTeacher > 0) {
                 return (
@@ -64,7 +67,7 @@ const Timetables = () => {
                   tt.dayId === searchParameters.selectedDay &&
                   tt.classroomId === searchParameters.selectedClassroom
                 );
-              } 
+              }
               return false;
             })
             .map((tt) => {

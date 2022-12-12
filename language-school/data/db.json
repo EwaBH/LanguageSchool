@@ -39,6 +39,16 @@
       "classroomId": "12",
       "description": "",
       "id": 4
+    },
+    {
+      "dayId": "1",
+      "timeStart": "14:00",
+      "timeEnd": "15:30",
+      "teacherId": "5",
+      "subjectId": "8",
+      "classroomId": "4",
+      "description": "",
+      "id": 5
     }
   ],
   "classrooms": [
@@ -56,16 +66,6 @@
       "classroom": "2",
       "description": "sala dla dzieci",
       "id": 7
-    },
-    {
-      "classroom": "333",
-      "description": "4",
-      "id": 8
-    },
-    {
-      "classroom": "333",
-      "description": "333333",
-      "id": 9
     },
     {
       "classroom": "7",
@@ -103,11 +103,6 @@
       "id": 21
     },
     {
-      "classroom": "2",
-      "description": "2",
-      "id": 22
-    },
-    {
       "classroom": "32",
       "description": "II piętro",
       "id": 23
@@ -121,11 +116,6 @@
       "classroom": "110",
       "description": "I piętro",
       "id": 25
-    },
-    {
-      "classroom": "7",
-      "description": "parter",
-      "id": 26
     }
   ],
   "subjects": [

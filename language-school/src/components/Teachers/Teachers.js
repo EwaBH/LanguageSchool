@@ -39,7 +39,8 @@ const Teachers = () => {
      <h2 className="teachers__header">Nauczyciele</h2>
      <Search address={address} search={search} />
      <ul>
-       {teachers.filter((teacher)=> {
+       {teachers.sort((a, b)=> {return a.surname > b.surname ? 1: -1})
+       .filter((teacher)=> {
         if(searchText==="") {
           return true;
         } else {
