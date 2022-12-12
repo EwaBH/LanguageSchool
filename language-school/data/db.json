@@ -2,80 +2,30 @@
   "timetables": [
     {
       "dayId": "1",
-      "timeStart": "15:31",
-      "timeEnd": "18:34",
+      "timeStart": "16:47",
+      "timeEnd": "18:49",
       "teacherId": "2",
       "subjectId": "5",
-      "classroomId": "3",
+      "classroomId": "4",
       "description": "",
       "id": 1
     },
     {
       "dayId": "1",
-      "timeStart": "15:31",
-      "timeEnd": "16:35",
+      "timeStart": "13:16",
+      "timeEnd": "14:20",
       "teacherId": "2",
-      "subjectId": "6",
-      "classroomId": "3",
+      "subjectId": "5",
+      "classroomId": "14",
       "description": "",
       "id": 2
-    },
-    {
-      "dayId": "1",
-      "timeStart": "15:00",
-      "timeEnd": "16:30",
-      "teacherId": "8",
-      "subjectId": "5",
-      "classroomId": "11",
-      "description": "",
-      "id": 3
-    },
-    {
-      "dayId": "3",
-      "timeStart": "17:30",
-      "timeEnd": "19:00",
-      "teacherId": "7",
-      "subjectId": "11",
-      "classroomId": "12",
-      "description": "",
-      "id": 4
-    },
-    {
-      "dayId": "1",
-      "timeStart": "14:00",
-      "timeEnd": "15:30",
-      "teacherId": "5",
-      "subjectId": "8",
-      "classroomId": "4",
-      "description": "",
-      "id": 5
     }
   ],
   "classrooms": [
     {
-      "classroom": 10,
-      "description": "2 piętro, sala dla dorosłych",
-      "id": 3
-    },
-    {
       "classroom": "154",
       "description": "2 piętro, sala dla dorosłych",
       "id": 4
-    },
-    {
-      "classroom": "2",
-      "description": "sala dla dzieci",
-      "id": 7
-    },
-    {
-      "classroom": "7",
-      "description": "99",
-      "id": 11
-    },
-    {
-      "classroom": "4",
-      "description": "4",
-      "id": 12
     },
     {
       "classroom": "22",
@@ -96,16 +46,6 @@
       "classroom": "333",
       "description": "lll",
       "id": 20
-    },
-    {
-      "classroom": "3",
-      "description": "5",
-      "id": 21
-    },
-    {
-      "classroom": "32",
-      "description": "II piętro",
-      "id": 23
     },
     {
       "classroom": "302",
@@ -148,6 +88,11 @@
       "subject": "francuski",
       "description": "B2",
       "id": 11
+    },
+    {
+      "subject": "angielski",
+      "description": "A2/B1",
+      "id": 12
     }
   ],
   "teachers": [

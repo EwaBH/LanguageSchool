@@ -138,10 +138,11 @@ const setEmailValue = (value) => {
 
   return (
     <>
-      <form onSubmit={submit}>
+      <form onSubmit={submit} className="teacher__container">
         <h2 className="teachers__header">Nauczyciele</h2>
         <label>imię</label> <br />
         <input
+          className="teacherItem__input-label"
           type="text"
           value={name}
           onChange={nameChanged}
@@ -151,6 +152,7 @@ const setEmailValue = (value) => {
         <br />
         <label>nazwisko</label> <br />
         <input
+          className="teacherItem__input-label"
           type="text"
           value={surname}
           onChange={surnameChanged}
@@ -160,6 +162,7 @@ const setEmailValue = (value) => {
         <br />
         <label>email</label> <br />
         <input
+          className="teacherItem__input-label"
           type="text"
           value={email}
           onChange={emailChanged}
@@ -169,6 +172,7 @@ const setEmailValue = (value) => {
         <br />
         <label>telefon</label> <br />
         <input
+          className="teacherItem__input-label"
           type="text"
           value={phone}
           onChange={phoneChanged}
@@ -178,6 +182,7 @@ const setEmailValue = (value) => {
         <br />
         <label>opis (nieobowiązkowy)</label> <br />
         <input
+          className="teacherItem__input-label"
           type="text"
           value={description}
           onChange={descriptionChanged}
@@ -187,7 +192,11 @@ const setEmailValue = (value) => {
         {nameValidation &&
           surnameValidation &&
           emailValidation &&
-          phoneValidation && <button type="submit">Wyślij</button>}
+          phoneValidation && (
+            <button className="teacher__button" type="submit">
+              Wyślij
+            </button>
+          )}
         <br />
       </form>
     </>

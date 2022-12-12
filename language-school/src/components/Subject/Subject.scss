@@ -1,0 +1,48 @@
+@import "../../../style/variables";
+@import "../../../style/global";
+
+.subject__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  @media (max-width: 780px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.subject__header {
+  display: flex;
+  text-transform: uppercase;
+  justify-content: center;
+  color: $secondary-color;
+  font-weight: 700;
+  margin: 20px auto;
+}
+
+.subjectItem__input {
+  display: flex;
+  margin-bottom: 20px;
+  width: 500px;
+  height: 45px;
+  padding: 5px;
+  font-family: $main-font;
+  font-size: 15px;
+  list-style-type: none;
+  box-shadow: 1px 1px 4px $main-color-dark;
+  border-radius: 4px;
+}
+
+.subjectItem__input-label {
+  height: 30px;
+  font-family: $main-font;
+  font-size: 19px;
+  font-weight: 700;
+}
+.subject__button {
+  height: 30px;
+  font-family: $main-font;
+  font-size: 19px;
+}

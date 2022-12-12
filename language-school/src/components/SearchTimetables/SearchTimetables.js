@@ -7,7 +7,7 @@ import {
   getSubjects,
   getClassrooms,
 } from "../../services/httpService";
-import Timetable from "../Timetable/Timetable";
+import "./SearchTimetable.scss"
 
 const SearchTimetables = ({ search }) => {
   const [selectedDay, setSelectedDay] = useState(new Date().getDay());
@@ -71,7 +71,11 @@ const SearchTimetables = ({ search }) => {
   if (loading) return <Spinner animation="border" />;
   return (
     <div>
-      <select value={selectedDay} onChange={dayChanged}>
+      <select
+        value={selectedDay}
+        onChange={dayChanged}
+        className="timetable__select"
+      >
         {weekDays.map((day) => {
           return (
             <option key={day.nr} value={day.nr}>
@@ -82,6 +86,7 @@ const SearchTimetables = ({ search }) => {
       </select>
 
       <select
+        className="timetable__select"
         value={selectedTeacher}
         onChange={teacherChanged}
         disabled={selectedClassroom > 0 || selectedSubject > 0}
@@ -99,6 +104,7 @@ const SearchTimetables = ({ search }) => {
       </select>
 
       <select
+        className="timetable__select"
         value={selectedSubject}
         onChange={subjectChanged}
         disabled={selectedClassroom > 0 || selectedTeacher > 0}
@@ -116,6 +122,7 @@ const SearchTimetables = ({ search }) => {
       </select>
 
       <select
+        className="timetable__select"
         value={selectedClassroom}
         onChange={classroomChanged}
         disabled={selectedTeacher > 0 || selectedSubject > 0}

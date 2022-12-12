@@ -32,8 +32,9 @@ const Timetables = () => {
       tt.subject = data[1].find((s) => s.id == tt.subjectId);
       tt.teacher = data[2].find((t) => t.id == tt.teacherId);
       tt.day = weekDays.find((d) => d.nr == tt.dayId);
+      tt.start = Number(tt.timeStart.replace(":", ""));
     });
-    setTimetables(data[3]);
+    setTimetables(data[3].sort((a, b) => a.start - b.start));
     setLoading(false);
   };
   useEffect(() => {
@@ -48,23 +49,20 @@ const Timetables = () => {
       {searchParameters !== null && (
         <ul>
           {timetables
-            .sort((a, b) => {
-              return a.timeStart > b.timeStart ? 1 : -1;
-            })
             .filter((tt) => {
               if (searchParameters.selectedTeacher > 0) {
                 return (
-                  tt.dayId === searchParameters.selectedDay &&
+                  tt.dayId == searchParameters.selectedDay &&
                   tt.teacherId === searchParameters.selectedTeacher
                 );
               } else if (searchParameters.selectedSubject > 0) {
                 return (
-                  tt.dayId === searchParameters.selectedDay &&
+                  tt.dayId == searchParameters.selectedDay &&
                   tt.subjectId === searchParameters.selectedSubject
                 );
               } else if (searchParameters.selectedClassroom > 0) {
                 return (
-                  tt.dayId === searchParameters.selectedDay &&
+                  tt.dayId == searchParameters.selectedDay &&
                   tt.classroomId === searchParameters.selectedClassroom
                 );
               }

@@ -18,17 +18,21 @@ const TeachersItem = ({ teacher, refresh }) => {
         <div className="teachersItem__description-second">
           {teacher.description}
         </div>
-        <div
-          className="material-symbols-outlined edit"
-          onClick={() => navigate(`/teacher/${teacher.id}`)}
-        >
-          edit
-        </div>
-        {teacher.canBeRemoved && (
-          <div className="material-symbols-outlined bin" onClick={deleteItem}>
-            delete
+        <div>
+          <div
+            className="material-symbols-outlined edit"
+            onClick={() => navigate(`/teacher/${teacher.id}`)}
+          >
+           
+            edit
           </div>
-        )}
+          {teacher.canBeRemoved && (
+            <div className="material-symbols-outlined bin" onClick={deleteItem}>
+             
+              delete{" "}
+            </div>
+          )}
+        </div>
       </li>
     </div>
   );

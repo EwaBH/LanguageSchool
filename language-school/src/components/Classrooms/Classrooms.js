@@ -18,14 +18,15 @@ const Classrooms = () => {
     setLoading(true);
     const data = await Promise.all([getClassrooms(), getTimetables()]);
     data[0].forEach((c) => {
-      c.canBeRemoved = !data[1].some((tt) => tt.classroomId == c.id);
+      c.mustBeDisabled = data[1].some((tt) => tt.classroomId == c.id);
     });
 
     setClasssrooms(data[0]);
     setLoading(false);
   };
 
-  const refresh = () => {
+ 
+    const refresh = () => {
     fetchData();
   };
 

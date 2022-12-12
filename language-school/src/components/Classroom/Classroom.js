@@ -6,6 +6,8 @@ import {
   updateClassroom,
 } from "../../services/httpService";
 import "./Classroom.scss";
+import Button from "react-bootstrap/Button";
+
 
 const Classroom = () => {
   const [classroom, setClassroom] = useState("");
@@ -105,9 +107,10 @@ const Classroom = () => {
           />
         </div>
         {classroomValidation && descriptionValidation && (
-          <button  className = "classroom__button " type="submit">Wyślij</button>
+            <Button variant="secondary" type="submit">
+              Wyślij
+            </Button>
         )}
-        
       </form>
     </>
   );

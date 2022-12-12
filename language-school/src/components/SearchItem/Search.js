@@ -15,20 +15,22 @@ const Search = ({ address, search }) => {
   };
   return (
     <div className="search__container">
-      <div>
+      <div className="button__container">
         <input
           ref={searchInput}
           className="search__button"
           type="text"
           placeholder="wyszukaj"
         />
-        <button className="search__button-item" onClick={itemSearch}>
-          <span className="material-symbols-outlined">search</span>
+        <div>
+          <button className="search__button-item" onClick={itemSearch}>
+            <span className="material-symbols-outlined">search</span>
+          </button>
+        </div>
+        <button className="search__button-item" onClick={addItem}>
+          <span className="material-symbols-outlined">add</span>
         </button>
       </div>
-      <button className="search__button-item" onClick={addItem}>
-        <span className="material-symbols-outlined">add</span>
-      </button>
     </div>
   );
 };

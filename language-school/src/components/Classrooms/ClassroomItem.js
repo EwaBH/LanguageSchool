@@ -19,17 +19,22 @@ const ClassroomItem = ({ classroom, refresh }) => {
         <div className="classroomItem__description-second">
           opis: {classroom.description}
         </div>
-        <div
-          className="material-symbols-outlined edit"
-          onClick={() => navigate(`/classroom/${classroom.id}`)}
-        >
-          edit
-        </div>
-        {classroom.canBeRemoved && (
-          <div className="material-symbols-outlined bin" onClick={deleteItem}>
-            delete
+        <div>
+          <div
+            className="material-symbols-outlined edit"
+            onClick={() => navigate(`/classroom/${classroom.id}`)}
+          >
+            edit
           </div>
-        )}
+
+          {classroom.mustBeDisabled ? (
+            <div className="material-symbols-outlined bin__enabled">delete</div>
+          ) : (
+            <div className="material-symbols-outlined bin" onClick={deleteItem}>
+              delete
+            </div>
+          )}
+        </div>
       </li>
     </div>
   );

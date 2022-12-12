@@ -5,6 +5,7 @@ import {
   getSubject,
   updateSubject,
 } from "../../services/httpService";
+import "./Subject.scss"
 
 const Subject = () => {
   const [subject, setSubject] = useState("");
@@ -75,9 +76,12 @@ const Subject = () => {
 
   return (
     <>
-      <form onSubmit={submit}>
-        <h2 className="subjects__header">Przedmioty</h2>
-        <label>przedmiot (język obcy)</label> <br />
+      <form onSubmit={submit} className="subject__container">
+        <h2 className="subject__header">Przedmioty</h2>
+        <label className="subjectItem__input-label">
+          przedmiot (język obcy)
+        </label>
+        <br />
         <input
           type="text"
           value={subject}
@@ -88,8 +92,9 @@ const Subject = () => {
           }}
         />
         <br />
-        <label>opis</label> <br />
+        <label className="subjectItem__input-label">opis</label> <br />
         <input
+         
           type="text"
           value={description}
           onChange={descriptionChanged}
@@ -99,7 +104,11 @@ const Subject = () => {
           }}
         />
         <br />
-        {subjectValidation && <button type="submit">Wyślij</button>}
+        {subjectValidation && (
+          <button className="subject__button" type="submit">
+            Wyślij
+          </button>
+        )}
         <br />
       </form>
     </>

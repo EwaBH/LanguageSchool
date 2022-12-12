@@ -17,18 +17,19 @@ const SubjectsItem = ({ subject, refresh }) => {
         <div className="classroomItem__description-second">
           opis: {subject.description}
         </div>
-        <div
-          className="material-symbols-outlined  edit"
-          onClick={() => navigate(`/subject/${subject.id}`)}
-        >
-          edit
-        </div>
-         {subject.canBeRemoved && (
-          <div className="material-symbols-outlined bin" onClick={deleteItem}>
-            delete
+        <div>
+          <div
+            className="material-symbols-outlined  edit"
+            onClick={() => navigate(`/subject/${subject.id}`)}
+          >
+            edit
           </div>
-        )}
-        
+          {subject.canBeRemoved && (
+            <div className="material-symbols-outlined bin" onClick={deleteItem}>
+              delete
+            </div>
+          )}
+        </div>
       </li>
     </div>
   );

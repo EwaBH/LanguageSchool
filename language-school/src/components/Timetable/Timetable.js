@@ -17,7 +17,7 @@ const weekDays = [
   { dayName: "sobota", nr: 6 },
   { dayName: "niedziela", nr: 0 },
 ];
-//Number(e.target.value.replace(":", ""));
+
 const AddTimetable = () => {
   const [selectedDay, setSelectedDay] = useState(-1);
   const [selectedTimeStart, setSelectedTimeStart] = useState("");

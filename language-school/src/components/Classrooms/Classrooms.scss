@@ -41,16 +41,14 @@
     margin: 5px 0;
     height: 90px;
   }
-   @media screen and (min-width: 992px) {
-      width: 600px;
+  @media screen and (min-width: 992px) {
+    width: 600px;
     margin: 5px 0;
-   
-   }
+  }
 
- @media screen and (min-width: 1200px) {
-      width: 700px;
+  @media screen and (min-width: 1200px) {
+    width: 700px;
     margin: 5px 0;
-    
   }
 
   &:hover {
@@ -81,8 +79,12 @@
   width: 300px;
 }
 
-.edit,
-.bin {
+.bin,
+.edit {
   padding: 10px;
   cursor: pointer;
+}
+.bin__enabled {
+  padding: 10px;
+  pointer-events: none;
 }
