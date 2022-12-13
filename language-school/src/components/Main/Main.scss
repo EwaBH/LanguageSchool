@@ -3,15 +3,20 @@
 
 .main__container {
   display: flex;
+  justify-content: center;
+
   width: 80%;
-  margin: 15px auto;
+  margin: 20px 50px;
   height: 600px;
   background-image: url("../../../public/assets/zdjecie.jpg");
   background-size: contain;
   background-repeat: no-repeat;
+
+
+    @media screen and (max-width: 780px) {
+      background-image:
+   url("../../../public/assets/20180206_120342_mini.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  }
 }
-// @media all and (min-width: $md-min){
-//     &__image{
-//         width: 50%;
-//     }
-// }

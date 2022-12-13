@@ -2,6 +2,9 @@
 @import "../../../style/global";
 
 .header__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   box-shadow: 0 0 10px $main-color-dark;
   background-color: $main-color-light;
   flex-grow: 1;
@@ -11,6 +14,7 @@
 
   @media screen and (min-width: 780px) {
     flex-basis: 130px;
+    // flex-direction: column;
   }
   @media screen and (min-width: 992px) {
     flex-basis: 130px;
@@ -18,32 +22,50 @@
   @media screen and (min-width: 1200px) {
     flex-basis: 160px;
   }
+}
+.header__text {
+  font-family: $second-font;
+  color: $secondary-color;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // text-shadow: 8px 8px 11px $secondary-color;
+  // text-shadow: 8px 8px 11px yellowgreen;
 
-  .header__text {
-    font-family: $second-font;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-shadow: 8px 8px 11px $main-color-dark;
-    color: $secondary-color;
+  @media screen and (max-width: 780px) {
+    // font-size: 40px;
+    letter-spacing: normal;
+    font-weight: 500;
+    padding: 10px;
+    display: none;
+  }
 
-    @media screen and (min-width: 780px) {
-      font-size: 50px;
-      letter-spacing: normal;
-      font-weight: 500;
-      padding: 10px;
-    }
-    @media screen and (min-width: 992px) {
-      font-size: 70px;
-      letter-spacing: normal;
-      font-weight: 500;
-      padding: 10px;
-    }
-    @media screen and (min-width: 1200px) {
-      font-size: 90px;
-      letter-spacing: 8px;
-      font-weight: 700;
-      padding: 10px;
-    }
+  @media screen and (min-width: 992px) {
+    font-size: 70px;
+    letter-spacing: normal;
+    font-weight: 500;
+    padding: 10px;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 80px;
+    letter-spacing: 8px;
+    font-weight: 700;
+    padding: 10px;
+  }
+}
+
+.header__logo {
+  font-family: $second-font;
+  color: $secondary-color;
+  text-shadow: 8px 8px 11px $main-color-dark;
+  font-size: 100px;
+  margin-left: 8px;
+  margin-right: 8px;
+
+  @media screen and (max-width: 780px) {
+    font-size: 60px;
+    letter-spacing: normal;
+    font-weight: 500;
+    padding: 10px;
   }
 }

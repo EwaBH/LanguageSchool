@@ -18,7 +18,7 @@ const Subjects = () => {
     setLoading(true);
     const data = await Promise.all([getSubjects(), getTimetables()]);
     data[0].forEach((s) => {
-      s.mustBeDisabled = data[1].some((tt) => tt.classroomId == s.id);
+      s.mustBeDisabled = !data[1].some((tt) => tt.classroomId == s.id);
     });
 
     setSubjects(data[0]);

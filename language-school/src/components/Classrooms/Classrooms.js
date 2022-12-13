@@ -3,6 +3,7 @@ import ClassroomItem from "./ClassroomItem";
 import { getClassrooms, getTimetables } from "../../services/httpService";
 import Spinner from "react-bootstrap/Spinner";
 import Search from "../SearchItem/Search";
+import "./Classrooms.scss";
 const address = "classroom";
 
 const Classrooms = () => {
@@ -34,7 +35,7 @@ const Classrooms = () => {
   }, []);
 
   if (loading) return <Spinner animation="border" />;
-  
+
   return (
     <div className="classrooms__container">
       <h2 className="classrooms__header">Sale lekcyjne</h2>

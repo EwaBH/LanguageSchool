@@ -7,6 +7,8 @@ import {
   getClassrooms,
   createTimetable,
 } from "../../services/httpService";
+import Button from "react-bootstrap/Button";
+import "./Timetable.scss";
 
 const weekDays = [
   { dayName: "poniedziałek", nr: 1 },
@@ -99,8 +101,13 @@ const AddTimetable = () => {
 
   if (loading) return <Spinner animation="border" />;
   return (
-    <form onSubmit={submit}>
-      <select value={selectedDay} onChange={dayChanged}>
+    <form className="timetable__container" onSubmit={submit}>
+      <h2 className="timetables__header">Dodaj nowy plan</h2>
+      <select
+        className="timetableItem__select"
+        value={selectedDay}
+        onChange={dayChanged}
+      >
         <option key={-1} value={-1}>
           wybierz dzień
         </option>
@@ -131,7 +138,11 @@ const AddTimetable = () => {
         ></input>
       </p>
 
-      <select value={selectedTeacher} onChange={teacherChanged}>
+      <select
+        className="timetableItem__select"
+        value={selectedTeacher}
+        onChange={teacherChanged}
+      >
         <option key={0} value={0}>
           wybierz nauczyciela
         </option>
@@ -144,7 +155,11 @@ const AddTimetable = () => {
         })}
       </select>
 
-      <select value={selectedSubject} onChange={subjectChanged}>
+      <select
+        className="timetableItem__select"
+        value={selectedSubject}
+        onChange={subjectChanged}
+      >
         <option key={0} value={0}>
           wybierz przemiot
         </option>
@@ -157,7 +172,11 @@ const AddTimetable = () => {
         })}
       </select>
 
-      <select value={selectedClassroom} onChange={classroomChanged}>
+      <select
+        className="timetableItem__select"
+        value={selectedClassroom}
+        onChange={classroomChanged}
+      >
         <option key={0} value={0}>
           wybierz salę
         </option>
@@ -170,6 +189,7 @@ const AddTimetable = () => {
         })}
       </select>
       <input
+        className="timetableItem__select"
         type="text"
         onChange={descriptionChanged}
         placeholder="opis,poziom"
@@ -180,7 +200,16 @@ const AddTimetable = () => {
         selectedSubject > 0 &&
         selectedClassroom > 0 &&
         selectedTimeStart.length === 5 &&
-        selectedTimeEnd.length === 5 && <button type="submit">Wyślij</button>}
+        selectedTimeEnd.length === 5 && (
+          <Button
+            className="button"
+            style={{ float: "right" }}
+            variant="secondary"
+            type="submit"
+          >
+            Wyślij
+          </Button>
+        )}
     </form>
   );
 };

@@ -7,6 +7,7 @@ import {
   getSubjects,
   getClassrooms,
 } from "../../services/httpService";
+import Button from "react-bootstrap/Button";
 import "./SearchTimetable.scss";
 
 const SearchTimetables = ({ search }) => {
@@ -70,84 +71,101 @@ const SearchTimetables = ({ search }) => {
 
   if (loading) return <Spinner animation="border" />;
   return (
-    <div>
-      <select
-        value={selectedDay}
-        onChange={dayChanged}
-        className="timetable__select"
-      >
-        {weekDays.map((day) => {
-          return (
-            <option key={day.nr} value={day.nr}>
-              {day.dayName}
-            </option>
-          );
-        })}
-      </select>
+    <>
+      <form className="timetable__container">
+        <select
+          className="timetableItem__select"
+          value={selectedDay}
+          onChange={dayChanged}
+        >
+          {weekDays.map((day) => {
+            return (
+              <option key={day.nr} value={day.nr}>
+                {day.dayName}
+              </option>
+            );
+          })}
+        </select>
 
-      <select
-        className="timetable__select"
-        value={selectedTeacher}
-        onChange={teacherChanged}
-        disabled={selectedClassroom > 0 || selectedSubject > 0}
-      >
-        <option key={0} value={0}>
-          wybierz nauczyciela
-        </option>
-        {teachers.map((teacher) => {
-          return (
-            <option key={teacher.id} value={teacher.id}>
-              {teacher.name} {teacher.surname}
-            </option>
-          );
-        })}
-      </select>
+        <select
+          className="timetableItem__select"
+          value={selectedTeacher}
+          onChange={teacherChanged}
+          disabled={selectedClassroom > 0 || selectedSubject > 0}
+        >
+          <option key={0} value={0}>
+            wybierz nauczyciela
+          </option>
+          {teachers.map((teacher) => {
+            return (
+              <option key={teacher.id} value={teacher.id}>
+                {teacher.name} {teacher.surname}
+              </option>
+            );
+          })}
+        </select>
 
-      <select
-        className="timetable__select"
-        value={selectedSubject}
-        onChange={subjectChanged}
-        disabled={selectedClassroom > 0 || selectedTeacher > 0}
-      >
-        <option key={0} value={0}>
-          wybierz przemiot
-        </option>
-        {subjects.map((subject) => {
-          return (
-            <option key={subject.id} value={subject.id}>
-              {subject.subject}
-            </option>
-          );
-        })}
-      </select>
+        <select
+          className="timetableItem__select"
+          value={selectedSubject}
+          onChange={subjectChanged}
+          disabled={selectedClassroom > 0 || selectedTeacher > 0}
+        >
+          <option key={0} value={0}>
+            wybierz przemiot
+          </option>
+          {subjects.map((subject) => {
+            return (
+              <option key={subject.id} value={subject.id}>
+                {subject.subject}
+              </option>
+            );
+          })}
+        </select>
 
-      <select
-        className="timetable__select"
-        value={selectedClassroom}
-        onChange={classroomChanged}
-        disabled={selectedTeacher > 0 || selectedSubject > 0}
-      >
-        <option key={0} value={0}>
-          wybierz salę
-        </option>
-        {classrooms.map((classroom) => {
-          return (
-            <option key={classroom.id} value={classroom.id}>
-              {classroom.classroom}
-            </option>
-          );
-        })}
-      </select>
-      {(selectedTeacher > 0 ||
-        selectedSubject > 0 ||
-        selectedClassroom > 0) && <button onClick={itemSearch}>Generuj</button>}
-      <br />
-
-      <div>dodaj pozycję</div>
-      <button className="search__button-item" onClick={addItem}>
-        <span className="material-symbols-outlined">add</span>
-      </button>
-    </div>
+        <select
+          className="timetableItem__select"
+          value={selectedClassroom}
+          onChange={classroomChanged}
+          disabled={selectedTeacher > 0 || selectedSubject > 0}
+        >
+          <option key={0} value={0}>
+            wybierz salę
+          </option>
+          {classrooms.map((classroom) => {
+            return (
+              <option key={classroom.id} value={classroom.id}>
+                {classroom.classroom}
+              </option>
+            );
+          })}
+        </select>
+        {(selectedTeacher > 0 ||
+          selectedSubject > 0 ||
+          selectedClassroom > 0) && (
+          <Button
+            className="button"
+            style={{ float: "right" }}
+            variant="secondary"
+            type="submit"
+          >
+            Wyszukaj
+          </Button>
+        )}
+      </form>
+      <div>
+        <h2 className="timetables__header">
+          Dodaj plan
+          <button
+            className="search__button-item"
+            style={{ float: "right" }}
+            onClick={addItem}
+          >
+            <span className="material-symbols-outlined">add</span>
+          </button>
+        </h2>
+      </div>
+    </>
   );
 };
 

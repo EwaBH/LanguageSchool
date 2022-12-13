@@ -45,7 +45,7 @@ const Timetables = () => {
 
   return (
     <div className="timetables__container">
-      <h2 className="timetables__header">Plan</h2>
+      <h2 className="timetables__header">Wyszukaj plan</h2>
       <SearchTimetables search={search} />
       {searchParameters !== null && (
         <ul>
@@ -74,6 +74,7 @@ const Timetables = () => {
             })}
         </ul>
       )}
+     
     </div>
   );
 };

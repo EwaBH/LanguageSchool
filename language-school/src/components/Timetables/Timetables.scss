@@ -2,6 +2,27 @@
 @import "../../../style/global";
 
 
+.timetables__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-grow: 1;
+  background-color: $main-color-light;
+}
+
+// .timetable__container {
+//   display: flex;
+//   align-items: center;
+//   flex-direction: column;
+//   justify-content: center;
+//   flex-grow: 1;
+//   @media (max-width: 780px) {
+//     display: flex;
+//     flex-direction: column;
+//   }
+// }
+
 .timetables__header {
   display: flex;
   margin: 20px;
@@ -12,3 +33,18 @@
   font-family: $second-font;
   letter-spacing: 3px;
 }
+
+
+
+// .timetableItem__input {
+//   display: flex;
+//   margin-bottom: 20px;
+//   width: 500px;
+//   height: 45px;
+//   padding: 5px;
+//   font-family: $main-font;
+//   font-size: 15px;
+//   list-style-type: none;
+//   box-shadow: 1px 1px 4px $main-color-dark;
+//   border-radius: 4px;
+// }

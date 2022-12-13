@@ -93,13 +93,13 @@ const Subject = () => {
           }}
         />
 
-        <label className="subjectItem__input-label">opis</label>
+        <label className="subjectItem__input-label">opis (poziom)</label>
         <input
           className="subjectItem__input"
           type="text"
           value={description}
           onChange={descriptionChanged}
-          placeholder="opis,piętro"
+          placeholder="opis"
           style={{
             backgroundColor: descriptionValidation ? "#CCF7BA" : "#FFC4C4",
           }}

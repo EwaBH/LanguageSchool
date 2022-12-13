@@ -19,6 +19,7 @@ const TimetableItem = ({ timetable }) => {
         <div className="material-symbols-outlined edit">edit</div>
         <div className="material-symbols-outlined bin">delete</div>
       </li>
+      
     </div>
   );
 };

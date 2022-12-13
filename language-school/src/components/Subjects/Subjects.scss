@@ -24,6 +24,7 @@
   border-radius: 4px;
   display: flex;
   justify-content: space-between;
+  
   @media (max-width: 780px) {
     width: 300px;
     margin: 5px 0;
@@ -59,7 +60,7 @@
 
 .subjectItem__description {
   font-weight: 700;
-  width: 120px;
+  width: 140px;
 }
 
 .subjectItem__description-second {
