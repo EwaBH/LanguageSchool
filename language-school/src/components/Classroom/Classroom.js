@@ -5,9 +5,8 @@ import {
   getClassroom,
   updateClassroom,
 } from "../../services/httpService";
-import "./Classroom.scss";
 import Button from "react-bootstrap/Button";
-
+import "./Classroom.scss";
 
 const Classroom = () => {
   const [classroom, setClassroom] = useState("");
@@ -89,7 +88,7 @@ const Classroom = () => {
             onChange={classroomChanged}
             placeholder="dodaj salę"
             style={{
-              backgroundColor: classroomValidation ? "#CCF7BA" : "#FFA8A8",
+              backgroundColor: classroomValidation ? "#CCF7BA" : "#FFC4C4",
             }}
           />
         </div>
@@ -102,14 +101,21 @@ const Classroom = () => {
             onChange={descriptionChanged}
             placeholder="opis,piętro"
             style={{
-              backgroundColor: descriptionValidation ? "#CCF7BA" : "#FFA8A8",
+              backgroundColor: descriptionValidation ? "#CCF7BA" : "#FFC4C4",
             }}
           />
         </div>
         {classroomValidation && descriptionValidation && (
-            <Button variant="secondary" type="submit">
+          <div style={{ width: "500px" }}>
+            <Button
+              className="button"
+              style={{ float: "right" }}
+              variant="secondary"
+              type="submit"
+            >
               Wyślij
             </Button>
+          </div>
         )}
       </form>
     </>

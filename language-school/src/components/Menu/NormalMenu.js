@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 import MenuLinks from "./MenuLinks";
 
- const NormalMenu = () => {
+const NormalMenu = () => {
   return (
     <nav className="normalMenu">
       <MenuLinks />
     </nav>
   );
-}
+};
 
-export default NormalMenu
+export default NormalMenu;

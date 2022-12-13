@@ -25,8 +25,7 @@ const Classrooms = () => {
     setLoading(false);
   };
 
- 
-    const refresh = () => {
+  const refresh = () => {
     fetchData();
   };
 
@@ -35,32 +34,34 @@ const Classrooms = () => {
   }, []);
 
   if (loading) return <Spinner animation="border" />;
+  
   return (
     <div className="classrooms__container">
       <h2 className="classrooms__header">Sale lekcyjne</h2>
       <Search address={address} search={search} />
 
-      <ul>
-        {classrooms.sort((a,b)=>{return a.classroom-b.classroom})
-          .filter((classroom) => {
-            if (searchText === "") {
-              return true;
-            } else {
-              return String(classroom.classroom)
-                .toLowerCase()
-                .includes(String(searchText).toLowerCase());
-            }
-          })
-          .map((classroom) => {
-            return (
-              <ClassroomItem
-                key={classroom.id}
-                classroom={classroom}
-                refresh={refresh}
-              />
-            );
-          })}
-      </ul>
+      {classrooms
+        .sort((a, b) => {
+          return a.classroom - b.classroom;
+        })
+        .filter((classroom) => {
+          if (searchText === "") {
+            return true;
+          } else {
+            return String(classroom.classroom)
+              .toLowerCase()
+              .includes(String(searchText).toLowerCase());
+          }
+        })
+        .map((classroom) => {
+          return (
+            <ClassroomItem
+              key={classroom.id}
+              classroom={classroom}
+              refresh={refresh}
+            />
+          );
+        })}
     </div>
   );
 };

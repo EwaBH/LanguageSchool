@@ -28,7 +28,9 @@ const ClassroomItem = ({ classroom, refresh }) => {
           </div>
 
           {classroom.mustBeDisabled ? (
-            <div className="material-symbols-outlined bin__enabled">delete</div>
+            <div className="material-symbols-outlined bin__enabled">
+              delete_forever
+            </div>
           ) : (
             <div className="material-symbols-outlined bin" onClick={deleteItem}>
               delete

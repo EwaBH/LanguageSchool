@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SubjectsItem from "./SubjectItem";
-import { getSubjects, getTimetables} from "../../services/httpService";
+import { getSubjects, getTimetables } from "../../services/httpService";
 import Spinner from "react-bootstrap/Spinner";
 import Search from "../SearchItem/Search";
 const address = "subject";
@@ -10,15 +10,15 @@ const Subjects = () => {
   const [loading, setLoading] = useState(false);
   const [searchText, setSearchText] = useState("");
 
- const search = (text) => {
-   setSearchText(text);
- };
+  const search = (text) => {
+    setSearchText(text);
+  };
 
   const fetchData = async () => {
     setLoading(true);
     const data = await Promise.all([getSubjects(), getTimetables()]);
     data[0].forEach((s) => {
-      s.canBeRemoved = !data[1].some((tt) => tt.classroomId == s.id);
+      s.mustBeDisabled = data[1].some((tt) => tt.classroomId == s.id);
     });
 
     setSubjects(data[0]);
@@ -39,10 +39,12 @@ const Subjects = () => {
     <div className="subjects__container">
       <h2 className="subjects__header">Przedmioty</h2>
       <Search address={address} search={search} />
-      <ul>
-        {subjects.sort((a, b)=> {return a.subject > b.subject ? 1: -1})
-        .filter((subject)=>{
-          if(searchText==="") {
+      {subjects
+        .sort((a, b) => {
+          return a.subject > b.subject ? 1 : -1;
+        })
+        .filter((subject) => {
+          if (searchText === "") {
             return true;
           } else {
             return String(subject.subject)
@@ -53,14 +55,12 @@ const Subjects = () => {
         .map((subject) => {
           return (
             <SubjectsItem
-              // className="subject__list"
               key={subject.id}
               subject={subject}
               refresh={refresh}
             />
           );
         })}
-      </ul>
     </div>
   );
 };

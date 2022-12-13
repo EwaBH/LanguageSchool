@@ -15,8 +15,8 @@
 
 .classroom__header {
   display: flex;
-  text-transform: uppercase;
-  justify-content: center;
+  font-family: $second-font;
+   justify-content: center;
   color: $secondary-color;
   font-weight: 700;
   margin: 20px auto;
@@ -41,8 +41,14 @@
   font-size: 19px;
   font-weight: 700;
 }
-.classroom__button {
-  height: 30px;
-  font-family: $main-font;
-  font-size: 19px;
-}
+// .classroom__button {
+//   height: 30px;
+//   font-family: $main-font;
+//   font-size: 19px;
+// }
+// .button__container {
+//   width: 500px;
+// }
+// .button {
+//  align-items: flex-end;
+// }

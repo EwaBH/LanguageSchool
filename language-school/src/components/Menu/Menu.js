@@ -8,11 +8,10 @@ import NormalMenu from "./NormalMenu";
 const Menu = () => {
   return (
     <>
-    <div className="menu__container">
-      <NormalMenu />
-      <MobileMenu />
+      <div className="menu__container">
+        <NormalMenu />
+        <MobileMenu />
       </div>
-  
     </>
   );
 };

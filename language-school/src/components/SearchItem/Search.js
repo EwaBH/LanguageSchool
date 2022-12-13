@@ -22,13 +22,13 @@ const Search = ({ address, search }) => {
           type="text"
           placeholder="wyszukaj"
         />
-        <div>
-          <button className="search__button-item" onClick={itemSearch}>
-            <span className="material-symbols-outlined">search</span>
-          </button>
-        </div>
+
+        <button className="search__button-item" onClick={itemSearch}>
+          <span className="material-symbols-outlined search__icon">search</span>
+        </button>
+
         <button className="search__button-item" onClick={addItem}>
-          <span className="material-symbols-outlined">add</span>
+          <span className="material-symbols-outlined search__icon">add</span>
         </button>
       </div>
     </div>

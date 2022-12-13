@@ -47,7 +47,7 @@ const AddTimetable = () => {
     const p3 = getTeachers().then((result) => {
       setTeachers(result);
     });
-    await Promise.all([p1, p2, p3]);    
+    await Promise.all([p1, p2, p3]);
     setLoading(false);
   };
 

@@ -3,12 +3,21 @@
 
 
 .footer__container {
-
-  width: 100%;
+margin-top: 10px;
+  //width: 100%;
 
   box-shadow: 0 0 10px $main-color-dark;
   background-color: $main-color-light;
-  margin: 5px auto;
+  //margin: 5px auto;
   flex-basis: 100px;
- 
+ flex-grow: 1;
+ @media screen and (min-width: 780px) {
+    flex-basis: 130px;
+  }
+  @media screen and (min-width: 992px) {
+    flex-basis: 130px;
+  }
+  @media screen and (min-width: 1200px) {
+    flex-basis: 160px;
+  }
 }

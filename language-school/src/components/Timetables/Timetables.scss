@@ -1,0 +1,14 @@
+@import "../../../style/variables";
+@import "../../../style/global";
+
+
+.timetables__header {
+  display: flex;
+  margin: 20px;
+  justify-content: center;
+  color: $secondary-color;
+  width: 650px;
+  font-weight: 700;
+  font-family: $second-font;
+  letter-spacing: 3px;
+}

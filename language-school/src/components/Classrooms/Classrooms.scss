@@ -6,21 +6,19 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
-  width: 100%;
   flex-grow: 1;
   background-color: $main-color-light;
 
   @media screen and (min-width: 780px) {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    //height: 100%;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: flex-start;
   }
   @media screen and (min-width: 992px) {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: flex-start;
   }
 }
 .classroomItem__list {
@@ -60,7 +58,6 @@
 
 .classrooms__header {
   display: flex;
-  // text-transform: uppercase;
   justify-content: center;
   color: $secondary-color;
   width: 650px;
@@ -79,12 +76,16 @@
   width: 300px;
 }
 
-.bin,
-.edit {
-  padding: 10px;
+.bin {
   cursor: pointer;
+  margin-right: 5px;
 }
 .bin__enabled {
-  padding: 10px;
   pointer-events: none;
+  margin-right: 5px;
+}
+
+.edit {
+  cursor: pointer;
+  margin-right: 15px;
 }

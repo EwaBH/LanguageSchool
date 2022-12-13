@@ -9,11 +9,11 @@ import { weekDays } from "../../data/constants";
 import SearchTimetables from "../SearchTimetables/SearchTimetables";
 import Spinner from "react-bootstrap/Spinner";
 import TimetableItem from "./TimetableItem";
+import "./Timetables.scss"
 
 const Timetables = () => {
   const [loading, setLoading] = useState(false);
   const [searchParameters, setsearchParameters] = useState(null);
-
   const [timetables, setTimetables] = useState([]);
 
   const search = (parameters) => {
@@ -44,7 +44,8 @@ const Timetables = () => {
   if (loading) return <Spinner animation="border" />;
 
   return (
-    <>
+    <div className="timetables__container">
+      <h2 className="timetables__header">Plan</h2>
       <SearchTimetables search={search} />
       {searchParameters !== null && (
         <ul>
@@ -73,7 +74,7 @@ const Timetables = () => {
             })}
         </ul>
       )}
-    </>
+    </div>
   );
 };
 export default Timetables;

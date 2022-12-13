@@ -7,7 +7,7 @@ import {
   getSubjects,
   getClassrooms,
 } from "../../services/httpService";
-import "./SearchTimetable.scss"
+import "./SearchTimetable.scss";
 
 const SearchTimetables = ({ search }) => {
   const [selectedDay, setSelectedDay] = useState(new Date().getDay());

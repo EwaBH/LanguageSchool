@@ -6,22 +6,10 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
-  width: 100%;
   flex-grow: 1;
   background-color: $main-color-light;
 
-  @media screen and (min-width: 780px) {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  @media screen and (min-width: 992px) {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
+
 }
 .subjectItem__list {
   margin: 10px 20px;
@@ -41,17 +29,15 @@
     margin: 5px 0;
     height: 90px;
   }
-  
-   @media screen and (min-width: 992px) {
-      width: 600px;
-    margin: 5px 0;
-   
-   }
 
- @media screen and (min-width: 1200px) {
-      width: 700px;
+  @media screen and (min-width: 992px) {
+    width: 600px;
     margin: 5px 0;
-    
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 700px;
+    margin: 5px 0;
   }
   &:hover {
     background-color: $secondary-color;
@@ -62,12 +48,13 @@
 
 .subjects__header {
   display: flex;
-  text-transform: uppercase;
   justify-content: center;
   color: $secondary-color;
   width: 650px;
   font-weight: 700;
   margin: 20px;
+  font-family: $second-font;
+  letter-spacing: 3px;
 }
 
 .subjectItem__description {
@@ -77,4 +64,17 @@
 
 .subjectItem__description-second {
   width: 300px;
+}
+.bin {
+  cursor: pointer;
+  margin-right: 5px;
+}
+.bin__enabled {
+  pointer-events: none;
+  margin-right: 5px;
+}
+
+.edit {
+  cursor: pointer;
+  margin-right: 15px;
 }

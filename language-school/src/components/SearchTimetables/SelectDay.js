@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 export const SelectDay = () => {
-  return (
-    <div>SelectDay</div>
-  )
-}
+  return <div>SelectDay</div>;
+};
 
-export default SelectDay
+export default SelectDay;

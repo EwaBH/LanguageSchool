@@ -2,26 +2,13 @@
 @import "../../../style/global";
 
 .teachers__container {
- display: flex;
+  display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
-   width: 100%;
   flex-grow: 1;
   background-color: $main-color-light;
-
-  @media screen and (min-width: 780px) {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  @media screen and (min-width: 992px) {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
+ 
 }
 .teachersItem__list {
   margin: 10px 20px;
@@ -41,17 +28,15 @@
     margin: 5px 0;
     height: 90px;
   }
-  
-   @media screen and (min-width: 992px) {
-      width: 600px;
-    margin: 5px 0;
-   
-   }
 
- @media screen and (min-width: 1200px) {
-      width: 700px;
+  @media screen and (min-width: 992px) {
+    width: 600px;
     margin: 5px 0;
-    
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 700px;
+    margin: 5px 0;
   }
 
   &:hover {
@@ -61,24 +46,38 @@
   }
 }
 .teachers__header {
-   display: flex;
-   margin: 20px;
-  text-transform: uppercase;
+  display: flex;
+  margin: 20px;
   justify-content: center;
   color: $secondary-color;
   width: 650px;
   font-weight: 700;
+  font-family: $second-font;
+  letter-spacing: 3px;
 }
 
 .teachersItem__list-data {
   font-weight: 700;
 }
 .teachersItem__description {
-font-weight: 700;
+  font-weight: 700;
   width: 120px;
 }
 
 .teachersItem__description-second {
   width: 300px;
   font-weight: 700;
+}
+.bin {
+  cursor: pointer;
+  margin-right: 5px;
+}
+.bin__enabled {
+  pointer-events: none;
+  margin-right: 5px;
+}
+
+.edit {
+  cursor: pointer;
+  margin-right: 15px;
 }

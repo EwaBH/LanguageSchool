@@ -5,7 +5,8 @@ import {
   getSubject,
   updateSubject,
 } from "../../services/httpService";
-import "./Subject.scss"
+import Button from "react-bootstrap/Button";
+import "./Subject.scss";
 
 const Subject = () => {
   const [subject, setSubject] = useState("");
@@ -81,35 +82,41 @@ const Subject = () => {
         <label className="subjectItem__input-label">
           przedmiot (język obcy)
         </label>
-        <br />
         <input
+          className="subjectItem__input"
           type="text"
           value={subject}
           onChange={subjectChanged}
           placeholder="przedmiot"
           style={{
-            backgroundColor: subjectValidation ? "#CCF7BA" : "#FFA8A8",
+            backgroundColor: subjectValidation ? "#CCF7BA" : "#FFC4C4",
           }}
         />
-        <br />
-        <label className="subjectItem__input-label">opis</label> <br />
+
+        <label className="subjectItem__input-label">opis</label>
         <input
-         
+          className="subjectItem__input"
           type="text"
           value={description}
           onChange={descriptionChanged}
           placeholder="opis,piętro"
           style={{
-            backgroundColor: descriptionValidation ? "#CCF7BA" : "#FFA8A8",
+            backgroundColor: descriptionValidation ? "#CCF7BA" : "#FFC4C4",
           }}
         />
-        <br />
-        {subjectValidation && (
-          <button className="subject__button" type="submit">
-            Wyślij
-          </button>
+
+        {subjectValidation && descriptionValidation && (
+          <div style={{ width: "500px" }}>
+            <Button
+              className="button"
+              style={{ float: "right" }}
+              variant="secondary"
+              type="submit"
+            >
+              Wyślij
+            </Button>
+          </div>
         )}
-        <br />
       </form>
     </>
   );

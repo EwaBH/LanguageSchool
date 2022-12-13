@@ -13,7 +13,8 @@ const SubjectsItem = ({ subject, refresh }) => {
   return (
     <div className="subjectItem__container">
       <li className="subjectItem__list">
-        <div className="subjectItem__description">język: {subject.subject}</div>
+        <div className="subjectItem__description">
+        język: {subject.subject}</div>
         <div className="classroomItem__description-second">
           opis: {subject.description}
         </div>
@@ -24,7 +25,13 @@ const SubjectsItem = ({ subject, refresh }) => {
           >
             edit
           </div>
-          {subject.canBeRemoved && (
+
+          {subject.mustBeDisabled ? (
+            <div
+              className="material-symbols-outlined bin__enabled">
+              delete_forever
+            </div>
+          ) : (
             <div className="material-symbols-outlined bin" onClick={deleteItem}>
               delete
             </div>
