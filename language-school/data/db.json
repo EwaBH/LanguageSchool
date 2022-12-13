@@ -19,6 +19,16 @@
       "classroomId": "14",
       "description": "",
       "id": 2
+    },
+    {
+      "dayId": "3",
+      "timeStart": "13:30",
+      "timeEnd": "15:00",
+      "teacherId": "6",
+      "subjectId": "11",
+      "classroomId": "18",
+      "description": "B2",
+      "id": 3
     }
   ],
   "classrooms": [
@@ -93,6 +103,16 @@
       "subject": "angielski",
       "description": "A2/B1",
       "id": 12
+    },
+    {
+      "subject": "hiszpański",
+      "description": "A2",
+      "id": 13
+    },
+    {
+      "subject": "włoski",
+      "description": "A1",
+      "id": 14
     }
   ],
   "teachers": [
