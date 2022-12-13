@@ -8,19 +8,28 @@ const MenuLinks = (props) => {
       onClick={() => props.isMobile && props.closeMobileMenu()}
     >
       <Link className="menuLink" to="/">
-        strona główna
+        <span className="material-symbols-outlined menu__icon">home</span>
+        <span className="menu__text"> strona główna </span>
       </Link>
       <Link className="menuLink" to="/timetables">
-        <div>plan zajęć</div>
+        <span className="material-symbols-outlined menu__icon">
+          calendar_month
+        </span>
+        <span className="menu__text">plan zajęć</span>
       </Link>
       <Link className="menuLink" to="/teachers">
-        Nauczyciele
+        <span className="material-symbols-outlined menu__icon">face</span>
+        <span className="menu__text">Nauczyciele</span>
       </Link>
       <Link className="menuLink" to="/subjects">
-        Przedmioty
+        <span className="material-symbols-outlined menu__icon">
+          auto_stories
+        </span>
+        <span className="menu__text"> Przedmioty</span>
       </Link>
       <Link className="menuLink" to="/classrooms">
-        Sale lekcyjne
+        <span className="material-symbols-outlined menu__icon">home_pin</span>
+        <span className="menu__text">Sale lekcyjne</span>
       </Link>
     </div>
   );

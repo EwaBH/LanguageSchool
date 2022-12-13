@@ -71,8 +71,8 @@ const SearchTimetables = ({ search }) => {
 
   if (loading) return <Spinner animation="border" />;
   return (
-    <>
-      <form className="timetable__container">
+    <section className="timetable__container2">
+      <div>
         <select
           className="timetableItem__select"
           value={selectedDay}
@@ -147,15 +147,16 @@ const SearchTimetables = ({ search }) => {
             className="button"
             style={{ float: "right" }}
             variant="secondary"
-            type="submit"
+            onClick={itemSearch}
           >
             Wyszukaj
           </Button>
         )}
-      </form>
+      </div>
+
       <div>
         <h2 className="timetables__header">
-          Dodaj plan
+          Dodaj nowy plan
           <button
             className="search__button-item"
             style={{ float: "right" }}
@@ -165,7 +166,7 @@ const SearchTimetables = ({ search }) => {
           </button>
         </h2>
       </div>
-    </>
+    </section>
   );
 };
 
