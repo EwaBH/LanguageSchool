@@ -8,7 +8,7 @@
   justify-content: center;
   flex-grow: 1;
 
-  @media (max-width: 780px) {
+  @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
   }
@@ -16,7 +16,7 @@
 
 .subject__header {
   display: flex;
-font-family: $second-font;
+  font-family: $second-font;
   justify-content: center;
   color: $secondary-color;
   font-weight: 700;
@@ -34,7 +34,7 @@ font-family: $second-font;
   list-style-type: none;
   box-shadow: 1px 1px 4px $main-color-dark;
   border-radius: 4px;
-    @media screen and (max-width: 780px) {
+  @media screen and (max-width: 768px) {
     width: 300px;
 
     height: 70px;

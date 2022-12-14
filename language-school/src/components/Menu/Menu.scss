@@ -11,7 +11,7 @@
 
 .menuLink {
   display: flex;
-  width: 260px;
+  width: 250px;
   height: 80px;
   margin: 20px;
   background-color: #b6bdc7;
@@ -27,7 +27,7 @@
   &:focus,
   &:hover {
     background-color: $secondary-color;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     color: #fff;
   }
 }
@@ -85,11 +85,7 @@
     left: 5%;
     cursor: pointer;
   }
-  // .mobileMenu .close {
-  //   position: absolute;
-  //   left: 5%;
-  //   cursor: pointer;
-  // }
+
 }
 .menu__icon {
   padding: 5px;

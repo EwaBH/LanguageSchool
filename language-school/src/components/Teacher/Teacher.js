@@ -196,7 +196,7 @@ const Teacher = () => {
           surnameValidation &&
           emailValidation &&
           phoneValidation && (
-            <div style={{ width: "600px" }}>
+            <div style={{ width: "700px" }}>
               <Button
                 className="button"
                 style={{ float: "right" }}
