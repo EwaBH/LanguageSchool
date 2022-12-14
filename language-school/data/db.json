@@ -29,6 +29,26 @@
       "classroomId": "18",
       "description": "B2",
       "id": 3
+    },
+    {
+      "dayId": "3",
+      "timeStart": "12:00",
+      "timeEnd": "13:00",
+      "teacherId": "8",
+      "subjectId": "11",
+      "classroomId": "18",
+      "description": "B2",
+      "id": 4
+    },
+    {
+      "dayId": "3",
+      "timeStart": "12:46",
+      "timeEnd": "13:46",
+      "teacherId": "2",
+      "subjectId": "5",
+      "classroomId": "19",
+      "description": "",
+      "id": 5
     }
   ],
   "classrooms": [
@@ -66,6 +86,11 @@
       "classroom": "110",
       "description": "I piętro",
       "id": 25
+    },
+    {
+      "classroom": "8",
+      "description": "parter",
+      "id": 26
     }
   ],
   "subjects": [
@@ -117,7 +142,7 @@
   ],
   "teachers": [
     {
-      "name": "Roma",
+      "name": "Roman",
       "surname": "Pigwa",
       "email": "www@op.pl",
       "phone": "www542036987",
@@ -145,7 +170,7 @@
       "id": 7
     },
     {
-      "name": "Zosia",
+      "name": "Zofia",
       "surname": "Markowska",
       "email": "mark@wp.pl",
       "phone": "602516478",

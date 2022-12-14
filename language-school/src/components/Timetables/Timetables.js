@@ -9,6 +9,7 @@ import { weekDays } from "../../data/constants";
 import SearchTimetables from "../SearchTimetables/SearchTimetables";
 import Spinner from "react-bootstrap/Spinner";
 import TimetableItem from "./TimetableItem";
+import { useNavigate } from "react-router-dom";
 import "./Timetables.scss"
 
 const Timetables = () => {
@@ -28,10 +29,10 @@ const Timetables = () => {
       getTimetables(),
     ]);
     data[3].forEach((tt) => {
-      tt.classroom = data[0].find((c) => c.id == tt.classroomId);
-      tt.subject = data[1].find((s) => s.id == tt.subjectId);
-      tt.teacher = data[2].find((t) => t.id == tt.teacherId);
-      tt.day = weekDays.find((d) => d.nr == tt.dayId);
+      tt.classroom = data[0].find((c) => +c.id === +tt.classroomId);
+      tt.subject = data[1].find((s) => +s.id === +tt.subjectId);
+      tt.teacher = data[2].find((t) => +t.id === +tt.teacherId);
+      tt.day = weekDays.find((d) => +d.nr === +tt.dayId);
       tt.start = Number(tt.timeStart.replace(":", ""));
     });
     setTimetables(data[3].sort((a, b) => a.start - b.start));
@@ -40,12 +41,26 @@ const Timetables = () => {
   useEffect(() => {
     fetchData();
   }, []);
+  const navigate = useNavigate();
+ const addItem = () => {
+   navigate("/timetable");
+ };
 
   if (loading) return <Spinner animation="border" />;
 
   return (
     <div className="timetables__container">
-      <h2 className="timetables__header">Wyszukaj plan</h2>
+      <h2 className="timetables__header">
+        Wyszukaj lub dodaj nowy plan
+        <button
+          className="search__button-item"
+          style={{ float: "right" }}
+          onClick={addItem}
+        >
+          <span className="material-symbols-outlined">add</span>
+        </button>
+      </h2>
+
       <SearchTimetables search={search} />
       {searchParameters !== null && (
         <ul>
@@ -74,7 +89,6 @@ const Timetables = () => {
             })}
         </ul>
       )}
-     
     </div>
   );
 };

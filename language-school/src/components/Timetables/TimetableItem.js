@@ -5,21 +5,24 @@ const TimetableItem = ({ timetable }) => {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <li>
-        <div>dzień: {timetable.day.dayName}</div>
-        <div>
+    <div className="timetableItem__container">
+      <li className="timetableItem__list">
+        <div className="timetable__Item">{timetable.day.dayName}</div>
+        <div className="timetable__Item">
           od: {timetable.timeStart} do: {timetable.timeEnd}
         </div>
-        <div>
-          nauczyciel: {timetable.teacher.surname} {timetable.teacher.name}
+        <div className="timetable__Item">
+           {timetable.teacher.name} {timetable.teacher.surname}
         </div>
-        <div>przedmiot: {timetable.subject.subject}</div>
-        <div>sala nr: {timetable.classroom.classroom}</div>
+        <div className="timetable__Item">
+          przedmiot: {timetable.subject.subject}
+        </div>
+        <div className="timetable__Item">
+          sala nr: {timetable.classroom.classroom}
+        </div>
         <div className="material-symbols-outlined edit">edit</div>
         <div className="material-symbols-outlined bin">delete</div>
       </li>
-      
     </div>
   );
 };

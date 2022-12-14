@@ -6,21 +6,11 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-    flex-grow: 1;
+  flex-grow: 1;
   background-color: $main-color-light;
-
-  // @media screen and (min-width: 780px) {
-  //   //height: 100%;
-  //   // display: flex;
-  //   // flex-direction: column;
-  //   // align-items: flex-start;
-  // }
-  // @media screen and (min-width: 992px) {
-  //   // display: flex;
-  //   // flex-direction: column;
-  //   // align-items: flex-start;
-  // }
+  padding: 5px;
 }
+
 .classroomItem__list {
   margin: 10px 20px;
   width: 700px;

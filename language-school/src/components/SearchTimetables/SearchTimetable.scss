@@ -1,13 +1,13 @@
 @import "../../../style/variables";
 @import "../../../style/global";
 
-
 .timetable__container {
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   flex-grow: 1;
+  width: 100%;
 
   @media (max-width: 780px) {
     display: flex;
@@ -16,9 +16,9 @@
 }
 
 .timetable__header {
-  display: flex;
+  //display: flex;
   font-family: $second-font;
-   justify-content: center;
+  justify-content: center;
   color: $secondary-color;
   font-weight: 700;
   margin: 20px auto;
@@ -36,9 +36,9 @@
   box-shadow: 1px 1px 4px $main-color-dark;
   border-radius: 4px;
 
-    @media screen and (max-width: 780px) {
+  @media screen and (max-width: 780px) {
     width: 300px;
-    height: 60px;
+    height: 70px;
   }
   @media screen and (min-width: 992px) {
     width: 600px;
@@ -47,5 +47,4 @@
   @media screen and (min-width: 1200px) {
     width: 700px;
   }
-  
 }
