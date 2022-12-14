@@ -19,7 +19,7 @@ const Classrooms = () => {
     setLoading(true);
     const data = await Promise.all([getClassrooms(), getTimetables()]);
     data[0].forEach((c) => {
-      c.mustBeDisabled = data[1].some((tt) => tt.classroomId == c.id);
+      c.mustBeDisabled = data[1].some((tt) => +tt.classroomId === +c.id);
     });
 
     setClasssrooms(data[0]);

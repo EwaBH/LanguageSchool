@@ -42,7 +42,11 @@ export async function deleteTeacher(id) {
     method: "DELETE",
   });
 }
-
+export async function deleteTimetable(id) {
+  await fetch(`${API_URL}/timetables/${id}`, {
+    method: "DELETE",
+  });
+}
 export async function createSubject(data) {
   await fetch(`${API_URL}/subjects`, {
     method: "POST",
@@ -120,4 +124,14 @@ export function getTimetable(id) {
   return fetch(`${API_URL}/timetables/${id}`).then((response) =>
     response.json()
   );
+}
+
+export async function updateTimetable(data, id) {
+  await fetch(`${API_URL}/timetables/${id}`, {
+    method: "PUT",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 }

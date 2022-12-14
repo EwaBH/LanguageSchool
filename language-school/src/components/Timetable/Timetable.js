@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Spinner from "react-bootstrap/Spinner";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import {
   getTeachers,
   getSubjects,
   getClassrooms,
   createTimetable,
+  updateTimetable,
+  getTimetable,
 } from "../../services/httpService";
 import Button from "react-bootstrap/Button";
 import "./Timetable.scss";
@@ -32,11 +34,28 @@ const AddTimetable = () => {
   const [classrooms, setClasssrooms] = useState([]);
   const [selectedClassroom, setSelectedClasssroom] = useState(0);
   const [description, setDescription] = useState("");
+  const [timetable, setTimetable] = useState("");
+  // const [timetableValidation, setTimetableValidation] = useState(false);
+  const { id } = useParams();
+
   const navigate = useNavigate();
 
   useEffect(() => {
     setLoading(true);
-    fetchDate();
+    if (id !== undefined && !Number.isNaN(id)) {
+      getTimetable(id).then((result) => {
+        setTimetable(result);
+        fetchDate();
+        setSelectedDay(result.dayId);
+        setSelectedTimeStart(result.timeStart);
+        setSelectedTimeEnd(result.timeEnd);
+        setSelectedTeacher(result.teacherId);
+        setSelectedSubject(result.subjectId)
+        setSelectedClasssroom(result.classroomId)
+      });
+    } else {
+      fetchDate();
+    }
   }, []);
 
   const fetchDate = async () => {
@@ -81,7 +100,11 @@ const AddTimetable = () => {
   };
 
   const sendData = async (data) => {
+    if (id !== undefined && !Number.isNaN(id)) {
+      await updateTimetable(data, id);
+    }else {
     await createTimetable(data);
+    }
     navigate("/timetables");
   };
 
@@ -126,6 +149,7 @@ const AddTimetable = () => {
           id="appt"
           name="appt"
           onChange={timeChangedStart}
+          value={selectedTimeStart}
         ></input>
       </p>
       <p>
@@ -135,6 +159,7 @@ const AddTimetable = () => {
           id="appt"
           name="appt"
           onChange={timeChangedEnd}
+          value={selectedTimeEnd}
         ></input>
       </p>
 
@@ -191,6 +216,7 @@ const AddTimetable = () => {
       <input
         className="timetableItem__select"
         type="text"
+        // value={selectedDescription}
         onChange={descriptionChanged}
         placeholder="opis,poziom"
       />

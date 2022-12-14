@@ -45,6 +45,10 @@ const Timetables = () => {
  const addItem = () => {
    navigate("/timetable");
  };
+ 
+ const refresh = () => {
+   fetchData();
+ };
 
   if (loading) return <Spinner animation="border" />;
 
@@ -68,24 +72,26 @@ const Timetables = () => {
             .filter((tt) => {
               if (searchParameters.selectedTeacher > 0) {
                 return (
-                  tt.dayId == searchParameters.selectedDay &&
-                  tt.teacherId === searchParameters.selectedTeacher
+                  +tt.dayId === +searchParameters.selectedDay &&
+                  +tt.teacherId === +searchParameters.selectedTeacher
                 );
               } else if (searchParameters.selectedSubject > 0) {
                 return (
-                  tt.dayId == searchParameters.selectedDay &&
-                  tt.subjectId === searchParameters.selectedSubject
+                  +tt.dayId === +searchParameters.selectedDay &&
+                  +tt.subjectId === +searchParameters.selectedSubject
                 );
               } else if (searchParameters.selectedClassroom > 0) {
                 return (
-                  tt.dayId == searchParameters.selectedDay &&
-                  tt.classroomId === searchParameters.selectedClassroom
+                  +tt.dayId === +searchParameters.selectedDay &&
+                  +tt.classroomId === +searchParameters.selectedClassroom
                 );
               }
               return false;
             })
             .map((tt) => {
-              return <TimetableItem key={tt.id} timetable={tt} />;
+              return (
+                <TimetableItem key={tt.id} timetable={tt} refresh={refresh} />
+              );
             })}
         </ul>
       )}

@@ -18,7 +18,7 @@ const Teacher = () => {
   const [phone, setPhone] = useState("");
   const [phoneValidation, setPhoneValidation] = useState(false);
   const [description, setDescription] = useState("");
-  const [descriptionValidation, setDescriptionValidation] = useState(false);
+  // const [descriptionValidation, setDescriptionValidation] = useState(false);
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -66,7 +66,6 @@ const Teacher = () => {
   };
 
   const emailChanged = (e) => {
-    const reEmail = new RegExp("^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$");
     setEmailValue(e.target.value);
   };
 
@@ -75,7 +74,8 @@ const Teacher = () => {
       value = "";
     }
     setEmail(value);
-    if (value.length !== 0) {
+    const reEmail = new RegExp("^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$");
+    if (reEmail.test(value)) {
       setEmailValidation(true);
     } else {
       setEmailValidation(false);
@@ -107,11 +107,6 @@ const Teacher = () => {
       value = "";
     }
     setDescription(value);
-    if (value.length !== 0) {
-      setDescriptionValidation(true);
-    } else {
-      setDescriptionValidation(false);
-    }
   };
 
   const submit = (e) => {
@@ -200,9 +195,8 @@ const Teacher = () => {
         {nameValidation &&
           surnameValidation &&
           emailValidation &&
-          phoneValidation &&
-          (
-            <div style={{ width: "500px" }}>
+          phoneValidation && (
+            <div style={{ width: "600px" }}>
               <Button
                 className="button"
                 style={{ float: "right" }}

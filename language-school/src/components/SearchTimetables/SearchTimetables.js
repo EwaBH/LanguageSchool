@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Spinner from "react-bootstrap/Spinner";
-import { useNavigate } from "react-router-dom";
 import { weekDays } from "../../data/constants";
 import {
   getTeachers,
@@ -19,16 +18,11 @@ const SearchTimetables = ({ search }) => {
   const [selectedSubject, setSelectedSubject] = useState(0);
   const [classrooms, setClasssrooms] = useState([]);
   const [selectedClassroom, setSelectedClasssroom] = useState(0);
-  const navigate = useNavigate();
 
   useEffect(() => {
     setLoading(true);
     fetchDate();
   }, []);
-
-  const addItem = () => {
-    navigate("/timetable");
-  };
 
   const fetchDate = async () => {
     const p1 = getClassrooms().then((result) => {
@@ -72,7 +66,7 @@ const SearchTimetables = ({ search }) => {
   if (loading) return <Spinner animation="border" />;
   return (
     <section className="timetable__container">
-      <div >
+      <div>
         <select
           className="timetableItem__select"
           value={selectedDay}
@@ -152,16 +146,6 @@ const SearchTimetables = ({ search }) => {
             Wyszukaj
           </Button>
         )}
-      </div>
-
-      <div >
-        {/* <button
-          className="search__button-item"
-          style={{ float: "right" }}
-          onClick={addItem}
-        >
-          <span className="material-symbols-outlined">add</span>
-        </button> */}
       </div>
     </section>
   );

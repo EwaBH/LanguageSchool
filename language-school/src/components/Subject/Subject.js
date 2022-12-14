@@ -106,7 +106,7 @@ const Subject = () => {
         />
 
         {subjectValidation && descriptionValidation && (
-          <div style={{ width: "500px" }}>
+          <div style={{ width: "600px" }}>
             <Button
               className="button"
               style={{ float: "right" }}

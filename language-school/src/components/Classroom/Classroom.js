@@ -1,5 +1,5 @@
-import { useNavigate, useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import {
   createClassroom,
   getClassroom,
@@ -106,7 +106,7 @@ const Classroom = () => {
           />
         </div>
         {classroomValidation && descriptionValidation && (
-          <div style={{ width: "500px" }}>
+          <div style={{ width: "600px" }}>
             <Button
               className="button"
               style={{ float: "right" }}
