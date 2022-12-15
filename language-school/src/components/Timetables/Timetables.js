@@ -10,7 +10,7 @@ import SearchTimetables from "../SearchTimetables/SearchTimetables";
 import Spinner from "react-bootstrap/Spinner";
 import TimetableItem from "./TimetableItem";
 import { useNavigate } from "react-router-dom";
-import "./Timetables.scss"
+import "./Timetables.scss";
 
 const Timetables = () => {
   const [loading, setLoading] = useState(false);
@@ -42,13 +42,13 @@ const Timetables = () => {
     fetchData();
   }, []);
   const navigate = useNavigate();
- const addItem = () => {
-   navigate("/timetable");
- };
- 
- const refresh = () => {
-   fetchData();
- };
+  const addItem = () => {
+    navigate("/timetable");
+  };
+
+  const refresh = () => {
+    fetchData();
+  };
 
   if (loading) return <Spinner animation="border" />;
 

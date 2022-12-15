@@ -18,7 +18,6 @@ const Teacher = () => {
   const [phone, setPhone] = useState("");
   const [phoneValidation, setPhoneValidation] = useState(false);
   const [description, setDescription] = useState("");
-  // const [descriptionValidation, setDescriptionValidation] = useState(false);
   const { id } = useParams();
   const navigate = useNavigate();
 

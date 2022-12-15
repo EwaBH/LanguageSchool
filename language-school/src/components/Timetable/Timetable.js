@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Spinner from "react-bootstrap/Spinner";
 import { useNavigate, useParams } from "react-router-dom";
 import {
   getTeachers,
@@ -9,18 +8,11 @@ import {
   updateTimetable,
   getTimetable,
 } from "../../services/httpService";
+import {weekDays} from  "../../data/constants"
 import Button from "react-bootstrap/Button";
+import Spinner from "react-bootstrap/Spinner";
 import "./Timetable.scss";
 
-const weekDays = [
-  { dayName: "poniedziałek", nr: 1 },
-  { dayName: "wtorek", nr: 2 },
-  { dayName: "środa", nr: 3 },
-  { dayName: "czwartek", nr: 4 },
-  { dayName: "piątek", nr: 5 },
-  { dayName: "sobota", nr: 6 },
-  { dayName: "niedziela", nr: 0 },
-];
 
 const AddTimetable = () => {
   const [selectedDay, setSelectedDay] = useState(-1);
@@ -34,8 +26,6 @@ const AddTimetable = () => {
   const [classrooms, setClasssrooms] = useState([]);
   const [selectedClassroom, setSelectedClasssroom] = useState(0);
   const [description, setDescription] = useState("");
-  const [timetable, setTimetable] = useState("");
-  // const [timetableValidation, setTimetableValidation] = useState(false);
   const { id } = useParams();
 
   const navigate = useNavigate();
@@ -44,14 +34,13 @@ const AddTimetable = () => {
     setLoading(true);
     if (id !== undefined && !Number.isNaN(id)) {
       getTimetable(id).then((result) => {
-        setTimetable(result);
         fetchDate();
         setSelectedDay(result.dayId);
         setSelectedTimeStart(result.timeStart);
         setSelectedTimeEnd(result.timeEnd);
         setSelectedTeacher(result.teacherId);
-        setSelectedSubject(result.subjectId)
-        setSelectedClasssroom(result.classroomId)
+        setSelectedSubject(result.subjectId);
+        setSelectedClasssroom(result.classroomId);
       });
     } else {
       fetchDate();
@@ -102,8 +91,8 @@ const AddTimetable = () => {
   const sendData = async (data) => {
     if (id !== undefined && !Number.isNaN(id)) {
       await updateTimetable(data, id);
-    }else {
-    await createTimetable(data);
+    } else {
+      await createTimetable(data);
     }
     navigate("/timetables");
   };
@@ -215,8 +204,7 @@ const AddTimetable = () => {
       </select>
       <input
         className="timetableItem__select"
-        type="text"
-        // value={selectedDescription}
+        type="text"      
         onChange={descriptionChanged}
         placeholder="opis,poziom"
       />

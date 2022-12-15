@@ -35,7 +35,7 @@
 .normalMenu {
   display: flex;
 
-  @media (max-width: 992px) {
+  @media #{$tablet} {
     .menu__text {
       display: none;
     }
@@ -49,7 +49,7 @@
   }
 }
 
-@media (max-width: 768px) {
+ @media #{$mobile} {
   .normalMenu {
     display: none;
   }
@@ -59,7 +59,7 @@
   display: none;
 }
 
-@media (max-width: 768px) {
+ @media #{$mobile} {
   .mobileMenu {
     display: none;
   }
@@ -85,7 +85,6 @@
     left: 5%;
     cursor: pointer;
   }
-
 }
 .menu__icon {
   padding: 5px;

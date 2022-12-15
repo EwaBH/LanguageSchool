@@ -9,9 +9,8 @@
   flex-grow: 1;
   background-color: $main-color-light;
   padding:20px;
-
-
 }
+
 .subjectItem__list {
   margin: 10px 20px;
   width: 700px;
@@ -26,18 +25,18 @@
   display: flex;
   justify-content: space-between;
   
-  @media (max-width: 768px) {
+  @media #{$mobile} {
     width: 300px;
     margin: 5px 0;
     height: 90px;
   }
 
-  @media screen and (min-width: 992px) {
+ @media #{$tablet} {
     width: 600px;
     margin: 5px 0;
   }
 
-  @media screen and (min-width: 1200px) {
+   @media #{$desktop} {
     width: 700px;
     margin: 5px 0;
   }

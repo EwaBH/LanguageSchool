@@ -12,16 +12,15 @@
   margin: 10px auto;
   width: 100%;
 
-  @media screen and (max-width: 768px) {
+   @media #{$mobile} {
     flex-basis: 200px;
     flex-direction: column;
     justify-content: center;
   }
-
-  @media screen and (min-width: 992px) {
+   @media #{$tablet} {
     flex-basis: 130px;
   }
-  @media screen and (min-width: 1200px) {
+   @media #{$desktop} {
     flex-basis: 160px;
   }
 }
@@ -33,13 +32,14 @@
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
-  @media screen and (max-width: 768px) {
+
+   @media #{$mobile} {
     font-size: 14px;
   }
 }
-.footer__text{
-  margin:15px;
-   padding: 6px;
+.footer__text {
+  margin: 15px;
+  padding: 6px;
 }
 .footer__icon {
   color: #fff;
@@ -47,7 +47,8 @@
   margin: 15px;
   border-radius: 50%;
   background-color: $main-color-dark;
-    @media screen and (max-width: 768px) {
+
+ @media #{$mobile} {
     font-size: 14px;
   }
 }

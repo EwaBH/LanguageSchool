@@ -111,7 +111,7 @@ const SearchTimetables = ({ search }) => {
           {subjects.map((subject) => {
             return (
               <option key={subject.id} value={subject.id}>
-                {subject.subject}
+                {subject.subject} {subject.description}
               </option>
             );
           })}

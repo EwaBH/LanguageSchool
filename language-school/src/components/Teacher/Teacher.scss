@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: center;
   flex-grow: 1;
-  @media (max-width: 768px) {
+   @media #{$mobile} {
     display: flex;
     flex-direction: column;
   }
@@ -16,7 +16,7 @@
 .teacher__header {
   display: flex;
   font-family: $second-font;
-   justify-content: center;
+  justify-content: center;
   color: $secondary-color;
   font-weight: 700;
   margin: 20px auto;
@@ -33,16 +33,17 @@
   list-style-type: none;
   box-shadow: 1px 1px 4px $main-color-dark;
   border-radius: 4px;
-    @media screen and (max-width: 768px) {
+
+  @media #{$mobile} {
     width: 300px;
 
     height: 70px;
   }
-  @media screen and (min-width: 992px) {
+  @media #{$tablet} {
     width: 600px;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media #{$desktop} {
     width: 700px;
   }
 }

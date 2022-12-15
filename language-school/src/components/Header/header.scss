@@ -12,41 +12,34 @@
   margin: 10px auto;
   width: 100%;
 
-  @media screen and (min-width: 768px) {
-    flex-basis: 130px;
-    // flex-direction: column;
-  }
-  @media screen and (min-width: 992px) {
+  @media #{$mobile} {
     flex-basis: 130px;
   }
-  @media screen and (min-width: 1200px) {
+  @media #{$tablet} {
+    flex-basis: 130px;
+  }
+  @media #{$desktop} {
     flex-basis: 160px;
   }
 }
 .header__text {
   font-family: $second-font;
   color: $secondary-color;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-  // text-shadow: 8px 8px 11px $secondary-color;
-  // text-shadow: 8px 8px 11px yellowgreen;
 
-  @media screen and (max-width: 768px) {
-    // font-size: 40px;
+  @media #{$mobile} {
     letter-spacing: normal;
     font-weight: 500;
     padding: 10px;
     display: none;
   }
 
-  @media screen and (min-width: 992px) {
+  @media #{$tablet} {
     font-size: 70px;
     letter-spacing: normal;
     font-weight: 500;
     padding: 10px;
   }
-  @media screen and (min-width: 1200px) {
+  @media #{$desktop} {
     font-size: 80px;
     letter-spacing: 8px;
     font-weight: 700;
@@ -62,7 +55,7 @@
   margin-left: 8px;
   margin-right: 8px;
 
-  @media screen and (max-width: 768px) {
+  @media #{$mobile} {
     font-size: 60px;
     letter-spacing: normal;
     font-weight: 500;

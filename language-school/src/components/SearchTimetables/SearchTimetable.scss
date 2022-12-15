@@ -9,7 +9,7 @@
   flex-grow: 1;
   width: 100%;
 
-  @media (max-width: 768px) {
+  @media #{$mobile} {
     display: flex;
     flex-direction: column;
   }
@@ -35,15 +35,15 @@
   box-shadow: 1px 1px 4px $main-color-dark;
   border-radius: 4px;
 
-  @media screen and (max-width: 768px) {
+  @media #{$mobile} {
     width: 300px;
     height: 70px;
   }
-  @media screen and (min-width: 992px) {
+  @media #{$tablet} {
     width: 600px;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media #{$desktop} {
     width: 700px;
   }
 }
