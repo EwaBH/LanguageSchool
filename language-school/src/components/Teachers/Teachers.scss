@@ -1,0 +1,84 @@
+@import "../../../style/variables";
+@import "../../../style/global";
+
+.teachers__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  background-color: $main-color-light;
+}
+
+.teachersItem__list {
+  margin: 10px 20px;
+  width: 700px;
+  height: 45px;
+  padding: 10px;
+  font-family: $main-font;
+  font-size: 15px;
+  list-style-type: none;
+  box-shadow: 1px 1px 4px $main-color-dark;
+  background-color: $main-color-light;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+
+   @media #{$mobile} {
+    width: 300px;
+    margin: 5px 0;
+    height: 90px;
+  }
+
+  @media #{$tablet} {
+    width: 600px;
+    margin: 5px 0;
+  }
+
+  @media #{$desktop} {
+    width: 700px;
+    margin: 5px 0;
+  }
+
+  &:hover {
+    background-color: $secondary-color;
+    color: #fff;
+    opacity: 80;
+  }
+}
+.teachers__header {
+  display: flex;
+  margin: 20px;
+  justify-content: center;
+  color: $secondary-color;
+  width: 650px;
+  font-weight: 700;
+  font-family: $second-font;
+  letter-spacing: 3px;
+}
+
+.teachersItem__list-data {
+  font-weight: 700;
+}
+.teachersItem__description {
+  font-weight: 700;
+  width: 120px;
+}
+
+.teachersItem__description-second {
+  width: 300px;
+  font-weight: 700;
+}
+.bin {
+  cursor: pointer;
+  margin-right: 5px;
+}
+.bin__enabled {
+  pointer-events: none;
+  margin-right: 5px;
+}
+
+.edit {
+  cursor: pointer;
+  margin-right: 15px;
+}

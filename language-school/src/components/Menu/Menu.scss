@@ -1,4 +1,92 @@
-.menu {
+@import "../../../style/variables";
+@import "../../../style/global";
+
+.menu__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 100px;
+  font-family: $main-font;
+}
+
+.menuLink {
+  display: flex;
+  width: 250px;
+  height: 80px;
+  margin: 20px;
+  background-color: #b6bdc7;
+  color: #3e3632;
+  font-weight: 700;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+
+  &:focus,
+  &:hover {
+    background-color: $secondary-color;
+    letter-spacing: 2px;
+    color: #fff;
+  }
+}
+
+.normalMenu {
+  display: flex;
+
+  @media #{$tablet} {
+    .menu__text {
+      display: none;
+    }
+    .menuLink {
+      width: 50px;
+      height: 50px;
+    }
+    .menu__icon {
+      margin: 7px;
+    }
+  }
+}
+
+ @media #{$mobile} {
+  .normalMenu {
+    display: none;
+  }
+}
+
+.mobileMenu {
+  display: none;
+}
+
+ @media #{$mobile} {
+  .mobileMenu {
+    display: none;
+  }
+  .mobileMenu {
     display: flex;
-    flex-direction: column;
+    .menuLink {
+      margin-top: 20px;
+      width: 190px;
+      height: 30px;
+      font-size: 13px;
+
+      &:hover {
+        background-color: $secondary-color;
+        width: 154px;
+        letter-spacing: 1px;
+        color: #fff;
+      }
+    }
+  }
+
+  .mobileMenu .hamburger {
+    position: absolute;
+    left: 5%;
+    cursor: pointer;
+  }
+}
+.menu__icon {
+  padding: 5px;
+  margin: 0 15px;
 }

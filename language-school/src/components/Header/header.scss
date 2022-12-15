@@ -1,3 +1,64 @@
-.text {
-    color: red;
+@import "../../../style/variables";
+@import "../../../style/global";
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px $main-color-dark;
+  background-color: $main-color-light;
+  flex-grow: 1;
+  height: 100%;
+  margin: 10px auto;
+  width: 100%;
+
+  @media #{$mobile} {
+    flex-basis: 130px;
+  }
+  @media #{$tablet} {
+    flex-basis: 130px;
+  }
+  @media #{$desktop} {
+    flex-basis: 160px;
+  }
+}
+.header__text {
+  font-family: $second-font;
+  color: $secondary-color;
+
+  @media #{$mobile} {
+    letter-spacing: normal;
+    font-weight: 500;
+    padding: 10px;
+    display: none;
+  }
+
+  @media #{$tablet} {
+    font-size: 70px;
+    letter-spacing: normal;
+    font-weight: 500;
+    padding: 10px;
+  }
+  @media #{$desktop} {
+    font-size: 80px;
+    letter-spacing: 8px;
+    font-weight: 700;
+    padding: 10px;
+  }
+}
+
+.header__logo {
+  font-family: $second-font;
+  color: $secondary-color;
+  text-shadow: 8px 8px 11px $main-color-dark;
+  font-size: 100px;
+  margin-left: 8px;
+  margin-right: 8px;
+
+  @media #{$mobile} {
+    font-size: 60px;
+    letter-spacing: normal;
+    font-weight: 500;
+    padding: 10px;
+  }
 }

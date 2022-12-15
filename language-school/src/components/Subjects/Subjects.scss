@@ -1,1 +1,81 @@
-r
+@import "../../../style/variables";
+@import "../../../style/global";
+
+.subjects__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  background-color: $main-color-light;
+  padding:20px;
+}
+
+.subjectItem__list {
+  margin: 10px 20px;
+  width: 700px;
+  height: 45px;
+  padding: 10px;
+  font-family: $main-font;
+  font-size: 15px;
+  list-style-type: none;
+  box-shadow: 1px 1px 4px $main-color-dark;
+  background-color: $main-color-light;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  
+  @media #{$mobile} {
+    width: 300px;
+    margin: 5px 0;
+    height: 90px;
+  }
+
+ @media #{$tablet} {
+    width: 600px;
+    margin: 5px 0;
+  }
+
+   @media #{$desktop} {
+    width: 700px;
+    margin: 5px 0;
+  }
+  &:hover {
+    background-color: $secondary-color;
+    color: #fff;
+    opacity: 80;
+  }
+}
+
+.subjects__header {
+  display: flex;
+  justify-content: center;
+  color: $secondary-color;
+  width: 650px;
+  font-weight: 700;
+  margin: 20px;
+  font-family: $second-font;
+  letter-spacing: 3px;
+}
+
+.subjectItem__description {
+  font-weight: 700;
+  width: 140px;
+}
+
+.subjectItem__description-second {
+  width: 300px;
+}
+.bin {
+  cursor: pointer;
+  margin-right: 5px;
+}
+.bin__enabled {
+  pointer-events: none;
+  margin-right: 5px;
+}
+
+.edit {
+  cursor: pointer;
+  margin-right: 15px;
+}

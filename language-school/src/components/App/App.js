@@ -2,7 +2,6 @@ import { Routes, Route } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Menu from "../Menu/Menu";
-import "./App.scss";
 import Main from "../Main/Main";
 import Timetables from "../Timetables/Timetables";
 import Timetable from "../Timetable/Timetable";
@@ -12,6 +11,8 @@ import Subjects from "../Subjects/Subjects";
 import Subject from "../Subject/Subject";
 import Clasrooms from "../Classrooms/Classrooms";
 import Classroom from "../Classroom/Classroom";
+import { NotFound } from "../NotFound/NotFound";
+import "./App.scss";
 
 const App = () => {
   return (
@@ -22,13 +23,18 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/timetables" element={<Timetables />} />
+          <Route path="/timetable/:id" element={<Timetable />} />
           <Route path="/timetable" element={<Timetable />} />
           <Route path="/teachers" element={<Teachers />} />
           <Route path="/teacher" element={<Teacher />} />
+          <Route path="/teacher/:id" element={<Teacher />} />
           <Route path="/subjects" element={<Subjects />} />
           <Route path="/subject" element={<Subject />} />
-          <Route path="/clasrooms" element={<Clasrooms />} />
-          <Route path="/clasroom" element={<Classroom />} />
+          <Route path="/subject/:id" element={<Subject />} />
+          <Route path="/classrooms" element={<Clasrooms />} />
+          <Route path="/classroom" element={<Classroom />} />
+          <Route path="/classroom/:id" element={<Classroom />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
       <Footer />

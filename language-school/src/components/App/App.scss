@@ -1,7 +1,13 @@
+@import "../../../style/variables";
+@import "../../../style/global";
+
 .app {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 .mainSection {
-    display: flex;
+  display: flex;
+  flex-grow: 1;
+  background-color: $main-color-light;
 }

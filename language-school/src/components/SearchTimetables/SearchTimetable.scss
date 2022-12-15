@@ -1,0 +1,49 @@
+@import "../../../style/variables";
+@import "../../../style/global";
+
+.timetable__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  width: 100%;
+
+  @media #{$mobile} {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.timetable__header {
+  font-family: $second-font;
+  justify-content: center;
+  color: $secondary-color;
+  font-weight: 700;
+  margin: 20px auto;
+}
+
+.timetableItem__select {
+  display: flex;
+  margin-bottom: 20px;
+  width: 500px;
+  height: 45px;
+  padding: 5px;
+  font-family: $main-font;
+  font-size: 15px;
+  list-style-type: none;
+  box-shadow: 1px 1px 4px $main-color-dark;
+  border-radius: 4px;
+
+  @media #{$mobile} {
+    width: 300px;
+    height: 70px;
+  }
+  @media #{$tablet} {
+    width: 600px;
+  }
+
+  @media #{$desktop} {
+    width: 700px;
+  }
+}

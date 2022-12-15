@@ -1,16 +1,17 @@
-import React from 'react'
-import { Link } from "react-router-dom";
-import "./Menu.scss"
+import React from "react";
+import MobileMenu from "./MobileMenu";
+import NormalMenu from "./NormalMenu";
+import "./Menu.scss";
 
- const Menu = () => {
+const Menu = () => {
   return (
-    <div className="menu">
-      <div>Menu</div>
-      <Link to="/timetables">Timetables</Link>
-      <Link to="/teachers">Teachers</Link>
-      <Link to="/subjects">Subjects</Link>
-      <Link to="/clasrooms">Clasrooms</Link>
-    </div>
+    <>
+      <div className="menu__container">
+        <NormalMenu />
+        <MobileMenu />
+      </div>
+    </>
   );
-}
+};
+
 export default Menu;

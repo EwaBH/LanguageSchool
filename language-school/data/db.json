@@ -1,0 +1,234 @@
+{
+  "timetables": [
+    {
+      "dayId": "3",
+      "timeStart": "13:30",
+      "timeEnd": "15:00",
+      "teacherId": "6",
+      "subjectId": "11",
+      "classroomId": "18",
+      "description": "B2",
+      "id": 3
+    },
+    {
+      "dayId": "3",
+      "timeStart": "12:00",
+      "timeEnd": "13:00",
+      "teacherId": "8",
+      "subjectId": "11",
+      "classroomId": "18",
+      "description": "B2",
+      "id": 4
+    },
+    {
+      "dayId": "3",
+      "timeStart": "12:46",
+      "timeEnd": "13:46",
+      "teacherId": "2",
+      "subjectId": "5",
+      "classroomId": "19",
+      "description": "",
+      "id": 5
+    },
+    {
+      "dayId": "1",
+      "timeStart": "20:40",
+      "timeEnd": "21:40",
+      "teacherId": "2",
+      "subjectId": "5",
+      "classroomId": "18",
+      "description": "",
+      "id": 6
+    },
+    {
+      "dayId": "1",
+      "timeStart": "19:41",
+      "timeEnd": "20:41",
+      "teacherId": "5",
+      "subjectId": "13",
+      "classroomId": "26",
+      "description": "",
+      "id": 7
+    },
+    {
+      "dayId": "1",
+      "timeStart": "17:53",
+      "timeEnd": "19:54",
+      "teacherId": "9",
+      "subjectId": "13",
+      "classroomId": "19",
+      "description": "",
+      "id": 8
+    },
+    {
+      "dayId": "1",
+      "timeStart": "12:19",
+      "timeEnd": "14:19",
+      "teacherId": "2",
+      "subjectId": "5",
+      "classroomId": "14",
+      "description": "",
+      "id": 9
+    },
+    {
+      "dayId": "2",
+      "timeStart": "20:25",
+      "timeEnd": "21:25",
+      "teacherId": "2",
+      "subjectId": "5",
+      "classroomId": "18",
+      "description": "",
+      "id": 10
+    },
+    {
+      "dayId": "1",
+      "timeStart": "20:19",
+      "timeEnd": "21:19",
+      "teacherId": "2",
+      "subjectId": "5",
+      "classroomId": "26",
+      "description": "B2",
+      "id": 11
+    }
+  ],
+  "classrooms": [
+    {
+      "classroom": "154",
+      "description": "I piętro",
+      "id": 4
+    },
+    {
+      "classroom": "22",
+      "description": "parter",
+      "id": 14
+    },
+    {
+      "classroom": "8",
+      "description": "parter",
+      "id": 18
+    },
+    {
+      "classroom": "105",
+      "description": "I piętro",
+      "id": 19
+    },
+    {
+      "classroom": "204",
+      "description": "ll piętro",
+      "id": 20
+    },
+    {
+      "classroom": "202",
+      "description": "II piętro",
+      "id": 24
+    },
+    {
+      "classroom": "110",
+      "description": "I piętro",
+      "id": 25
+    },
+    {
+      "classroom": "5",
+      "description": "parter",
+      "id": 26
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "niemiecki",
+      "description": "A2",
+      "id": 5
+    },
+    {
+      "subject": "angielski",
+      "description": "A2",
+      "id": 6
+    },
+    {
+      "subject": "niemiecki",
+      "description": "B1",
+      "id": 7
+    },
+    {
+      "subject": "angielski",
+      "description": "B2",
+      "id": 8
+    },
+    {
+      "subject": "angielski",
+      "description": "A2",
+      "id": 9
+    },
+    {
+      "subject": "francuski",
+      "description": "B2",
+      "id": 11
+    },
+    {
+      "subject": "angielski",
+      "description": "B1/B2",
+      "id": 12
+    },
+    {
+      "subject": "hiszpański",
+      "description": "A2",
+      "id": 13
+    },
+    {
+      "subject": "włoski",
+      "description": "A1",
+      "id": 14
+    }
+  ],
+  "teachers": [
+    {
+      "name": "Roman",
+      "surname": "Pigwa",
+      "email": "www@op.pl",
+      "phone": "www542036987",
+      "id": 2
+    },
+    {
+      "name": "Grażyna ",
+      "surname": "Nowak",
+      "email": "grazia@pl.pl",
+      "phone": "676789087",
+      "id": 5
+    },
+    {
+      "name": "Ewa",
+      "surname": "Kowalska",
+      "email": "ewakow@op.pl",
+      "phone": "3332222222",
+      "id": 6
+    },
+    {
+      "name": "Jan",
+      "surname": "Kowalski",
+      "email": "kowalski@op.pl",
+      "phone": "777777777",
+      "id": 7
+    },
+    {
+      "name": "Zofia",
+      "surname": "Markowska",
+      "email": "mark@wp.pl",
+      "phone": "602516478",
+      "id": 8
+    },
+    {
+      "name": "Jagoda",
+      "surname": "Dabrak",
+      "email": "jagoda@wp.pl",
+      "phone": "514023658",
+      "id": 9
+    },
+    {
+      "name": "Daniel",
+      "surname": "Nawrocki",
+      "email": "nawrot@gmail.com",
+      "phone": "222222222",
+      "id": 10
+    }
+  ]
+}
