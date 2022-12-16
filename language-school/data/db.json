@@ -89,6 +89,16 @@
       "classroomId": "26",
       "description": "B2",
       "id": 11
+    },
+    {
+      "dayId": "2",
+      "timeStart": "08:50",
+      "timeEnd": "11:50",
+      "teacherId": "6",
+      "subjectId": "6",
+      "classroomId": "18",
+      "description": "C1",
+      "id": 12
     }
   ],
   "classrooms": [
@@ -151,12 +161,12 @@
     },
     {
       "subject": "angielski",
-      "description": "B2",
+      "description": "B1",
       "id": 8
     },
     {
       "subject": "angielski",
-      "description": "A2",
+      "description": "B1/B2",
       "id": 9
     },
     {

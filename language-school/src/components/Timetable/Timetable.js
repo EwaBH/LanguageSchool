@@ -8,11 +8,10 @@ import {
   updateTimetable,
   getTimetable,
 } from "../../services/httpService";
-import {weekDays} from  "../../data/constants"
+import { weekDays } from "../../data/constants";
 import Button from "react-bootstrap/Button";
 import Spinner from "react-bootstrap/Spinner";
 import "./Timetable.scss";
-
 
 const AddTimetable = () => {
   const [selectedDay, setSelectedDay] = useState(-1);
@@ -131,26 +130,28 @@ const AddTimetable = () => {
           );
         })}
       </select>
-      <p>
+      <div>
         godzina rozpoczęcia{" "}
         <input
+          className="time"
           type="time"
           id="appt"
           name="appt"
           onChange={timeChangedStart}
           value={selectedTimeStart}
         ></input>
-      </p>
-      <p>
+      </div>
+      <div>
         godzina zakończenia{" "}
         <input
+          className="time"
           type="time"
           id="appt"
           name="appt"
           onChange={timeChangedEnd}
           value={selectedTimeEnd}
         ></input>
-      </p>
+      </div>
 
       <select
         className="timetableItem__select"
@@ -204,7 +205,7 @@ const AddTimetable = () => {
       </select>
       <input
         className="timetableItem__select"
-        type="text"      
+        type="text"
         onChange={descriptionChanged}
         placeholder="opis,poziom"
       />
