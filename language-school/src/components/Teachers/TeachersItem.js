@@ -13,8 +13,9 @@ const TeachersItem = ({ teacher, refresh }) => {
   return (
     <div className="teachers__container">
       <li className="teachersItem__list">
-        <div className="teachersItem__list-data">{teacher.name}</div>
-        <div className="teachersItem__description">{teacher.surname}</div>
+        <div className="teachersItem__list-data">
+          {teacher.name} {teacher.surname}
+        </div>
         <div className="teachersItem__description-second">
           {teacher.description}
         </div>

@@ -99,6 +99,16 @@
       "classroomId": "18",
       "description": "C1",
       "id": 12
+    },
+    {
+      "dayId": "5",
+      "timeStart": "16:20",
+      "timeEnd": "17:20",
+      "teacherId": "6",
+      "subjectId": "6",
+      "classroomId": "20",
+      "description": "",
+      "id": 13
     }
   ],
   "classrooms": [
@@ -141,6 +151,11 @@
       "classroom": "5",
       "description": "parter",
       "id": 26
+    },
+    {
+      "classroom": "206",
+      "description": "II piętro",
+      "id": 27
     }
   ],
   "subjects": [
@@ -188,6 +203,11 @@
       "subject": "włoski",
       "description": "A1",
       "id": 14
+    },
+    {
+      "subject": "angielski",
+      "description": "B2/C1",
+      "id": 15
     }
   ],
   "teachers": [
