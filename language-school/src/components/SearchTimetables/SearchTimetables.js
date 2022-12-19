@@ -8,9 +8,10 @@ import {
 } from "../../services/httpService";
 import Button from "react-bootstrap/Button";
 import "./SearchTimetable.scss";
+import { MultiSelect } from "react-multi-select-component";
 
 const SearchTimetables = ({ search }) => {
-  const [selectedDay, setSelectedDay] = useState(new Date().getDay());
+  const [selectedDays, setSelectedDays] = useState([]);
   const [loading, setLoading] = useState(false);
   const [teachers, setTeachers] = useState([]);
   const [selectedTeacher, setSelectedTeacher] = useState(0);
@@ -39,7 +40,7 @@ const SearchTimetables = ({ search }) => {
   };
 
   const dayChanged = (e) => {
-    setSelectedDay(e.target.value);
+    setSelectedDays(e);
   };
 
   const teacherChanged = (e) => {
@@ -56,7 +57,7 @@ const SearchTimetables = ({ search }) => {
 
   const itemSearch = () => {
     search({
-      selectedDay,
+      selectedDays: selectedDays,
       selectedTeacher,
       selectedSubject,
       selectedClassroom,
@@ -66,20 +67,13 @@ const SearchTimetables = ({ search }) => {
   if (loading) return <Spinner animation="border" />;
   return (
     <section className="timetable__container">
-      <div>
-        <select
-          className="timetableItem__select"
-          value={selectedDay}
+      <div>        
+        <MultiSelect
+          options={weekDays}
+          value={selectedDays}
           onChange={dayChanged}
-        >
-          {weekDays.map((day) => {
-            return (
-              <option key={day.nr} value={day.nr}>
-                {day.dayName}
-              </option>
-            );
-          })}
-        </select>
+          labelledBy="Select"
+        />
 
         <select
           className="timetableItem__select"
@@ -134,7 +128,7 @@ const SearchTimetables = ({ search }) => {
             );
           })}
         </select>
-        {(selectedTeacher > 0 ||
+        { selectedDays.length > 0  && (selectedTeacher > 0 ||
           selectedSubject > 0 ||
           selectedClassroom > 0) && (
           <Button

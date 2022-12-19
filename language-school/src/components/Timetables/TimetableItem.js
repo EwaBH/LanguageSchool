@@ -14,7 +14,7 @@ const TimetableItem = ({ timetable, refresh }) => {
   return (
     <div className="timetableItem__container">
       <li className="timetableItem__list">
-        <div className="timetable__Item">{timetable.day.dayName}</div>
+        <div className="timetable__Item">{timetable.day.label}</div>
         <div className="timetable__Item">
           od: {timetable.timeStart} do: {timetable.timeEnd}
         </div>

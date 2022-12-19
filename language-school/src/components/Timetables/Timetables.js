@@ -32,10 +32,18 @@ const Timetables = () => {
       tt.classroom = data[0].find((c) => +c.id === +tt.classroomId);
       tt.subject = data[1].find((s) => +s.id === +tt.subjectId);
       tt.teacher = data[2].find((t) => +t.id === +tt.teacherId);
-      tt.day = weekDays.find((d) => +d.nr === +tt.dayId);
+      tt.day = weekDays.find((d) => +d.value === +tt.dayId);
       tt.start = Number(tt.timeStart.replace(":", ""));
     });
-    setTimetables(data[3].sort((a, b) => a.start - b.start));
+    setTimetables(
+      data[3].sort((a, b) => {
+        if (a.dayId !== b.dayId) {
+          return a.dayId - b.dayId;
+        } else {
+          return a.start - b.start;
+        }
+      })
+    );
     setLoading(false);
   };
   useEffect(() => {
@@ -48,6 +56,42 @@ const Timetables = () => {
 
   const refresh = () => {
     fetchData();
+  };
+
+  const dupa = () => {
+    const filteredTimetables = timetables.filter((tt) => {
+      if (searchParameters.selectedTeacher > 0) {
+        return (
+          +tt.teacherId === +searchParameters.selectedTeacher &&
+          searchParameters.selectedDays.some((sd) => sd.value === +tt.dayId)
+        );
+      } else if (searchParameters.selectedSubject > 0) {
+        return (
+          +tt.subjectId === +searchParameters.selectedSubject &&
+          searchParameters.selectedDays.some((sd) => sd.value === +tt.dayId)
+        );
+      } else if (searchParameters.selectedClassroom > 0) {
+        return (
+          +tt.classroomId === +searchParameters.selectedClassroom &&
+          searchParameters.selectedDays.some((sd) => sd.value === +tt.dayId)
+        );
+      }
+      return false;
+    });
+
+    const result = [];
+    
+    filteredTimetables.forEach((ft) => {
+      let x = result.find((r) => r.dayId === ft.dayId);
+
+      if (x == null) {
+        result.push({ dayId: ft.dayId, items: [ft] });
+      } else {
+        x.items.push(ft);
+      }
+    });
+    console.log(result);
+    return result;
   };
 
   if (loading) return <Spinner animation="border" />;
@@ -66,36 +110,22 @@ const Timetables = () => {
       </h2>
 
       <SearchTimetables search={search} />
-      {searchParameters !== null && (
-        <ul>
-          {timetables
-            .filter((tt) => {
-              if (searchParameters.selectedTeacher > 0) {
-                return (
-                  +tt.dayId === +searchParameters.selectedDay &&
-                  +tt.teacherId === +searchParameters.selectedTeacher
-                );
-              } else if (searchParameters.selectedSubject > 0) {
-                return (
-                  +tt.dayId === +searchParameters.selectedDay &&
-                  +tt.subjectId === +searchParameters.selectedSubject
-                );
-              } else if (searchParameters.selectedClassroom > 0) {
-                return (
-                  +tt.dayId === +searchParameters.selectedDay &&
-                  +tt.classroomId === +searchParameters.selectedClassroom
-                );
-              }
-              return false;
-            })
-            .map((tt) => {
-              return (
-                <TimetableItem key={tt.id} timetable={tt} refresh={refresh} />
-              );
-            })}
-        </ul>
-      )}
+      {searchParameters !== null && <ul>{
+        dupa().filter(d => +d.dayId === 1).map(d => {
+          return (
+            <>
+              <div key={d.dayId}>{JSON.stringify(d.items)}</div>
+              
+            </>
+          );})
+        }</ul>}
     </div>
   );
 };
 export default Timetables;
+
+/* .map((tt) => {
+              return (
+                <TimetableItem key={tt.id} timetable={tt} refresh={refresh} />
+              );
+            }) */
