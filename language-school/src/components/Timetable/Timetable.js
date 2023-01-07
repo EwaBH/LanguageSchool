@@ -124,8 +124,8 @@ const AddTimetable = () => {
         </option>
         {weekDays.map((day) => {
           return (
-            <option key={day.nr} value={day.nr}>
-              {day.dayName}
+            <option key={day.value} value={day.value}>
+              {day.label}
             </option>
           );
         })}

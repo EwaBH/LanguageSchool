@@ -30,12 +30,12 @@
     margin: 5px 0;
     height: 90px;
   }
-   @media #{$tablet} {
+  @media #{$tablet} {
     width: 600px;
     margin: 5px 0;
   }
 
-   @media #{$desktop} {
+  @media #{$desktop} {
     width: 700px;
     margin: 5px 0;
   }
@@ -69,14 +69,21 @@
 
 .bin {
   cursor: pointer;
-  margin-right: 5px;
+ border: 1px solid black;
+  display: inline;
+  border-radius: 6px;
 }
+
 .bin__enabled {
+  border: 1px solid black;
   pointer-events: none;
   margin-right: 5px;
+  border-radius: 6px;
 }
 
 .edit {
+  border: 1px solid black;
   cursor: pointer;
   margin-right: 15px;
+  border-radius: 6px;
 }

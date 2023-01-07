@@ -8,9 +8,9 @@ import {
 import { weekDays } from "../../data/constants";
 import SearchTimetables from "../SearchTimetables/SearchTimetables";
 import Spinner from "react-bootstrap/Spinner";
-import TimetableItem from "./TimetableItem";
 import { useNavigate } from "react-router-dom";
 import "./Timetables.scss";
+import TimetableDay from "./TimetableDay";
 
 const Timetables = () => {
   const [loading, setLoading] = useState(false);
@@ -54,25 +54,21 @@ const Timetables = () => {
     navigate("/timetable");
   };
 
-  const refresh = () => {
-    fetchData();
-  };
-
-  const dupa = () => {
+  const filterAndSortTimetables = () => {
     const filteredTimetables = timetables.filter((tt) => {
       if (searchParameters.selectedTeacher > 0) {
         return (
-          +tt.teacherId === +searchParameters.selectedTeacher &&
+          +tt.teacherId === searchParameters.selectedTeacher &&
           searchParameters.selectedDays.some((sd) => sd.value === +tt.dayId)
         );
       } else if (searchParameters.selectedSubject > 0) {
         return (
-          +tt.subjectId === +searchParameters.selectedSubject &&
+          +tt.subjectId === searchParameters.selectedSubject &&
           searchParameters.selectedDays.some((sd) => sd.value === +tt.dayId)
         );
       } else if (searchParameters.selectedClassroom > 0) {
         return (
-          +tt.classroomId === +searchParameters.selectedClassroom &&
+          +tt.classroomId === searchParameters.selectedClassroom &&
           searchParameters.selectedDays.some((sd) => sd.value === +tt.dayId)
         );
       }
@@ -80,17 +76,16 @@ const Timetables = () => {
     });
 
     const result = [];
-    
-    filteredTimetables.forEach((ft) => {
-      let x = result.find((r) => r.dayId === ft.dayId);
 
-      if (x == null) {
-        result.push({ dayId: ft.dayId, items: [ft] });
+    filteredTimetables.forEach((ft) => {
+      const foundItem = result.find((r) => r.dayId === ft.dayId);
+
+      if (foundItem == null) {
+        result.push({ dayId: ft.dayId, dayLabel: ft.day.label, items: [ft] });
       } else {
-        x.items.push(ft);
+        foundItem.items.push(ft);
       }
     });
-    console.log(result);
     return result;
   };
 
@@ -110,22 +105,21 @@ const Timetables = () => {
       </h2>
 
       <SearchTimetables search={search} />
-      {searchParameters !== null && <ul>{
-        dupa().filter(d => +d.dayId === 1).map(d => {
-          return (
-            <>
-              <div key={d.dayId}>{JSON.stringify(d.items)}</div>
-              
-            </>
-          );})
-        }</ul>}
+      {searchParameters !== null && (
+        <div style={{ display: "flex" }}>
+          {filterAndSortTimetables().map((day) => {
+            return (
+              <div key={day.dayId}>
+                <TimetableDay
+                  day={day}
+                  searchParameters={searchParameters}
+                ></TimetableDay>
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };
 export default Timetables;
-
-/* .map((tt) => {
-              return (
-                <TimetableItem key={tt.id} timetable={tt} refresh={refresh} />
-              );
-            }) */

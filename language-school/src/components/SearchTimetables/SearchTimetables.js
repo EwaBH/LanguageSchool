@@ -27,13 +27,27 @@ const SearchTimetables = ({ search }) => {
 
   const fetchDate = async () => {
     const p1 = getClassrooms().then((result) => {
-      setClasssrooms(result);
+      setClasssrooms(result.sort((a, b) => a.classroom - b.classroom));
     });
     const p2 = getSubjects().then((result) => {
-      setSubjects(result);
+      setSubjects(
+        result.sort((a, b) =>
+          a.subject.toUpperCase() + a.description.toUpperCase() >
+          b.subject.toUpperCase() + b.description.toUpperCase()
+            ? 1
+            : -1
+        )
+      );
     });
     const p3 = getTeachers().then((result) => {
-      setTeachers(result);
+      setTeachers(
+        result.sort((a, b) =>
+          a.surname.toUpperCase() + a.name.toUpperCase() >
+          b.surname.toUpperCase() + b.name.toUpperCase()
+            ? 1
+            : -1
+        )
+      );
     });
     await Promise.all([p1, p2, p3]);
     setLoading(false);
@@ -44,20 +58,20 @@ const SearchTimetables = ({ search }) => {
   };
 
   const teacherChanged = (e) => {
-    setSelectedTeacher(e.target.value);
+    setSelectedTeacher(+e.target.value);
   };
 
   const subjectChanged = (e) => {
-    setSelectedSubject(e.target.value);
+    setSelectedSubject(+e.target.value);
   };
 
   const classroomChanged = (e) => {
-    setSelectedClasssroom(e.target.value);
+    setSelectedClasssroom(+e.target.value);
   };
 
   const itemSearch = () => {
     search({
-      selectedDays: selectedDays,
+      selectedDays,
       selectedTeacher,
       selectedSubject,
       selectedClassroom,
@@ -67,12 +81,13 @@ const SearchTimetables = ({ search }) => {
   if (loading) return <Spinner animation="border" />;
   return (
     <section className="timetable__container">
-      <div>        
+      <div>
         <MultiSelect
           options={weekDays}
           value={selectedDays}
           onChange={dayChanged}
           labelledBy="Select"
+          className="select"
         />
 
         <select
@@ -87,7 +102,7 @@ const SearchTimetables = ({ search }) => {
           {teachers.map((teacher) => {
             return (
               <option key={teacher.id} value={teacher.id}>
-                {teacher.name} {teacher.surname}
+                {teacher.surname} {teacher.name}
               </option>
             );
           })}
@@ -128,18 +143,19 @@ const SearchTimetables = ({ search }) => {
             );
           })}
         </select>
-        { selectedDays.length > 0  && (selectedTeacher > 0 ||
-          selectedSubject > 0 ||
-          selectedClassroom > 0) && (
-          <Button
-            className="button"
-            style={{ float: "right" }}
-            variant="secondary"
-            onClick={itemSearch}
-          >
-            Wyszukaj
-          </Button>
-        )}
+        {selectedDays.length > 0 &&
+          (selectedTeacher > 0 ||
+            selectedSubject > 0 ||
+            selectedClassroom > 0) && (
+            <Button
+              className="button"
+              style={{ float: "right" }}
+              variant="secondary"
+              onClick={itemSearch}
+            >
+              Wyszukaj
+            </Button>
+          )}
       </div>
     </section>
   );

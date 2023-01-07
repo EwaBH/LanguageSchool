@@ -23,9 +23,9 @@
   margin: 20px auto;
 }
 
-.timetableItem__select {
+.timetableItem__select{
   display: flex;
-  margin-bottom: 20px;
+  margin: 20px;
   width: 500px;
   height: 45px;
   padding: 5px;
@@ -46,4 +46,29 @@
   @media #{$desktop} {
     width: 700px;
   }
+}
+
+.dropdown-container {
+width: 500px;
+  height: 45px;
+  padding: 5px 5px;
+   margin: 20px;
+   border: 1px solid black;
+   box-shadow: 1px 1px 4px $main-color-dark;
+  
+   
+   @media #{$mobile} {
+    width: 300px;
+    height: 70px;
+  }
+  @media #{$tablet} {
+    width: 600px;
+  }
+
+  @media #{$desktop} {
+    width: 700px;
+  }
+}
+.gray{
+    color:black;
 }

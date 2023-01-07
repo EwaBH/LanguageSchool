@@ -36,38 +36,7 @@
   border-radius: 4px;
 }
 
-.timetableItem__list {
-  display: flex;
-  justify-content: space-between;
-  width: 800px;
-  height: 45px;
-  margin-top: 30px;
-  padding: 10px;
-  font-family: $main-font;
-  font-size: 15px;
-  list-style-type: none;
-  box-shadow: 1px 1px 4px $main-color-dark;
-  border-radius: 4px;
 
-  @media #{$mobile} {
-    width: 400px;
-    height: 60px;
-    font-size: 12px;
-  }
-  @media #{$tablet} {
-    width: 600px;
-    height: 60px;
-  }
-
-  @media #{$desktop} {
-    width: 800px;
-  }
-  &:hover {
-    background-color: $secondary-color;
-    color: #fff;
-    opacity: 80;
-  }
-}
 .time {
   font-size: 25px;
   margin: 4px;
